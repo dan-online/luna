@@ -5,17 +5,17 @@
   "license": "MIT",
   "scripts": {
     "build": "rollup -c rollup.config.mjs",
-    "watch": "rollup -c rollup.config.mjs -w",
     "lint": "eslint src --ext ts --fix -c ../../.eslintrc",
     "start": "nodemon"
   },
   "dependencies": {
     "@apollo/server": "^4.1.1",
     "@as-integrations/fastify": "^1.1.1",
+    "@typegoose/typegoose": "^9.12.1",
     "env-schema": "^5.1.1",
     "fastify": "^4.10.0",
     "graphql": "^15.3.0",
-    "nodemon": "^2.0.20",
+    "mongoose": "^6.7.2",
     "reflect-metadata": "^0.1.13",
     "type-graphql": "^1.1.1"
   },
@@ -23,5 +23,8 @@
     "ignore": [
       "**/src/**"
     ]
+  },
+  "devDependencies": {
+    "pino-pretty": "^9.1.1"
   }
 }

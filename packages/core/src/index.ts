@@ -4,11 +4,11 @@ import Fastify from 'fastify';
 import 'reflect-metadata';
 import { buildSchema } from 'type-graphql';
 import { SchoolResolver } from './resolvers/School.resolver';
-import { env } from './utils/env';
+import { env, envToLogger } from './utils/env';
 
 const start = async () => {
   const fastifyServer = Fastify({
-    logger: true
+    logger: envToLogger[env.NODE_ENV]
   });
 
   const schema = await buildSchema({
