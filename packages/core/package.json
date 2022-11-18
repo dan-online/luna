@@ -1,0 +1,9 @@
+{
+  "name": "@luna/core",
+  "version": "0.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c rollup.config.ts"
+  }
+}
