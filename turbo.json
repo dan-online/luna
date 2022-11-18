@@ -4,7 +4,15 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**", "build/**"]
     },
+    "watch": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", "build/**"]
+    },
     "lint": {
+      "dependsOn": [],
+      "outputs": []
+    },
+    "start": {
       "dependsOn": [],
       "outputs": []
     }
