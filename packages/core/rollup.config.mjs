@@ -13,6 +13,6 @@ export default {
       sourcemap: true
     }
   ],
-  external: [],
+  external: ['type-graphql', 'env-schema', '@apollo/server', '@as-integrations/fastify', 'reflect-metadata', 'fastify'],
   plugins: [cleaner({ targets: ['./dist'] }), typescript({ tsconfig: resolve(process.cwd(), 'src', 'tsconfig.json') }), versionInjector()]
 };

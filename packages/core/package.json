@@ -4,8 +4,8 @@
   "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
-    "build": "rollup -c rollup.config.ts",
-    "watch": "rollup -c rollup.config.ts -w",
+    "build": "rollup -c rollup.config.mjs",
+    "watch": "rollup -c rollup.config.mjs -w",
     "lint": "eslint src --ext ts --fix -c ../../.eslintrc",
     "start": "nodemon"
   },
