@@ -3,7 +3,9 @@ import fastifyApollo, { fastifyApolloDrainPlugin } from '@as-integrations/fastif
 import Fastify from 'fastify';
 import 'reflect-metadata';
 import { buildSchema } from 'type-graphql';
-import { SchoolResolver } from './resolvers/School.resolver';
+import { getContext } from './orm';
+import { SchoolResolver } from './orm/resolvers/School.resolver';
+import { authChecker } from './utils/auth';
 import { env, envToLogger } from './utils/env';
 
 const start = async () => {
@@ -12,7 +14,8 @@ const start = async () => {
   });
 
   const schema = await buildSchema({
-    resolvers: [SchoolResolver]
+    resolvers: [SchoolResolver],
+    authChecker
   });
 
   const apollo = new ApolloServer<BaseContext>({
@@ -22,7 +25,14 @@ const start = async () => {
 
   await apollo.start();
 
-  await fastifyServer.register(fastifyApollo(apollo));
+  await fastifyServer.register(fastifyApollo(apollo), {
+    // @ts-expect-error 2769 - This is a bug in the type definitions
+    context: getContext
+  });
+
+  fastifyServer.get('/', () => {
+    return { hello: 'world' };
+  });
 
   await fastifyServer.listen({ port: env.PORT });
 };

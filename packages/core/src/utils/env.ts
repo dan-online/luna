@@ -15,11 +15,15 @@ const schema = {
     NODE_ENV: {
       type: 'string',
       default: 'development'
+    },
+    JWT_SECRET: {
+      type: 'string',
+      default: 'secret'
     }
   }
 };
 
-export const env = envSchema<{ PORT: number; LOG_LEVEL: string; NODE_ENV: 'production' | 'development' | 'test' }>({
+export const env = envSchema<{ PORT: number; LOG_LEVEL: string; NODE_ENV: 'production' | 'development' | 'test'; JWT_SECRET: string }>({
   schema,
   dotenv: true
 });

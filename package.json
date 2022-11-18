@@ -4,7 +4,7 @@
   "scripts": {
     "build": "turbo run build",
     "start": "turbo run start",
-    "watch:core": "nodemon --watch 'packages/core/' -e ts --exec 'turbo run build --scope=@luna/core'",
+    "watch:core": "nodemon --watch 'packages/core/src' -e ts --exec 'turbo run build --scope=@luna/core'",
     "lint": "turbo run lint"
   },
   "workspaces": [

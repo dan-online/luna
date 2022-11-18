@@ -12,6 +12,16 @@ export default {
       // sourcemap: true
     }
   ],
-  external: ['type-graphql', 'env-schema', '@apollo/server', 'reflect-metadata', '@as-integrations/fastify', 'fastify'],
+  external: [
+    'type-graphql',
+    'env-schema',
+    '@apollo/server',
+    'reflect-metadata',
+    '@as-integrations/fastify',
+    'fastify',
+    '@typegoose/typegoose',
+    'zod',
+    'jsonwebtoken'
+  ],
   plugins: [cleaner({ targets: ['./dist'] }), typescript({ tsconfig: resolve(process.cwd(), 'src', 'tsconfig.json') })]
 };
