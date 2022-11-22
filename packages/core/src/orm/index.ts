@@ -1,19 +1,23 @@
 import type { BaseContext } from '@apollo/server';
 import type { ApolloFastifyContextFunction } from '@as-integrations/fastify';
+import type { BeAnObject } from '@typegoose/typegoose/lib/types';
 import type { FastifyRequest } from 'fastify';
 import jwt from 'jsonwebtoken';
+import type { Document, Types } from 'mongoose';
 import { env } from '../utils/env';
 
 import { SchoolModel, SchoolSchema } from './models/School.model';
 import { UserModel, UserSchema } from './models/User.model';
 
-export interface Context extends BaseContext {
-  user: UserSchema | null;
+export type UserType = Document<Types.ObjectId, BeAnObject, UserSchema> & UserSchema;
+
+export interface Context<User = UserType | null> extends BaseContext {
+  user: User;
   request: FastifyRequest;
 }
 
 interface DecodedJWT {
-  _id: string;
+  user: string;
 }
 
 export const getContext: ApolloFastifyContextFunction<Context> = async (request) => {
@@ -21,15 +25,11 @@ export const getContext: ApolloFastifyContextFunction<Context> = async (request)
 
   if (!token) return { user: null, request };
 
-  const verified = await new Promise((r) => jwt.verify(token, env.JWT_SECRET, (_err, valid) => r(valid)));
+  const verified = jwt.verify(token, env.SECRET);
 
   if (!verified) return { user: null, request };
 
-  const decoded = jwt.decode(token);
-
-  if (!decoded) return { user: null, request };
-
-  const user = await UserModel.findById((decoded as DecodedJWT)._id);
+  const user = await UserModel.findById((verified as DecodedJWT).user);
 
   if (!user) return { user: null, request };
 

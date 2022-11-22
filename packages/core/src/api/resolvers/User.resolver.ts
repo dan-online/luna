@@ -1,6 +1,6 @@
 import { GraphQLError } from 'graphql';
-import { Arg, Mutation, Query, Resolver, UseMiddleware } from 'type-graphql';
-import { UserModel, UserSchema } from '../../orm';
+import { Arg, Authorized, Ctx, Mutation, Query, Resolver, UseMiddleware } from 'type-graphql';
+import { Context, UserModel, UserSchema, UserType } from '../../orm';
 import RateLimit from '../guards/RateLimit';
 import { LoginInput, RegisterInput } from '../inputs/User';
 import { LoginOutput, RegisterOutput } from '../outputs/User';
@@ -12,6 +12,7 @@ export class UserResolver {
     return 'Hello World!';
   }
 
+  @UseMiddleware(RateLimit({ window: '10s', max: 1 }))
   @Mutation(() => RegisterOutput)
   public async register(@Arg('user') userInput: RegisterInput): Promise<RegisterOutput> {
     const newUser = new UserModel({
@@ -59,5 +60,27 @@ export class UserResolver {
     return {
       token
     };
+  }
+
+  @Mutation(() => Boolean)
+  @UseMiddleware(RateLimit({ window: '1s', max: 1 }))
+  @Authorized()
+  public async verifyEmail(@Arg('verificationCode') verificationCode: string, @Ctx() context: Context<UserType>): Promise<boolean> {
+    const { user } = context;
+
+    if (user.verifiedEmail) {
+      return true;
+    }
+
+    if (user.verificationCode === verificationCode) {
+      user.verifiedEmail = true;
+
+      user.verificationCode = undefined;
+      await user.save();
+
+      return true;
+    }
+
+    return false;
   }
 }

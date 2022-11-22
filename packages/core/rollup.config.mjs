@@ -24,7 +24,8 @@ export default {
     'mongoose',
     'bcrypt',
     'graphql',
-    'graphql-rate-limit'
+    'graphql-rate-limit',
+    'ioredis'
   ],
   plugins: [cleaner({ targets: ['./dist'] }), typescript({ tsconfig: resolve(process.cwd(), 'src', 'tsconfig.json') })]
 };
