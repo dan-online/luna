@@ -20,8 +20,11 @@ export default {
     '@as-integrations/fastify',
     'fastify',
     '@typegoose/typegoose',
-    'zod',
-    'jsonwebtoken'
+    'class-validator',
+    'jsonwebtoken',
+    'mongoose',
+    'bcrypt',
+    'graphql'
   ],
   plugins: [cleaner({ targets: ['./dist'] }), typescript({ tsconfig: resolve(process.cwd(), 'src', 'tsconfig.json') })]
 };

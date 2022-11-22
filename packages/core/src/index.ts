@@ -3,8 +3,8 @@ import fastifyApollo, { fastifyApolloDrainPlugin } from '@as-integrations/fastif
 import Fastify from 'fastify';
 import 'reflect-metadata';
 import { buildSchema } from 'type-graphql';
+import { UserResolver } from './api/resolvers/User.resolver';
 import { getContext } from './orm';
-import { SchoolResolver } from './orm/resolvers/School.resolver';
 import { authChecker } from './utils/auth';
 import { env, envToLogger } from './utils/env';
 
@@ -14,7 +14,7 @@ const start = async () => {
   });
 
   const schema = await buildSchema({
-    resolvers: [SchoolResolver],
+    resolvers: [UserResolver],
     authChecker
   });
 

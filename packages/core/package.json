@@ -12,6 +12,8 @@
     "@apollo/server": "^4.1.1",
     "@as-integrations/fastify": "^1.1.1",
     "@typegoose/typegoose": "^9.12.1",
+    "bcrypt": "^5.1.0",
+    "class-validator": "^0.13.2",
     "env-schema": "^5.1.1",
     "fastify": "^4.10.0",
     "graphql": "^16.6.0",
@@ -27,6 +29,7 @@
     ]
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
     "@types/jsonwebtoken": "^8.5.9",
     "pino-pretty": "^9.1.1"
   }
