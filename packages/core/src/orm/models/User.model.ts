@@ -21,13 +21,12 @@ export class UserSchema {
   public _id!: Types.ObjectId;
 
   @UseMiddleware(SelfGuard)
-  @Field()
   @IsAscii()
   @IsString()
   @MinLength(3)
   @MaxLength(120)
-  @Field()
   @prop()
+  @Field()
   public name!: string;
 
   @IsString()

@@ -1,31 +1,21 @@
-import type { BaseContext } from '@apollo/server';
 import type { ApolloFastifyContextFunction } from '@as-integrations/fastify';
-import type { BeAnObject } from '@typegoose/typegoose/lib/types';
-import type { FastifyRequest } from 'fastify';
-import jwt from 'jsonwebtoken';
-import type { Document, Types } from 'mongoose';
+import { verify } from 'jsonwebtoken';
+import type { Context } from '../utils/context';
 import { env } from '../utils/env';
 
 import { SchoolModel, SchoolSchema } from './models/School.model';
 import { UserModel, UserSchema } from './models/User.model';
 
-export type DocType<T> = Document<Types.ObjectId, BeAnObject, T> & T;
-
-export interface Context<User = DocType<UserSchema> | null> extends BaseContext {
-  user: User;
-  request: FastifyRequest;
-}
-
 interface DecodedJWT {
   user: string;
 }
 
-export const getContext: ApolloFastifyContextFunction<Context> = async (request) => {
+const getContext: ApolloFastifyContextFunction<Context> = async (request) => {
   const token = request.headers.authorization;
 
   if (!token) return { user: null, request };
 
-  const verified = jwt.verify(token, env.SECRET);
+  const verified = verify(token, env.SECRET);
 
   if (!verified) return { user: null, request };
 
@@ -39,4 +29,4 @@ export const getContext: ApolloFastifyContextFunction<Context> = async (request)
   };
 };
 
-export { UserModel, UserSchema, SchoolModel, SchoolSchema };
+export { UserModel, UserSchema, SchoolModel, SchoolSchema, getContext };
