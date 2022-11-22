@@ -3,10 +3,10 @@ import type { Types } from 'mongoose';
 import { Field, ObjectType, UseMiddleware } from 'type-graphql';
 import { SchoolGuard } from '../../api/guards/SchoolOwner';
 import { mongooseConnection } from '../../utils/mongo';
-import { UserSchema } from './User.model';
+import { UserSchema } from './User';
 
 @ObjectType()
-@modelOptions({ options: { customName: 'user' }, existingConnection: mongooseConnection, schemaOptions: { timestamps: true, autoIndex: true } })
+@modelOptions({ options: { customName: 'school' }, existingConnection: mongooseConnection, schemaOptions: { timestamps: true, autoIndex: true } })
 export class SchoolSchema {
   public createdAt?: Date;
   public updatedAt?: Date;
@@ -15,12 +15,12 @@ export class SchoolSchema {
   public _id!: Types.ObjectId;
 
   @Field()
-  @prop()
+  @prop({ unique: true })
   public name?: string;
 
   @UseMiddleware(SchoolGuard)
   @Field()
-  @prop()
+  @prop({ unique: true })
   public domain?: string;
 
   @prop({ default: false })

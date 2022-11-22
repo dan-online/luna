@@ -3,8 +3,8 @@ import { verify } from 'jsonwebtoken';
 import type { Context } from '../utils/context';
 import { env } from '../utils/env';
 
-import { SchoolModel, SchoolSchema } from './models/School.model';
-import { UserModel, UserSchema } from './models/User.model';
+import { SchoolModel, SchoolSchema } from './models/School';
+import { UserModel, UserSchema } from './models/User';
 
 interface DecodedJWT {
   user: string;

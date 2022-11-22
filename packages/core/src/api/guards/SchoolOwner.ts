@@ -1,6 +1,7 @@
 import { GraphQLError } from 'graphql';
 import type { MiddlewareFn } from 'type-graphql';
-import type { Context, DocType, SchoolSchema } from '../../orm';
+import type { SchoolSchema } from '../../orm';
+import type { Context, DocType } from '../../utils/context';
 
 export const SchoolGuard: MiddlewareFn<Context> = async ({ context, root }, next) => {
   const { user } = context;
