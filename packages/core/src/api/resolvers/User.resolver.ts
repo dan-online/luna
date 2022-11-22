@@ -62,12 +62,16 @@ export class UserResolver {
     };
   }
 
+  @Authorized()
+  @Query(() => UserSchema)
+  public me(@Ctx() { user }: Context<UserSchema>): UserSchema {
+    return user;
+  }
+
   @Mutation(() => Boolean)
   @UseMiddleware(RateLimit({ window: '1s', max: 1 }))
   @Authorized()
-  public async verifyEmail(@Arg('verificationCode') verificationCode: string, @Ctx() context: Context<UserType>): Promise<boolean> {
-    const { user } = context;
-
+  public async verifyEmail(@Arg('verificationCode') verificationCode: string, @Ctx() { user }: Context<UserType>): Promise<boolean> {
     if (user.verifiedEmail) {
       return true;
     }

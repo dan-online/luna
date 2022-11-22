@@ -45,11 +45,12 @@ export const env = envSchema<{
 
 export const envToLogger = {
   development: {
+    redact: ['req.headers.authorization'],
     transport: {
-      target: 'pino-pretty',
+      target: '@fastify/one-line-logger',
       options: {
-        translateTime: 'HH:MM:ss Z',
-        ignore: 'pid,hostname'
+        colorize: true,
+        ignore: 'pid,hostname,time'
       }
     }
   },

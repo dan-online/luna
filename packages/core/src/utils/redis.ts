@@ -1,4 +1,5 @@
 import Redis, { RedisOptions as Options } from 'ioredis';
+import { log } from './log';
 
 export const RedisOptions: Options = {
   host: process.env.REDIS_HOST || 'localhost',
@@ -18,13 +19,13 @@ export function getRedis() {
 
   const redis = new Redis(RedisOptions);
 
-  // redis.addListener('connect', () => {
-  //   log.info(`Redis connected successfully`);
-  // });
+  redis.addListener('connect', () => {
+    log.info(`[redis] connected successfully`);
+  });
 
-  // redis.addListener('error', (err) => {
-  //   log.error(`Redis error: ${err.message}`);
-  // });
+  redis.addListener('error', (err) => {
+    log.error(`[redis] error: ${err.message}`);
+  });
 
   void redis.connect();
 

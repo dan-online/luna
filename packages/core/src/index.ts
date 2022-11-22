@@ -1,10 +1,10 @@
-import { ApolloServer, BaseContext } from '@apollo/server';
+import { ApolloServer } from '@apollo/server';
 import fastifyApollo, { fastifyApolloDrainPlugin } from '@as-integrations/fastify';
 import Fastify from 'fastify';
 import 'reflect-metadata';
 import { buildSchema } from 'type-graphql';
 import { UserResolver } from './api/resolvers/User.resolver';
-import { getContext } from './orm';
+import { Context, getContext } from './orm';
 import { authChecker } from './utils/auth';
 import { env, envToLogger } from './utils/env';
 import { formatError } from './utils/formatError';
@@ -19,7 +19,7 @@ const start = async () => {
     authChecker
   });
 
-  const apollo = new ApolloServer<BaseContext>({
+  const apollo = new ApolloServer<Context>({
     schema,
     plugins: [fastifyApolloDrainPlugin(fastifyServer)],
     formatError
@@ -28,7 +28,6 @@ const start = async () => {
   await apollo.start();
 
   await fastifyServer.register(fastifyApollo(apollo), {
-    // @ts-expect-error 2769 - This is a bug in the type definitions
     context: getContext
   });
 
