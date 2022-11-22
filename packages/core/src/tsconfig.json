@@ -4,6 +4,7 @@
     "strict": true,
     "rootDir": "./",
     "outDir": "../dist",
+    "declarationMap": false,
     "composite": true,
     "tsBuildInfoFile": "../dist/.tsbuildinfo",
     "esModuleInterop": true,

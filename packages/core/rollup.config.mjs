@@ -6,9 +6,11 @@ export default {
   input: 'src/index.ts',
   output: [
     {
-      file: './dist/index.js',
+      dir: './dist',
       format: 'cjs',
-      sourcemap: false
+      sourcemap: false,
+      indent: false,
+      interop: 'esModule'
     }
   ],
   external: [
@@ -26,7 +28,9 @@ export default {
     'bcrypt',
     'graphql',
     'graphql-rate-limit',
-    'ioredis'
+    'ioredis',
+    'pino'
   ],
-  plugins: [cleaner({ targets: ['./dist'] }), typescript({ tsconfig: resolve(process.cwd(), 'src', 'tsconfig.json') })]
+  plugins: [cleaner({ targets: ['./dist'] }), typescript({ tsconfig: resolve(process.cwd(), 'src', 'tsconfig.json'), check: false })],
+  treeshake: false
 };

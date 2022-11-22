@@ -1,13 +1,13 @@
 import { GraphQLError } from 'graphql';
 import type { MiddlewareFn } from 'type-graphql';
-import type { Context, DocType, UserSchema } from '../../orm';
+import type { Context, DocType, SchoolSchema } from '../../orm';
 
-export const SelfGuard: MiddlewareFn<Context> = async ({ context, root }, next) => {
+export const SchoolGuard: MiddlewareFn<Context> = async ({ context, root }, next) => {
   const { user } = context;
-  const typedRoot = root as DocType<UserSchema>;
+  const typedRoot = root as DocType<SchoolSchema>;
 
   if (user) {
-    if (typedRoot._id.equals(user._id)) {
+    if (typedRoot.owners.find((owner) => owner && owner._id.equals(user._id))) {
       return next();
     }
   }

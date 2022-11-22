@@ -9,9 +9,9 @@ import { env } from '../utils/env';
 import { SchoolModel, SchoolSchema } from './models/School.model';
 import { UserModel, UserSchema } from './models/User.model';
 
-export type UserType = Document<Types.ObjectId, BeAnObject, UserSchema> & UserSchema;
+export type DocType<T> = Document<Types.ObjectId, BeAnObject, T> & T;
 
-export interface Context<User = UserType | null> extends BaseContext {
+export interface Context<User = DocType<UserSchema> | null> extends BaseContext {
   user: User;
   request: FastifyRequest;
 }

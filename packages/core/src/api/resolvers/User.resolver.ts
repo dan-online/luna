@@ -1,17 +1,12 @@
 import { GraphQLError } from 'graphql';
 import { Arg, Authorized, Ctx, Mutation, Query, Resolver, UseMiddleware } from 'type-graphql';
-import { Context, UserModel, UserSchema, UserType } from '../../orm';
+import { Context, DocType, UserModel, UserSchema } from '../../orm';
 import RateLimit from '../guards/RateLimit';
 import { LoginInput, RegisterInput } from '../inputs/User';
 import { LoginOutput, RegisterOutput } from '../outputs/User';
 
 @Resolver(() => UserSchema)
 export class UserResolver {
-  @Query(() => String)
-  public hello(): string {
-    return 'Hello World!';
-  }
-
   @UseMiddleware(RateLimit({ window: '10s', max: 1 }))
   @Mutation(() => RegisterOutput)
   public async register(@Arg('user') userInput: RegisterInput): Promise<RegisterOutput> {
@@ -71,7 +66,7 @@ export class UserResolver {
   @Mutation(() => Boolean)
   @UseMiddleware(RateLimit({ window: '1s', max: 1 }))
   @Authorized()
-  public async verifyEmail(@Arg('verificationCode') verificationCode: string, @Ctx() { user }: Context<UserType>): Promise<boolean> {
+  public async verifyEmail(@Arg('verificationCode') verificationCode: string, @Ctx() { user }: Context<DocType<UserSchema>>): Promise<boolean> {
     if (user.verifiedEmail) {
       return true;
     }
