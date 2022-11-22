@@ -7,6 +7,7 @@ import { UserResolver } from './api/resolvers/User.resolver';
 import { getContext } from './orm';
 import { authChecker } from './utils/auth';
 import { env, envToLogger } from './utils/env';
+import { formatError } from './utils/formatError';
 
 const start = async () => {
   const fastifyServer = Fastify({
@@ -20,7 +21,8 @@ const start = async () => {
 
   const apollo = new ApolloServer<BaseContext>({
     schema,
-    plugins: [fastifyApolloDrainPlugin(fastifyServer)]
+    plugins: [fastifyApolloDrainPlugin(fastifyServer)],
+    formatError
   });
 
   await apollo.start();

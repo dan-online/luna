@@ -10,7 +10,7 @@ import { mongooseConnection } from '../../utils/mongo';
 /**
  * @description This user schema is used for authentication and authorization of Admins, they are not the same as Students or teachers etc
  */
-@modelOptions({ existingConnection: mongooseConnection, schemaOptions: { timestamps: true, autoIndex: true } })
+@modelOptions({ options: { customName: 'user' }, existingConnection: mongooseConnection, schemaOptions: { timestamps: true, autoIndex: true } })
 export class UserSchema {
   public _id!: Types.ObjectId;
   public createdAt?: Date;

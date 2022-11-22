@@ -8,14 +8,13 @@ export default {
     {
       file: './dist/index.js',
       format: 'cjs'
-      // exports: 'named'
-      // sourcemap: true
     }
   ],
   external: [
     'type-graphql',
     'env-schema',
     '@apollo/server',
+    '@apollo/server/errors',
     'reflect-metadata',
     '@as-integrations/fastify',
     'fastify',
@@ -24,7 +23,8 @@ export default {
     'jsonwebtoken',
     'mongoose',
     'bcrypt',
-    'graphql'
+    'graphql',
+    'graphql-rate-limit'
   ],
   plugins: [cleaner({ targets: ['./dist'] }), typescript({ tsconfig: resolve(process.cwd(), 'src', 'tsconfig.json') })]
 };

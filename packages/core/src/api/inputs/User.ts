@@ -1,9 +1,7 @@
-import { MinLength } from 'class-validator';
 import { Field, InputType } from 'type-graphql';
 
 @InputType()
 export class RegisterInput {
-  @MinLength(3)
   @Field()
   public name!: string;
 

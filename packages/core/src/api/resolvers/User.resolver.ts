@@ -1,6 +1,7 @@
 import { GraphQLError } from 'graphql';
-import { Arg, Mutation, Query, Resolver } from 'type-graphql';
+import { Arg, Mutation, Query, Resolver, UseMiddleware } from 'type-graphql';
 import { UserModel, UserSchema } from '../../orm';
+import RateLimit from '../guards/RateLimit';
 import { LoginInput, RegisterInput } from '../inputs/User';
 import { LoginOutput, RegisterOutput } from '../outputs/User';
 
@@ -30,6 +31,7 @@ export class UserResolver {
     };
   }
 
+  @UseMiddleware(RateLimit({ window: '2s', max: 1 }))
   @Mutation(() => LoginOutput)
   public async login(@Arg('user') userInput: LoginInput): Promise<LoginOutput> {
     const foundUser = await UserModel.findOne({ email: userInput.email });
