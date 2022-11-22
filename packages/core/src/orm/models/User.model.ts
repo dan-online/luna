@@ -68,7 +68,6 @@ export class UserSchema {
   }
 
   public getToken(this: DocumentType<UserSchema>): string {
-    console.log(env.SECRET);
     return jwt.sign({ user: this._id }, env.SECRET, { expiresIn: '1d' });
   }
 }
