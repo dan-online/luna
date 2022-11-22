@@ -26,7 +26,7 @@ export function getRedis() {
   //   log.error(`Redis error: ${err.message}`);
   // });
 
-  redis.connect();
+  void redis.connect();
 
   instance = redis;
 
