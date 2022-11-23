@@ -74,8 +74,6 @@ export class UserResolver {
 
     if (user.emailVerificationCode === verificationCode) {
       user.verifiedEmail = true;
-
-      user.emailVerificationCode = undefined;
       await user.save();
 
       return true;

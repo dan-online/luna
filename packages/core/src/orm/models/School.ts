@@ -60,7 +60,6 @@ export class SchoolSchema {
     if (records.length === 0) return false;
     if (records.flatMap((a) => a).find((record) => record === `luna-domain-verification=${this.domainVerificationCode}`)) {
       this.verifiedDomain = true;
-      this.domainVerificationCode = undefined;
       return true;
     }
 
