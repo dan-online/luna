@@ -12,6 +12,5 @@ export function autoProjection(info: GraphQLResolveInfo) {
     }
   }
 
-  console.log(obj);
   return obj;
 }

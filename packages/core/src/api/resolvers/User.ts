@@ -72,10 +72,10 @@ export class UserResolver {
       return true;
     }
 
-    if (user.verificationCode === verificationCode) {
+    if (user.emailVerificationCode === verificationCode) {
       user.verifiedEmail = true;
 
-      user.verificationCode = undefined;
+      user.emailVerificationCode = undefined;
       await user.save();
 
       return true;

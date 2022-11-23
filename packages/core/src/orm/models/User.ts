@@ -52,7 +52,7 @@ export class UserSchema {
   public verifiedEmail!: boolean;
 
   @prop({ default: randomKey() })
-  public verificationCode?: string;
+  public emailVerificationCode?: string;
 
   @prop()
   private password!: string;

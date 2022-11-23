@@ -39,4 +39,40 @@ export class SchoolResolver {
 
     return schools;
   }
+
+  @Mutation(() => Boolean)
+  @Authorized()
+  public async deleteSchool(@Arg('school') _id: string, @Ctx() { user }: Context<DocType<SchoolSchema>>): Promise<boolean> {
+    const school = await SchoolModel.findOne({ _id, owners: user._id });
+
+    if (!school) {
+      return false;
+    }
+
+    await school.delete();
+
+    return true;
+  }
+
+  @Mutation(() => Boolean)
+  @Authorized()
+  public async verifyDomain(@Arg('school') _id: string, @Ctx() { user }: Context<DocType<SchoolSchema>>): Promise<boolean> {
+    const school = await SchoolModel.findOne({ _id, owners: user._id });
+
+    if (!school) {
+      return false;
+    }
+
+    if (school.verifiedDomain) {
+      return true;
+    }
+
+    const result = await school.verifyDomain();
+
+    if (result) {
+      await school.save();
+    }
+
+    return result;
+  }
 }
