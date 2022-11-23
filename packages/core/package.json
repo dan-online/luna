@@ -9,8 +9,8 @@
     "watch:start": "nodemon"
   },
   "dependencies": {
-    "@apollo/server": "^4.1.1",
-    "@as-integrations/fastify": "^1.1.1",
+    "@apollo/server": "^4.2.0",
+    "@as-integrations/fastify": "^1.2.0",
     "@fastify/one-line-logger": "^1.0.0",
     "@typegoose/typegoose": "^9.13.0",
     "bcrypt": "^5.1.0",
@@ -22,7 +22,7 @@
     "graphql-rate-limit": "^3.3.0",
     "ioredis": "^5.2.4",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.7.2",
+    "mongoose": "^6.7.3",
     "reflect-metadata": "^0.1.13",
     "type-graphql": "2.0.0-beta.1",
     "zod": "^3.19.1"
