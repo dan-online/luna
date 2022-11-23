@@ -24,7 +24,8 @@ const start = async () => {
   const apollo = new ApolloServer<Context>({
     schema,
     plugins: [fastifyApolloDrainPlugin(fastifyServer)],
-    formatError
+    formatError,
+    introspection: env.NODE_ENV === 'development'
   });
 
   await apollo.start();

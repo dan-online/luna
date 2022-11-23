@@ -5,7 +5,6 @@ import { ArgumentValidationError } from 'type-graphql';
 import type { ValidationError as ClassValidatorValidationError } from 'class-validator';
 import { GraphQLError } from 'graphql';
 import { Error } from 'mongoose';
-
 type IValidationError = Pick<ClassValidatorValidationError, 'property' | 'value' | 'constraints' | 'children'> | Error.ValidatorError;
 
 function formatValidationErrors(validationError: IValidationError): IValidationError {
@@ -43,8 +42,21 @@ export class ValidationError extends GraphQLError {
   }
 }
 
+export class DuplicateKeyError extends GraphQLError {
+  public constructor(originalError: any) {
+    super(`Duplicate Error, these values are taken: ${Object.keys(originalError.keyValue).join(', ')}`, {
+      extensions: {
+        code: 'BAD_USER_INPUT',
+        keys: Object.keys(originalError.keyValue)
+      }
+    });
+
+    Object.setPrototypeOf(this, ValidationError.prototype);
+  }
+}
+
 export function formatError(formattedError: GraphQLFormattedError, error: unknown): GraphQLFormattedError {
-  const originalError = unwrapResolverError(error);
+  const originalError = unwrapResolverError(error) as unknown | any;
 
   if (originalError instanceof ArgumentValidationError) {
     return new ValidationError(originalError.validationErrors);
@@ -52,6 +64,11 @@ export function formatError(formattedError: GraphQLFormattedError, error: unknow
 
   if (originalError instanceof Error.ValidationError) {
     return new ValidationError(Object.values(originalError.errors) as Error.ValidatorError[]);
+  }
+
+  // Handle duplicate key error
+  if ('code' in originalError && originalError.code === 11000) {
+    return new DuplicateKeyError(originalError);
   }
 
   return formattedError;

@@ -1,5 +1,8 @@
-import { Arg, Authorized, Ctx, Mutation, Resolver } from 'type-graphql';
+import type { GraphQLResolveInfo } from 'graphql';
+import { Arg, Authorized, Ctx, Info, Mutation, Query, Resolver } from 'type-graphql';
 import { SchoolModel, SchoolSchema } from '../../orm';
+import { autoPopulate } from '../../utils/autoPopulate';
+import { autoProjection } from '../../utils/autoProject';
 import type { Context, DocType } from '../../utils/context';
 import { CreateSchoolInput } from '../inputs/School';
 import { CreateSchoolOutput } from '../outputs/School';
@@ -23,5 +26,17 @@ export class SchoolResolver {
     return {
       _id: doc._id.toString()
     };
+  }
+
+  @Query(() => [SchoolSchema])
+  @Authorized()
+  public async schools(@Ctx() { user }: Context<DocType<SchoolSchema>>, @Info() info: GraphQLResolveInfo): Promise<DocType<SchoolSchema>[]> {
+    const schools = await SchoolModel.find({ owners: user._id }, autoProjection(info));
+
+    for (const school of schools) {
+      await autoPopulate<DocType<SchoolSchema>>(school, info);
+    }
+
+    return schools;
   }
 }
