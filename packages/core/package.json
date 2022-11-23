@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsup",
     "lint": "eslint src --ext ts --fix -c ../../.eslintrc",
-    "start": "nodemon"
+    "watch:start": "nodemon"
   },
   "dependencies": {
     "@apollo/server": "^4.1.1",

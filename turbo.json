@@ -8,6 +8,10 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**", "build/**"]
     },
+    "watch:start": {
+      "dependsOn": [],
+      "outputs": []
+    },
     "lint": {
       "dependsOn": [],
       "outputs": []
