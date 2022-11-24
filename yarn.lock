@@ -37,31 +37,31 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@apollo/server-gateway-interface@npm:^1.0.6":
-  version: 1.0.6
-  resolution: "@apollo/server-gateway-interface@npm:1.0.6"
+"@apollo/server-gateway-interface@npm:^1.0.7":
+  version: 1.0.7
+  resolution: "@apollo/server-gateway-interface@npm:1.0.7"
   dependencies:
     "@apollo/usage-reporting-protobuf": ^4.0.0
     "@apollo/utils.fetcher": ^2.0.0
-    "@apollo/utils.keyvaluecache": ^2.0.0
+    "@apollo/utils.keyvaluecache": ^2.0.1
     "@apollo/utils.logger": ^2.0.0
   peerDependencies:
     graphql: 14.x || 15.x || 16.x
-  checksum: d2a3076247de4a0a5554af172732bce107c2a5e4bd9636c6083b8e54a670b19e9ad5d15a5e4af5f6b2e161a403d40dd31cda60458b93eef22ee11d54836c91eb
+  checksum: 081d398a7c3d1138679f05706ceb9ef1a444597de01912ce3b5e73c532d52da8ae94c3fd9fb00bd44946dce8b82d903faa0887896628994a80433995a3a2526d
   languageName: node
   linkType: hard
 
-"@apollo/server@npm:^4.2.0":
-  version: 4.2.0
-  resolution: "@apollo/server@npm:4.2.0"
+"@apollo/server@npm:^4.2.1":
+  version: 4.2.1
+  resolution: "@apollo/server@npm:4.2.1"
   dependencies:
     "@apollo/cache-control-types": ^1.0.2
-    "@apollo/server-gateway-interface": ^1.0.6
+    "@apollo/server-gateway-interface": ^1.0.7
     "@apollo/usage-reporting-protobuf": ^4.0.0
     "@apollo/utils.createhash": ^2.0.0
     "@apollo/utils.fetcher": ^2.0.0
     "@apollo/utils.isnodelike": ^2.0.0
-    "@apollo/utils.keyvaluecache": ^2.0.0
+    "@apollo/utils.keyvaluecache": ^2.0.1
     "@apollo/utils.logger": ^2.0.0
     "@apollo/utils.usagereporting": ^2.0.0
     "@apollo/utils.withrequired": ^2.0.0
@@ -83,7 +83,7 @@ __metadata:
     whatwg-mimetype: ^3.0.0
   peerDependencies:
     graphql: ^16.6.0
-  checksum: 07a897301b248662d51b61f8d0893fd39c74f473aeac194ddeddb61e0b8eee738b325f03f4039aac20349984795a28df1c57490139f294f66777ce74d77311b5
+  checksum: 703d39078c52393783260a1433c77ac4f0941849ce5ba91fcc4147db66c7ba9b61f3ac2a5dcb129ec600750ae8fb894b6202b8e65607125cd2992f335d33bc17
   languageName: node
   linkType: hard
 
@@ -129,13 +129,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@apollo/utils.keyvaluecache@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "@apollo/utils.keyvaluecache@npm:2.0.0"
+"@apollo/utils.keyvaluecache@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "@apollo/utils.keyvaluecache@npm:2.0.1"
   dependencies:
     "@apollo/utils.logger": ^2.0.0
-    lru-cache: ^7.10.1 - 7.13.1
-  checksum: 2549c9a06d0d6cbe930a3611f05898f35cc4d24c05fa40d053294b4df546be93fe8730a6813662232d3c798f2148e631e8e8b9fd6e59a6e90421abcb07c40f32
+    lru-cache: ^7.14.1
+  checksum: e093ba3843e898d4f9fa7fdaba33815273ae2723df2203b9ead4dbd45b1f51fd2fb52e175b526efe2c3fdedc94f4c5938012540d64acaeb7aa4dbf7f699abcba
   languageName: node
   linkType: hard
 
@@ -1601,10 +1601,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@luna/core@workspace:packages/core"
   dependencies:
-    "@apollo/server": ^4.2.0
+    "@apollo/server": ^4.2.1
     "@as-integrations/fastify": ^1.2.0
     "@fastify/one-line-logger": ^1.0.0
-    "@typegoose/typegoose": ^9.13.0
+    "@typegoose/typegoose": ^9.13.1
     "@types/bcrypt": ^5.0.0
     "@types/jsonwebtoken": ^8.5.9
     bcrypt: ^5.1.0
@@ -1934,9 +1934,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typegoose/typegoose@npm:^9.13.0":
-  version: 9.13.0
-  resolution: "@typegoose/typegoose@npm:9.13.0"
+"@typegoose/typegoose@npm:^9.13.1":
+  version: 9.13.1
+  resolution: "@typegoose/typegoose@npm:9.13.1"
   dependencies:
     lodash: ^4.17.20
     loglevel: ^1.8.1
@@ -1945,7 +1945,7 @@ __metadata:
     tslib: ^2.4.1
   peerDependencies:
     mongoose: ~6.7.2
-  checksum: 4a3440894d0343f51215139e04d02b6f7ad039f777a994dcbde564b1efb9bb5feeee2121297622511fba27d35061d26594240049a810e336f2b86fa56d1805b7
+  checksum: 98694157523276db9010ccebbeddec49591482dd75e0fdd8824ec1157f4392da9eef991f87bad55e5164d74499220e37db89e74d2b749f5d894fc5e3e71ed55a
   languageName: node
   linkType: hard
 
