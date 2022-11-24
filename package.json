@@ -38,9 +38,6 @@
     "node": ">=16.6.0",
     "npm": ">=7.0.0"
   },
-  "resolutions": {
-    "lru-cache": "7.13.1"
-  },
   "lint-staged": {
     "*.{mjs,ts}": "eslint --fix --ext mjs,ts"
   },
