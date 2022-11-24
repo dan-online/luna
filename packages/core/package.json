@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsup",
     "lint": "eslint src --ext ts --fix -c ../../.eslintrc",
-    "watch:start": "nodemon"
+    "watch:start": "nodemon",
+    "typecheck": "tsc --noEmit -p ./src/tsconfig.json"
   },
   "dependencies": {
     "@apollo/server": "^4.2.0",

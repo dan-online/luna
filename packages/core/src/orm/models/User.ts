@@ -1,7 +1,7 @@
 import { DocumentType, getModelForClass, modelOptions, prop } from '@typegoose/typegoose';
 import { compare, genSalt, hash } from 'bcrypt';
 import { IsAscii, IsDate, IsEmail, IsString, MaxLength, MinLength } from 'class-validator';
-import jwt from 'jsonwebtoken';
+import { sign } from 'jsonwebtoken';
 import { Types } from 'mongoose';
 import { Field, ObjectType, UseMiddleware } from 'type-graphql';
 import { SelfGuard } from '../../api/guards/SelfGuard';
@@ -68,7 +68,7 @@ export class UserSchema {
   }
 
   public getToken(this: DocumentType<UserSchema>): string {
-    return jwt.sign({ user: this._id }, env.SECRET, { expiresIn: env.NODE_ENV === 'development' ? '1y' : '7d' });
+    return sign({ user: this._id }, env.SECRET, { expiresIn: env.NODE_ENV === 'development' ? '1y' : '7d' });
   }
 }
 

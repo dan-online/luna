@@ -44,3 +44,5 @@ jobs:
         run: yarn --immutable
       - name: Compile Packages
         run: yarn build
+      - name: Run Typecheck
+        run: yarn typecheck

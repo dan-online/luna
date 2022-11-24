@@ -19,6 +19,10 @@
     "start": {
       "dependsOn": [],
       "outputs": []
+    },
+    "typecheck": {
+      "dependsOn": [],
+      "outputs": []
     }
   }
 }
