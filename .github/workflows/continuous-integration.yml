@@ -24,7 +24,7 @@ jobs:
       - name: Install Dependencies
         run: yarn --immutable
       - name: Run ESLint
-        run: yarn lint --cache-dir ./node_modules/.turbo -- --fix=false
+        run: yarn lint --cache-dir ./.yarn/berry/cache/.turbo -- --fix=false
 
   building:
     name: Compile Source Code
@@ -43,6 +43,6 @@ jobs:
       - name: Install Dependencies
         run: yarn --immutable
       - name: Compile Packages
-        run: yarn build --cache-dir ./node_modules/.turbo
+        run: yarn build --cache-dir ./.yarn/berry/cache/.turbo
       - name: Run Typecheck
-        run: yarn typecheck --cache-dir ./node_modules/.turbo
+        run: yarn typecheck --cache-dir ./.yarn/berry/cache/.turbo
