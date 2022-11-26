@@ -7,7 +7,8 @@
     "typecheck": "turbo run typecheck",
     "watch:start": "turbo run watch:start",
     "watch:build": "nodemon --watch 'packages/core/src' -e ts --exec 'turbo run build'",
-    "lint": "turbo run lint"
+    "lint": "turbo run lint",
+    "postinstall": "husky install"
   },
   "workspaces": [
     "packages/*"
