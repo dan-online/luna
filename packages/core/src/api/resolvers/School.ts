@@ -1,6 +1,6 @@
 import { GraphQLError, GraphQLResolveInfo } from 'graphql';
 import { Arg, Authorized, Ctx, Info, Mutation, Query, Resolver } from 'type-graphql';
-import { SchoolModel, SchoolSchema } from '../../orm';
+import { SchoolModel, SchoolSchema, UserSchema } from '../../orm';
 import { autoPopulate } from '../../utils/autoPopulate';
 import { autoProjection } from '../../utils/autoProject';
 import type { Context, DocType } from '../../utils/context';
@@ -13,8 +13,16 @@ export class SchoolResolver {
   @Authorized()
   public async createSchool(
     @Arg('school') schoolInput: CreateSchoolInput,
-    @Ctx() { user }: Context<DocType<SchoolSchema>>
+    @Ctx() { user }: Context<DocType<UserSchema>>
   ): Promise<CreateSchoolOutput> {
+    if (!user.verifiedEmail) {
+      throw new GraphQLError('You must verify your email before creating a school', {
+        extensions: {
+          code: 'UNVERIFIED_EMAIL'
+        }
+      });
+    }
+
     const newSchool = new SchoolModel({
       name: schoolInput.name,
       domain: schoolInput.domain,
