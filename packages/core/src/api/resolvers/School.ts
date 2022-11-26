@@ -4,8 +4,10 @@ import { SchoolModel, SchoolSchema, UserSchema } from '../../orm';
 import { autoPopulate } from '../../utils/autoPopulate';
 import { autoProjection } from '../../utils/autoProject';
 import type { Context, DocType } from '../../utils/context';
+import { limitFind } from '../../utils/limitFind';
+import { PaginationInput } from '../inputs/Core';
 import { CreateSchoolInput } from '../inputs/School';
-import { CreateSchoolOutput } from '../outputs/School';
+import { CreateSchoolOutput, SchoolsOutput } from '../outputs/School';
 
 @Resolver(() => SchoolSchema)
 export class SchoolResolver {
@@ -36,22 +38,31 @@ export class SchoolResolver {
     };
   }
 
-  @Query(() => [SchoolSchema])
+  @Query(() => SchoolsOutput)
   @Authorized()
-  public async schools(@Ctx() { user }: Context<DocType<SchoolSchema>>, @Info() info: GraphQLResolveInfo): Promise<DocType<SchoolSchema>[]> {
-    const schools = await SchoolModel.find({ owners: user._id }, autoProjection(info));
+  public async schools(
+    @Ctx() { user }: Context<DocType<SchoolSchema>>,
+    @Info() info: GraphQLResolveInfo,
+    @Arg('pagination', { nullable: true }) pagination?: PaginationInput
+  ): Promise<SchoolsOutput> {
+    const schools = await limitFind<DocType<SchoolSchema>>(SchoolModel.find({ owners: user._id }, autoProjection(info, 'items')), pagination);
+    const total = await SchoolModel.countDocuments({ owners: user._id });
 
     for (const school of schools) {
-      await autoPopulate<DocType<SchoolSchema>>(school, info);
+      await autoPopulate<DocType<SchoolSchema>>(school, info, 'items');
     }
 
-    return schools;
+    return {
+      total,
+      items: schools
+    };
   }
 
   @Query(() => SchoolSchema)
   @Authorized()
   public async school(
     @Arg('school') schoolId: string,
+
     @Ctx() { user }: Context<DocType<SchoolSchema>>,
     @Info() info: GraphQLResolveInfo
   ): Promise<DocType<SchoolSchema>> {
