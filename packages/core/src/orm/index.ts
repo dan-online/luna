@@ -3,6 +3,7 @@ import { verify } from 'jsonwebtoken';
 import type { Context } from '../utils/context';
 import { env } from '../utils/env';
 
+import { AcademicModel, AcademicSchema } from './models/Academic';
 import { SchoolModel, SchoolSchema } from './models/School';
 import { UserModel, UserSchema } from './models/User';
 
@@ -29,4 +30,4 @@ const getContext: ApolloFastifyContextFunction<Context> = async (request) => {
   };
 };
 
-export { UserModel, UserSchema, SchoolModel, SchoolSchema, getContext };
+export { UserModel, UserSchema, SchoolModel, SchoolSchema, getContext, AcademicSchema, AcademicModel };

@@ -23,7 +23,25 @@ export class BaseUser {
   @MaxLength(120)
   @prop()
   @Field()
-  public name!: string;
+  public firstName!: string;
+
+  @UseMiddleware(SelfGuard)
+  @IsAscii()
+  @IsString()
+  @MinLength(3)
+  @MaxLength(120)
+  @prop()
+  @Field()
+  public middleName!: string;
+
+  @UseMiddleware(SelfGuard)
+  @IsAscii()
+  @IsString()
+  @MinLength(3)
+  @MaxLength(120)
+  @prop()
+  @Field()
+  public lastName!: string;
 
   @IsDate()
   @prop()
