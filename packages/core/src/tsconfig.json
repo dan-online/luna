@@ -7,9 +7,11 @@
     "declarationMap": false,
     "composite": true,
     "tsBuildInfoFile": "../dist/.tsbuildinfo",
+    "incremental": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "moduleResolution": "node",
+    "disableSourceOfProjectReferenceRedirect": true
   },
   "emitDecoratorMetadata": true,
   "experimentalDecorators": true,

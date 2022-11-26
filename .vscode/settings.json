@@ -17,14 +17,10 @@
         {
           "name": "Build",
           "commands": ["yarn watch:build"]
-        }
-      ]
-    },
-    {
-      "splitTerminals": [
+        },
         {
           "name": "Start",
-          "commands": ["yarn watch:start"]
+          "commands": ["yarn watch:start | cut -d\" \" -f2-"]
         }
       ]
     }
