@@ -13,6 +13,10 @@ export const getMongo = () => {
     log.info('[mongo] connected successfully');
   });
 
+  instance.connection.on('disconnected', () => {
+    log.error(`[mongo] disconnected`);
+  });
+
   instance.connection.on('error', (err) => {
     if (!err.message.includes('ECONNREFUSED')) {
       log.error(`[mongo] error: ${err.message}`);

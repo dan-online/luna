@@ -15,9 +15,11 @@ export function getRedis() {
   }
 
   const redis = new Redis(RedisOptions);
+  let registeredDisconnect = false;
 
   redis.addListener('connect', () => {
     log.info(`[redis] connected successfully`);
+    registeredDisconnect = false;
   });
 
   redis.addListener('error', (err) => {
@@ -26,12 +28,22 @@ export function getRedis() {
     } // Handled on line 36
   });
 
+  redis.addListener('close', () => {
+    if (!registeredDisconnect) {
+      log.error(`[redis] connection closed`);
+    }
+
+    registeredDisconnect = true;
+  });
+
   const connect = async () => {
     try {
       await redis.connect();
     } catch {
-      log.warn(`[redis] failed to connect, attempting to reconnect in 2s`);
-      setTimeout(connect, 2000);
+      if (redis.status !== 'ready' && redis.status !== 'connect') {
+        log.warn(`[redis] failed to connect, attempting to reconnect in 2s`);
+        setTimeout(connect, 2000);
+      }
     }
   };
 
