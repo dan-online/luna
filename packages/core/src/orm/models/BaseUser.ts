@@ -3,15 +3,20 @@ import { compare, genSalt, hash } from 'bcrypt';
 import { IsAscii, IsDate, IsEmail, IsString, MaxLength, MinLength } from 'class-validator';
 import { sign } from 'jsonwebtoken';
 import type { Types } from 'mongoose';
-import { Field, UseMiddleware } from 'type-graphql';
+import { Field, ObjectType, UseMiddleware } from 'type-graphql';
 import { SelfGuard } from '../../api/guards/SelfGuard';
 import { env } from '../../utils/env';
 import { randomKey } from '../../utils/randomKey';
 import type { UserSchema } from './User';
 
+@ObjectType()
 export class BaseUser {
   public createdAt?: Date;
   public updatedAt?: Date;
+
+  @Field()
+  @prop({ default: () => new Date() })
+  public lastLogin?: Date;
 
   @Field(() => String)
   public _id!: Types.ObjectId;

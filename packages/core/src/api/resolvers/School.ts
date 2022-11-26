@@ -102,7 +102,7 @@ export class SchoolResolver {
     const result = await school.verifyDomain();
 
     if (result) {
-      await school.save();
+      await SchoolModel.updateOne({ _id }, { verifiedDomain: true });
     }
 
     return result;

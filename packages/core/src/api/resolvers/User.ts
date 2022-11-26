@@ -13,7 +13,9 @@ export class UserResolver {
   public async register(@Arg('user') userInput: RegisterInput): Promise<RegisterOutput> {
     const newUser = new UserModel({
       email: userInput.email,
-      name: userInput.name,
+      firstName: userInput.firstName,
+      middleName: userInput.middleName,
+      lastName: userInput.lastName,
       birthday: userInput.birthday,
       username: userInput.username
     });
@@ -50,6 +52,10 @@ export class UserResolver {
         }
       });
     }
+
+    foundUser.lastLogin = new Date();
+
+    await foundUser.save();
 
     const token = await foundUser.getToken();
 
