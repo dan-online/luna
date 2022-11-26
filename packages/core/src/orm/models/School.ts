@@ -3,12 +3,12 @@ import type { Types } from 'mongoose';
 import dns from 'node:dns/promises';
 import { Authorized, Field, ObjectType, UseMiddleware } from 'type-graphql';
 import { SchoolGuard } from '../../api/guards/SchoolOwner';
-import { mongooseConnection } from '../../utils/mongo';
+import { getMongo } from '../../utils/mongo';
 import { randomKey } from '../../utils/randomKey';
 import { UserSchema } from './User';
 
 @ObjectType()
-@modelOptions({ options: { customName: 'school' }, existingConnection: mongooseConnection, schemaOptions: { timestamps: true, autoIndex: true } })
+@modelOptions({ options: { customName: 'school' }, existingConnection: getMongo(), schemaOptions: { timestamps: true, autoIndex: true } })
 export class SchoolSchema {
   public createdAt?: Date;
   public updatedAt?: Date;

@@ -6,13 +6,13 @@ import { Types } from 'mongoose';
 import { Field, ObjectType, UseMiddleware } from 'type-graphql';
 import { SelfGuard } from '../../api/guards/SelfGuard';
 import { env } from '../../utils/env';
-import { mongooseConnection } from '../../utils/mongo';
+import { getMongo } from '../../utils/mongo';
 import { randomKey } from '../../utils/randomKey';
 /**
  * @description This user schema is used for authentication and authorization of Admins, they are not the same as Students or teachers etc
  */
 @ObjectType()
-@modelOptions({ options: { customName: 'user' }, existingConnection: mongooseConnection, schemaOptions: { timestamps: true, autoIndex: true } })
+@modelOptions({ options: { customName: 'user' }, existingConnection: getMongo(), schemaOptions: { timestamps: true, autoIndex: true } })
 export class UserSchema {
   public createdAt?: Date;
   public updatedAt?: Date;

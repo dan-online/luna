@@ -1,4 +1,4 @@
-import type { GraphQLResolveInfo } from 'graphql';
+import { GraphQLError, GraphQLResolveInfo } from 'graphql';
 import { Arg, Authorized, Ctx, Info, Mutation, Query, Resolver } from 'type-graphql';
 import { SchoolModel, SchoolSchema } from '../../orm';
 import { autoPopulate } from '../../utils/autoPopulate';
@@ -40,13 +40,37 @@ export class SchoolResolver {
     return schools;
   }
 
+  @Query(() => SchoolSchema)
+  @Authorized()
+  public async school(
+    @Arg('school') schoolId: string,
+    @Ctx() { user }: Context<DocType<SchoolSchema>>,
+    @Info() info: GraphQLResolveInfo
+  ): Promise<DocType<SchoolSchema>> {
+    const school = await SchoolModel.findOne({ owners: user._id, _id: schoolId }, autoProjection(info));
+
+    if (!school) {
+      throw new GraphQLError('School not found', {
+        extensions: {
+          code: 'NOT_FOUND'
+        }
+      });
+    }
+
+    return autoPopulate<DocType<SchoolSchema>>(school, info);
+  }
+
   @Mutation(() => Boolean)
   @Authorized()
   public async deleteSchool(@Arg('school') _id: string, @Ctx() { user }: Context<DocType<SchoolSchema>>): Promise<boolean> {
     const school = await SchoolModel.findOne({ _id, owners: user._id });
 
     if (!school) {
-      return false;
+      throw new GraphQLError('School not found', {
+        extensions: {
+          code: 'NOT_FOUND'
+        }
+      });
     }
 
     await school.delete();
