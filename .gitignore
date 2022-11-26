@@ -29,6 +29,5 @@ gh
 # Yarn files
 .yarn/install-state.gz
 .yarn/build-state.yml
-.yarn/berry/cache
 
 schema.gql
