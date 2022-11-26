@@ -45,6 +45,7 @@ export const env = envSchema<{
 
 export const envToLogger = {
   development: {
+    level: env.LOG_LEVEL,
     redact: ['req.headers.authorization'],
     transport: {
       target: '@fastify/one-line-logger',

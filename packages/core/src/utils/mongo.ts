@@ -1,13 +1,39 @@
-import { createConnection } from 'mongoose';
+import { Mongoose } from 'mongoose';
 import { env } from './env';
 import { log } from './log';
 
-export const mongooseConnection = createConnection(env.MONGO_URL);
+let instance: Mongoose | undefined;
 
-mongooseConnection.on('connected', () => {
-  log.info('[mongo] connected successfully');
-});
+export const getMongo = () => {
+  if (instance) return instance.connection;
 
-mongooseConnection.on('error', (err) => {
-  log.error(`[mongo] error: ${err.message}`);
-});
+  instance = new Mongoose();
+
+  instance.connection.on('connected', () => {
+    log.info('[mongo] connected successfully');
+  });
+
+  instance.connection.on('error', (err) => {
+    if (!err.message.includes('ECONNREFUSED')) {
+      log.error(`[mongo] error: ${err.message}`);
+    } // Handled on line 31
+  });
+
+  const connect = async () => {
+    try {
+      await new Promise((res, rej) => {
+        instance!.connect(env.MONGO_URL, { serverSelectionTimeoutMS: 2000, connectTimeoutMS: 2000, socketTimeoutMS: 2000 }, (err) => {
+          if (err) rej(err);
+          else res(0);
+        });
+      });
+    } catch {
+      log.warn(`[mongo] failed to connect, attempting to reconnect in 2s`);
+      setTimeout(connect, 2000);
+    }
+  };
+
+  void connect();
+
+  return instance.connection;
+};
