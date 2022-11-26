@@ -10,5 +10,23 @@
     "source.organizeImports": true
   },
   "files.eol": "\n",
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "restoreTerminals.terminals": [
+    {
+      "splitTerminals": [
+        {
+          "name": "Build",
+          "commands": ["yarn watch:build"]
+        }
+      ]
+    },
+    {
+      "splitTerminals": [
+        {
+          "name": "Start",
+          "commands": ["yarn watch:start"]
+        }
+      ]
+    }
+  ]
 }
