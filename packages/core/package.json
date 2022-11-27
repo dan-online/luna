@@ -17,12 +17,12 @@
     "bcrypt": "^5.1.0",
     "class-validator": "^0.13.2",
     "env-schema": "^5.1.1",
+    "fast-jwt": "^2.0.2",
     "fastify": "^4.10.2",
     "graphql": "^16.6.0",
     "graphql-middleware": "^6.1.33",
     "graphql-rate-limit": "^3.3.0",
     "ioredis": "^5.2.4",
-    "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.7.3",
     "reflect-metadata": "^0.1.13",
     "type-graphql": "2.0.0-beta.1",
@@ -35,7 +35,6 @@
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
-    "@types/jsonwebtoken": "^8.5.9",
     "pino-pretty": "^9.1.1"
   }
 }

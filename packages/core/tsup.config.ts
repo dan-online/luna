@@ -17,7 +17,7 @@ export default defineConfig({
     'fastify',
     '@typegoose/typegoose',
     'class-validator',
-    'jsonwebtoken',
+    'fast-jwt',
     'mongoose',
     'bcrypt',
     'graphql',

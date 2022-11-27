@@ -57,7 +57,7 @@ export class UserResolver {
 
     await foundUser.save();
 
-    const token = await foundUser.getToken();
+    const token = foundUser.getToken();
 
     return {
       token

@@ -1,11 +1,14 @@
 import type { ApolloFastifyContextFunction } from '@as-integrations/fastify';
-import { verify } from 'jsonwebtoken';
+import { createVerifier } from 'fast-jwt';
+
 import type { Context } from '../utils/context';
 import { env } from '../utils/env';
 
 import { AcademicModel, AcademicSchema } from './models/Academic';
 import { SchoolModel, SchoolSchema } from './models/School';
 import { UserModel, UserSchema } from './models/User';
+
+const verify = createVerifier({ key: env.SECRET, cache: true });
 
 interface DecodedJWT {
   user: string;
@@ -16,7 +19,7 @@ const getContext: ApolloFastifyContextFunction<Context> = async (request) => {
 
   if (!token) return { user: null, request };
 
-  const verified = verify(token, env.SECRET);
+  const verified = verify(token);
 
   if (!verified) return { user: null, request };
 

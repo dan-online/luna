@@ -1,13 +1,16 @@
 import { prop, type DocumentType } from '@typegoose/typegoose';
 import { compare, genSalt, hash } from 'bcrypt';
 import { IsAscii, IsDate, IsEmail, IsString, MaxLength, MinLength } from 'class-validator';
-import { sign } from 'jsonwebtoken';
+import { createSigner } from 'fast-jwt';
+
 import type { Types } from 'mongoose';
 import { Field, ObjectType, UseMiddleware } from 'type-graphql';
 import { SelfGuard } from '../../api/guards/SelfGuard';
 import { env } from '../../utils/env';
 import { randomKey } from '../../utils/randomKey';
 import type { UserSchema } from './User';
+
+const sign = createSigner({ key: env.SECRET, expiresIn: env.NODE_ENV === 'development' ? 3.17098e-11 : 6.048e8 });
 
 @ObjectType()
 export class BaseUser {
@@ -79,6 +82,6 @@ export class BaseUser {
   }
 
   public getToken(this: DocumentType<UserSchema>): string {
-    return sign({ user: this._id }, env.SECRET, { expiresIn: env.NODE_ENV === 'development' ? '1y' : '7d' });
+    return sign({ user: this._id });
   }
 }

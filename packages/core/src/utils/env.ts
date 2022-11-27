@@ -16,10 +16,6 @@ const schema = {
       type: 'string',
       default: 'development'
     },
-    JWT_SECRET: {
-      type: 'string',
-      default: 'secret'
-    },
     MONGO_URL: {
       type: 'string',
       default: 'mongodb://localhost:27017/luna'
@@ -35,7 +31,6 @@ export const env = envSchema<{
   PORT: number;
   LOG_LEVEL: string;
   NODE_ENV: 'production' | 'development' | 'test';
-  JWT_SECRET: string;
   MONGO_URL: string;
   SECRET: string;
 }>({
