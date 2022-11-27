@@ -14,7 +14,7 @@ export class UserSchema extends BaseUser {
   @MinLength(3)
   @MaxLength(24)
   @Field()
-  @prop({ unique: true })
+  @prop({ unique: true, required: true })
   public username!: string;
 }
 

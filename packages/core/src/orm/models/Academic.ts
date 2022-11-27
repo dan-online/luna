@@ -39,7 +39,7 @@ export class AcademicSchema extends Omit(BaseUser, ['email']) {
   @MinLength(3)
   @MaxLength(120)
   @Field()
-  @prop()
+  @prop({ required: true })
   public preferredName?: string;
 
   @IsString({ each: true })

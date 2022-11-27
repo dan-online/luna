@@ -26,7 +26,7 @@ export class BaseUser {
   @IsString()
   @MinLength(3)
   @MaxLength(120)
-  @prop()
+  @prop({ required: true })
   @Field()
   public firstName!: string;
 
@@ -35,7 +35,7 @@ export class BaseUser {
   @IsString()
   @MinLength(3)
   @MaxLength(120)
-  @prop()
+  @prop({ required: true })
   @Field()
   public middleName!: string;
 
@@ -44,19 +44,19 @@ export class BaseUser {
   @IsString()
   @MinLength(3)
   @MaxLength(120)
-  @prop()
+  @prop({ required: true })
   @Field()
   public lastName!: string;
 
   @IsDate()
-  @prop()
+  @prop({ required: true })
   public birthday!: Date;
 
   @IsString()
   @IsEmail()
   @MaxLength(120)
   @MinLength(3)
-  @prop({ unique: true })
+  @prop({ unique: true, required: true })
   public email!: string;
 
   @prop({ default: false })
@@ -65,7 +65,7 @@ export class BaseUser {
   @prop({ default: randomKey() })
   public emailVerificationCode?: string;
 
-  @prop()
+  @prop({ required: true })
   private password!: string;
 
   public async hashPassword(this: DocumentType<BaseUser>, password: string) {

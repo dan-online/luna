@@ -17,14 +17,14 @@ export class SchoolSchema {
   public _id!: Types.ObjectId;
 
   @Field()
-  @prop({ unique: true })
-  public name?: string;
+  @prop({ unique: true, required: true })
+  public name!: string;
 
   @UseMiddleware(SchoolGuard)
   @Authorized()
   @Field()
-  @prop({ unique: true })
-  public domain?: string;
+  @prop({ unique: true, required: true })
+  public domain!: string;
 
   @UseMiddleware(SchoolGuard)
   @Authorized()
