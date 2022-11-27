@@ -45,12 +45,14 @@ export class SchoolResolver {
     @Info() info: GraphQLResolveInfo,
     @Arg('pagination', { nullable: true }) pagination?: PaginationInput
   ): Promise<SchoolsOutput> {
-    const schools = await limitFind<DocType<SchoolSchema>>(SchoolModel.find({ owners: user._id }, autoProjection(info, 'items')), pagination);
-    const total = await SchoolModel.countDocuments({ owners: user._id });
+    const schools = await limitFind<DocType<SchoolSchema>>(
+      SchoolModel.find({ owners: user._id }, autoProjection(info, ['items'], { owners: 1 }), {
+        populate: autoPopulate(info, ['items'])
+      }),
+      pagination
+    );
 
-    for (const school of schools) {
-      await autoPopulate<DocType<SchoolSchema>>(school, info, 'items');
-    }
+    const total = await SchoolModel.countDocuments({ owners: user._id });
 
     return {
       total,
@@ -62,11 +64,12 @@ export class SchoolResolver {
   @Authorized()
   public async school(
     @Arg('school') schoolId: string,
-
     @Ctx() { user }: Context<DocType<SchoolSchema>>,
     @Info() info: GraphQLResolveInfo
   ): Promise<DocType<SchoolSchema>> {
-    const school = await SchoolModel.findOne({ owners: user._id, _id: schoolId }, autoProjection(info));
+    const school = await SchoolModel.findOne({ owners: user._id, _id: schoolId }, autoProjection(info, [], { owners: 1 }), {
+      populate: autoPopulate(info)
+    });
 
     if (!school) {
       throw new GraphQLError('School not found', {
@@ -76,7 +79,7 @@ export class SchoolResolver {
       });
     }
 
-    return autoPopulate<DocType<SchoolSchema>>(school, info);
+    return school;
   }
 
   @Mutation(() => Boolean)

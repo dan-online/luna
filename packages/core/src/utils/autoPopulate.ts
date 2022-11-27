@@ -1,32 +1,30 @@
-import type { GraphQLResolveInfo } from 'graphql';
-import type { Document } from 'mongoose';
+import type { GraphQLResolveInfo, SelectionNode } from 'graphql';
 
-export async function autoPopulate<T extends Document>(doc: T, info: GraphQLResolveInfo, path?: string) {
+export function autoPopulate(info: GraphQLResolveInfo, path: string[] = []) {
   const selections = info?.fieldNodes[0]?.selectionSet?.selections;
+  const populate: string[] = [];
 
-  if (selections) {
-    if (path) {
-      const sel = selections.find((selection) => 'name' in selection && selection.name.value === path);
+  if (!selections) return populate;
 
-      if (sel) {
-        if ('selectionSet' in sel) {
-          if (sel.selectionSet?.selections) {
-            for (const selection of sel.selectionSet.selections) {
-              if ('name' in selection) {
-                await doc.populate(selection.name.value);
-              }
-            }
-          }
-        }
+  const populateSelection = (sels: readonly SelectionNode[]) => {
+    for (const selection of sels) {
+      if ('name' in selection) {
+        populate.push(selection.name.value);
       }
-    } else {
-      for (const selection of selections) {
-        if ('name' in selection) {
-          await doc.populate(selection.name.value);
-        }
+    }
+  };
+
+  if (path.length < 1) {
+    populateSelection(selections);
+  } else {
+    for (const p of path) {
+      const sel = selections.find((selection) => 'name' in selection && selection.name.value === p);
+
+      if (sel && 'selectionSet' in sel && sel.selectionSet?.selections) {
+        populateSelection(sel.selectionSet.selections);
       }
     }
   }
 
-  return doc;
+  return populate;
 }
