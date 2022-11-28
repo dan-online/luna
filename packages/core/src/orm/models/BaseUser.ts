@@ -10,7 +10,7 @@ import { env } from '../../utils/env';
 import { randomKey } from '../../utils/randomKey';
 import type { UserSchema } from './User';
 
-const sign = createSigner({ key: env.SECRET, expiresIn: env.NODE_ENV === 'development' ? 3.17098e-11 : 6.048e8 });
+const sign = createSigner({ key: env.SECRET, expiresIn: env.NODE_ENV === 'development' ? 1000 * 60 * 60 * 24 * 365 : 1000 * 60 * 60 * 24 * 7 });
 
 @ObjectType()
 export class BaseUser {
