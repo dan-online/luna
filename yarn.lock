@@ -51,9 +51,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@apollo/server@npm:^4.2.1":
-  version: 4.2.1
-  resolution: "@apollo/server@npm:4.2.1"
+"@apollo/server@npm:^4.2.2":
+  version: 4.2.2
+  resolution: "@apollo/server@npm:4.2.2"
   dependencies:
     "@apollo/cache-control-types": ^1.0.2
     "@apollo/server-gateway-interface": ^1.0.7
@@ -83,7 +83,7 @@ __metadata:
     whatwg-mimetype: ^3.0.0
   peerDependencies:
     graphql: ^16.6.0
-  checksum: 703d39078c52393783260a1433c77ac4f0941849ce5ba91fcc4147db66c7ba9b61f3ac2a5dcb129ec600750ae8fb894b6202b8e65607125cd2992f335d33bc17
+  checksum: fe1eeec7693118f4846cd25d4469147e27d6edeaa0fd96ef6b797bec92486a5b88f48bf5f50be4c6e748b48f2424b34f5f38103b877836e2192af0870c6c4548
   languageName: node
   linkType: hard
 
@@ -1400,13 +1400,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fastify/one-line-logger@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "@fastify/one-line-logger@npm:1.0.0"
+"@fastify/one-line-logger@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "@fastify/one-line-logger@npm:1.1.1"
   dependencies:
-    dateformat: ^4.6.3
-    pino-pretty: ^8.1.0
-  checksum: dd525ec1c3df96b3848b29de93d327aaee289c198e1b3badbc6e453e41fde35bcfd20d6725f68aff89cc055bc1dd164ad62ce52157243fb5c5848b41429264e5
+    pino-pretty: ^9.0.1
+  checksum: d2614cb7468f88c9a6c87cfbe80c5ea9e25d1692697fabb8ea4f72eade32f15d1b16cf6f9bac39055ef41d9569d1e06f7f5938371fdb519a68a11d1ab810a863
   languageName: node
   linkType: hard
 
@@ -1601,21 +1600,21 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@luna/core@workspace:packages/core"
   dependencies:
-    "@apollo/server": ^4.2.1
+    "@apollo/server": ^4.2.2
     "@as-integrations/fastify": ^1.2.0
-    "@fastify/one-line-logger": ^1.0.0
-    "@typegoose/typegoose": ^9.13.1
+    "@fastify/one-line-logger": ^1.1.1
+    "@typegoose/typegoose": ^9.13.2
     "@types/bcrypt": ^5.0.0
     bcrypt: ^5.1.0
     class-validator: ^0.13.2
-    env-schema: ^5.1.1
+    env-schema: ^5.2.0
     fast-jwt: ^2.0.2
     fastify: ^4.10.2
     graphql: ^16.6.0
     graphql-middleware: ^6.1.33
     graphql-rate-limit: ^3.3.0
     ioredis: ^5.2.4
-    mongoose: ^6.7.3
+    mongoose: ^6.8.0
     pino-pretty: ^9.1.1
     reflect-metadata: ^0.1.13
     type-graphql: 2.0.0-beta.1
@@ -1933,9 +1932,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typegoose/typegoose@npm:^9.13.1":
-  version: 9.13.1
-  resolution: "@typegoose/typegoose@npm:9.13.1"
+"@typegoose/typegoose@npm:^9.13.2":
+  version: 9.13.2
+  resolution: "@typegoose/typegoose@npm:9.13.2"
   dependencies:
     lodash: ^4.17.20
     loglevel: ^1.8.1
@@ -1944,7 +1943,7 @@ __metadata:
     tslib: ^2.4.1
   peerDependencies:
     mongoose: ~6.7.2
-  checksum: 98694157523276db9010ccebbeddec49591482dd75e0fdd8824ec1157f4392da9eef991f87bad55e5164d74499220e37db89e74d2b749f5d894fc5e3e71ed55a
+  checksum: ffb2acaef2bad9a4f9bb28196cef1b31a75b22121bbd278428e5a6e68660cdc1c14b3a18212ba64db922cf4561c011991e73690a20c0b47230b306d76f6352fb
   languageName: node
   linkType: hard
 
@@ -3260,7 +3259,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"denque@npm:^2.0.1, denque@npm:^2.1.0":
+"denque@npm:^2.0.1":
   version: 2.1.0
   resolution: "denque@npm:2.1.0"
   checksum: 1d4ae1d05e59ac3a3481e7b478293f4b4c813819342273f3d5b826c7ffa9753c520919ba264f377e09108d24ec6cf0ec0ac729a5686cbb8f32d797126c5dae74
@@ -3412,14 +3411,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"env-schema@npm:^5.1.1":
-  version: 5.1.1
-  resolution: "env-schema@npm:5.1.1"
+"env-schema@npm:^5.2.0":
+  version: 5.2.0
+  resolution: "env-schema@npm:5.2.0"
   dependencies:
     ajv: ^8.0.0
     dotenv: ^16.0.0
     dotenv-expand: ^9.0.0
-  checksum: 7aaaee9cf9b29435f0e743516cec9f2c8e0c55465f8867f285e510ec0953cb962bfd09c5b286687178b220622d00f5f867941eb99593542f10c7249392dc9090
+  checksum: 739f7bd4a2a4d5586535afa552ba1eabc1e37923c6390ae3b71368b46e2c183227317256ac4d6b2bc18fe7ac740280ee273c3c0e1ebd951c6d2a06a5960c36fe
   languageName: node
   linkType: hard
 
@@ -3962,13 +3961,6 @@ __metadata:
     utils-merge: 1.0.1
     vary: ~1.1.2
   checksum: 3c4b9b076879442f6b968fe53d85d9f1eeacbb4f4c41e5f16cc36d77ce39a2b0d81b3f250514982110d815b2f7173f5561367f9110fcc541f9371948e8c8b037
-  languageName: node
-  linkType: hard
-
-"fast-copy@npm:^2.1.1":
-  version: 2.1.7
-  resolution: "fast-copy@npm:2.1.7"
-  checksum: af8016c174b02bd4f706ffdf9f138511b17b748665b291fec6c5ca1922cb55da35cf86ded46b31890930bcf9b1c2481c03c793a47110ab81ec385e14972b9d7e
   languageName: node
   linkType: hard
 
@@ -5030,10 +5022,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"kareem@npm:2.4.1":
-  version: 2.4.1
-  resolution: "kareem@npm:2.4.1"
-  checksum: 83c8d8f5ea82e58fa9f43f62f65576ac32fc7c5f817deb2708c68996eb586bf3dc236404a4570c548730a041e29a6553f61f8a744fa96a1093e5dc28b4ce598f
+"kareem@npm:2.5.0":
+  version: 2.5.0
+  resolution: "kareem@npm:2.5.0"
+  checksum: 292e80b32fb44e1801c5eb25b150e4b42e6ddf8a9c38ac67f99d4e7164dc7d9e874ea9b6ffaa42d6c3e76c8dd28ae5723643f3b5c8cb5c481af07118ce1475e3
   languageName: node
   linkType: hard
 
@@ -5630,13 +5622,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mongodb@npm:4.11.0":
-  version: 4.11.0
-  resolution: "mongodb@npm:4.11.0"
+"mongodb@npm:4.12.1":
+  version: 4.12.1
+  resolution: "mongodb@npm:4.12.1"
   dependencies:
     "@aws-sdk/credential-providers": ^3.186.0
     bson: ^4.7.0
-    denque: ^2.1.0
     mongodb-connection-string-url: ^2.5.4
     saslprep: ^1.0.3
     socks: ^2.7.1
@@ -5645,22 +5636,22 @@ __metadata:
       optional: true
     saslprep:
       optional: true
-  checksum: 3080c2f58dc712ca6d0a34b0f4101c3ca66fbf86360b2a5ea2b64a9f757b4a0d7b77851688657fc3240ac748ddcd69c21ec2f7c785f10cb7d41e00e863f415ec
+  checksum: 84590484b2c93bce849ec1e334b064e983444ed73942061c91e09556348c80db9d4a40544b927cd795bdfbfc51d1b713a7df5ced4ecf13cd00fab5e3c3e32ada
   languageName: node
   linkType: hard
 
-"mongoose@npm:^6.7.3":
-  version: 6.7.3
-  resolution: "mongoose@npm:6.7.3"
+"mongoose@npm:^6.8.0":
+  version: 6.8.0
+  resolution: "mongoose@npm:6.8.0"
   dependencies:
     bson: ^4.7.0
-    kareem: 2.4.1
-    mongodb: 4.11.0
+    kareem: 2.5.0
+    mongodb: 4.12.1
     mpath: 0.9.0
     mquery: 4.0.3
     ms: 2.1.3
     sift: 16.0.1
-  checksum: cec70e3a54ce4423dabc242c31cb5de21c2c64dd5ab33af0cb0c40fd4ea7bb5c67b200974ca30bdd8b175038de913099b7d63ddd0471bafe16172f970584d20f
+  checksum: 565fbf795cfe9b753fc4cf7787c2d3804cefb3a203705b25d41f7c67d628f96dfc644560a69d97ec0546a279339a703de72d011f5ac82b1369ba73972d5b581f
   languageName: node
   linkType: hard
 
@@ -5974,13 +5965,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"on-exit-leak-free@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "on-exit-leak-free@npm:1.0.0"
-  checksum: 813adf176cf95500c0e5cfef2c82f8c92969692c3837b7b939519c31aab3866e856a30254184a347c5da0c885b2a840e37ee44cc72f6432a2284525db6a8ce7f
-  languageName: node
-  linkType: hard
-
 "on-exit-leak-free@npm:^2.1.0":
   version: 2.1.0
   resolution: "on-exit-leak-free@npm:2.1.0"
@@ -6203,31 +6187,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pino-pretty@npm:^8.1.0":
-  version: 8.1.0
-  resolution: "pino-pretty@npm:8.1.0"
-  dependencies:
-    colorette: ^2.0.7
-    dateformat: ^4.6.3
-    fast-copy: ^2.1.1
-    fast-safe-stringify: ^2.1.1
-    help-me: ^4.0.1
-    joycon: ^3.1.1
-    minimist: ^1.2.6
-    on-exit-leak-free: ^1.0.0
-    pino-abstract-transport: ^1.0.0
-    pump: ^3.0.0
-    readable-stream: ^4.0.0
-    secure-json-parse: ^2.4.0
-    sonic-boom: ^3.0.0
-    strip-json-comments: ^3.1.1
-  bin:
-    pino-pretty: bin.js
-  checksum: 6e8656cdecfd5cf23a328bbb50c5b9d3f27dee838ed797a41037845612dbe610e1083fa896128f7323cf45c862e3954441527ab315be3bab63d14095c7b4cd73
-  languageName: node
-  linkType: hard
-
-"pino-pretty@npm:^9.1.1":
+"pino-pretty@npm:^9.0.1, pino-pretty@npm:^9.1.1":
   version: 9.1.1
   resolution: "pino-pretty@npm:9.1.1"
   dependencies:
