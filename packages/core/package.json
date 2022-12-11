@@ -15,7 +15,7 @@
     "@fastify/one-line-logger": "^1.1.1",
     "@typegoose/typegoose": "^9.13.2",
     "bcrypt": "^5.1.0",
-    "class-validator": "^0.13.2",
+    "class-validator": "^0.14.0",
     "env-schema": "^5.2.0",
     "fast-jwt": "^2.0.2",
     "fastify": "^4.10.2",
