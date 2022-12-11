@@ -31,3 +31,5 @@ gh
 .yarn/build-state.yml
 
 schema.gql
+
+.env
