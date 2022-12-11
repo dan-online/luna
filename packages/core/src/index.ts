@@ -6,6 +6,7 @@ import { buildSchema } from 'type-graphql';
 import { SchoolResolver } from './api/resolvers/School';
 import { UserResolver } from './api/resolvers/User';
 import { getContext } from './orm';
+import ConnectRouter from './routes/auth/google';
 import { authChecker } from './utils/auth';
 import type { Context } from './utils/context';
 import { env, envToLogger } from './utils/env';
@@ -37,6 +38,8 @@ const start = async () => {
   fastifyServer.get('/', () => {
     return { hello: 'world' };
   });
+
+  await fastifyServer.register(ConnectRouter);
 
   await fastifyServer.listen({ port: env.PORT });
 };

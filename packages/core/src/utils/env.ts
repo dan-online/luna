@@ -23,6 +23,18 @@ const schema = {
     SECRET: {
       type: 'string',
       default: 'supersecret'
+    },
+    GOOGLE_CLIENT_ID: {
+      type: 'string',
+      default: ''
+    },
+    GOOGLE_CLIENT_SECRET: {
+      type: 'string',
+      default: ''
+    },
+    GOOGLE_REDIRECT_URI: {
+      type: 'string',
+      default: ''
     }
   }
 };
@@ -33,6 +45,9 @@ export const env = envSchema<{
   NODE_ENV: 'production' | 'development' | 'test';
   MONGO_URL: string;
   SECRET: string;
+  GOOGLE_CLIENT_ID: string;
+  GOOGLE_CLIENT_SECRET: string;
+  GOOGLE_REDIRECT_URI: string;
 }>({
   schema,
   dotenv: true

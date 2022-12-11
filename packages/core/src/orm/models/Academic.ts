@@ -1,9 +1,10 @@
-import { getModelForClass, modelOptions, prop } from '@typegoose/typegoose';
+import { getModelForClass, modelOptions, prop, Ref } from '@typegoose/typegoose';
 import { IsAscii, IsEmail, IsPhoneNumber, IsString, MaxLength, MinLength } from 'class-validator';
 import { Field, ObjectType } from 'type-graphql';
 import { getMongo } from '../../utils/mongo';
 import { Omit } from '../../utils/omit';
 import { BaseUser } from './BaseUser';
+import { SchoolModel, SchoolSchema } from './School';
 
 @ObjectType()
 class Socials {
@@ -33,14 +34,22 @@ class Socials {
  */
 @ObjectType()
 @modelOptions({ options: { customName: 'academic' }, existingConnection: getMongo(), schemaOptions: { timestamps: true, autoIndex: true } })
-export class AcademicSchema extends Omit(BaseUser, ['email']) {
+export class AcademicSchema extends Omit(BaseUser, ['email', 'verifiedEmail', 'emailVerificationCode', 'email']) {
   @IsAscii()
   @IsString()
   @MinLength(3)
   @MaxLength(120)
   @Field()
-  @prop({ required: true })
+  @prop()
   public preferredName?: string;
+
+  @IsAscii()
+  @IsString()
+  @MinLength(1)
+  @MaxLength(16)
+  @Field()
+  @prop()
+  public gender?: string;
 
   @IsString({ each: true })
   @IsAscii({ each: true })
@@ -80,6 +89,10 @@ export class AcademicSchema extends Omit(BaseUser, ['email']) {
   @Field()
   @prop({ default: {} })
   public socials?: Socials;
+
+  @Field(() => SchoolSchema)
+  @prop({ ref: () => SchoolModel, required: true })
+  public school!: Ref<SchoolSchema>;
 }
 
 export const AcademicModel = getModelForClass(AcademicSchema);
