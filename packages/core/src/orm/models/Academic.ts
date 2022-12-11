@@ -44,7 +44,7 @@ export class AcademicSchema extends Omit(BaseUser, ['email']) {
 
   @IsString({ each: true })
   @IsAscii({ each: true })
-  @IsEmail({ each: true })
+  @IsEmail({}, { each: true })
   @MaxLength(120, { each: true })
   @MinLength(3, { each: true })
   @Field(() => [String])
