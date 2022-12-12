@@ -18,6 +18,9 @@ const start = async () => {
   });
 
   const schema = await buildSchema({
+    validate: {
+      forbidUnknownValues: false
+    },
     resolvers: [UserResolver, SchoolResolver],
     authChecker
   });
