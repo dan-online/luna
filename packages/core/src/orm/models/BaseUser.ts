@@ -1,13 +1,11 @@
 import { prop, type DocumentType } from '@typegoose/typegoose';
-import { compare, genSalt, hash } from 'bcrypt';
-import { IsAscii, IsDate, IsEmail, IsString, MaxLength, MinLength } from 'class-validator';
+import { IsAscii, IsDate, IsString, MaxLength, MinLength } from 'class-validator';
 import { createSigner } from 'fast-jwt';
 
 import type { Types } from 'mongoose';
 import { Field, ObjectType, UseMiddleware } from 'type-graphql';
 import { SelfGuard } from '../../api/guards/SelfGuard';
 import { env } from '../../utils/env';
-import { randomKey } from '../../utils/randomKey';
 import type { UserSchema } from './User';
 
 const sign = createSigner({ key: env.SECRET, expiresIn: env.NODE_ENV === 'development' ? 1000 * 60 * 60 * 24 * 365 : 1000 * 60 * 60 * 24 * 7 });
@@ -54,32 +52,6 @@ export class BaseUser {
   @IsDate()
   @prop({ required: true })
   public birthday!: Date;
-
-  @IsString()
-  @IsEmail()
-  @MaxLength(120)
-  @MinLength(3)
-  @prop({ unique: true, required: true })
-  public email!: string;
-
-  @prop({ default: false })
-  public verifiedEmail!: boolean;
-
-  @prop({ default: randomKey() })
-  public emailVerificationCode?: string;
-
-  @prop({ required: true })
-  private password!: string;
-
-  public async hashPassword(this: DocumentType<BaseUser>, password: string) {
-    const salt = await genSalt();
-
-    this.password = await hash(password, salt);
-  }
-
-  public checkPassword(password: string): Promise<boolean> {
-    return compare(password, this.password);
-  }
 
   public getToken(this: DocumentType<UserSchema>): string {
     return sign({ user: this._id });

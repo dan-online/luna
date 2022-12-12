@@ -2,7 +2,6 @@ import { getModelForClass, modelOptions, prop, Ref } from '@typegoose/typegoose'
 import { IsAscii, IsEmail, IsPhoneNumber, IsString, MaxLength, MinLength } from 'class-validator';
 import { Field, ObjectType } from 'type-graphql';
 import { getMongo } from '../../utils/mongo';
-import { Omit } from '../../utils/omit';
 import { BaseUser } from './BaseUser';
 import { SchoolModel, SchoolSchema } from './School';
 
@@ -34,7 +33,7 @@ class Socials {
  */
 @ObjectType()
 @modelOptions({ options: { customName: 'academic' }, existingConnection: getMongo(), schemaOptions: { timestamps: true, autoIndex: true } })
-export class AcademicSchema extends Omit(BaseUser, ['email', 'verifiedEmail', 'emailVerificationCode', 'email']) {
+export class AcademicSchema extends BaseUser {
   @IsAscii()
   @IsString()
   @MinLength(3)

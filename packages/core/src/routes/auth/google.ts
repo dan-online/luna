@@ -8,7 +8,7 @@ export default async function ConnectRouter(fastify: FastifyInstance) {
     const { code } = req.query as { code: string };
     const googleOAuth = new GoogleOAuth();
     const user = await googleOAuth.callbackUser(code);
-    const domain = user.email.split('@')[1];
+    const domain = user.email.split('@')[1].toLowerCase();
     const foundSchool = await SchoolModel.findOne({ domain, verifiedDomain: true });
 
     if (!foundSchool) {

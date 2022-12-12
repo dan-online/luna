@@ -27,7 +27,7 @@ export class SchoolResolver {
 
     const newSchool = new SchoolModel({
       name: schoolInput.name,
-      domain: schoolInput.domain,
+      domain: schoolInput.domain.toLowerCase(),
       owners: [user._id]
     });
 
@@ -46,8 +46,8 @@ export class SchoolResolver {
     @Arg('pagination', { nullable: true }) pagination?: PaginationInput
   ): Promise<SchoolsOutput> {
     const schools = await limitFind<DocType<SchoolSchema>>(
-      SchoolModel.find({ owners: user._id }, autoProjection(info, ['items'], { owners: 1 }), {
-        populate: autoPopulate(info, ['items'])
+      SchoolModel.find({ owners: user._id }, autoProjection(info, ['schools'], { owners: 1 }), {
+        populate: autoPopulate(info, ['schools'])
       }),
       pagination
     );
@@ -56,7 +56,7 @@ export class SchoolResolver {
 
     return {
       total,
-      items: schools
+      schools
     };
   }
 

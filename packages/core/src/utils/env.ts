@@ -18,7 +18,7 @@ const schema = {
     },
     MONGO_URL: {
       type: 'string',
-      default: 'mongodb://localhost:27017/luna'
+      default: 'mongodb://127.0.0.1:27017/luna'
     },
     SECRET: {
       type: 'string',

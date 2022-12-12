@@ -1,5 +1,7 @@
-import { Field, Int, ObjectType } from 'type-graphql';
+import { Field, ObjectType } from 'type-graphql';
 import { SchoolSchema } from '../../orm';
+
+import { PaginatedOutput } from './Paginated';
 
 @ObjectType()
 export class CreateSchoolOutput {
@@ -8,10 +10,7 @@ export class CreateSchoolOutput {
 }
 
 @ObjectType()
-export class SchoolsOutput {
+export class SchoolsOutput extends PaginatedOutput {
   @Field(() => [SchoolSchema])
-  public items!: SchoolSchema[];
-
-  @Field(() => Int)
-  public total!: number;
+  public schools!: SchoolSchema[];
 }

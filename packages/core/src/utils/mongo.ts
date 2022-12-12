@@ -9,6 +9,8 @@ export const getMongo = () => {
 
   instance = new Mongoose();
 
+  instance.set('strictQuery', true);
+
   instance.connection.on('connected', () => {
     log.info('[mongo] connected successfully');
   });

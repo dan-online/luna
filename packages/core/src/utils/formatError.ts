@@ -5,6 +5,7 @@ import { ArgumentValidationError } from 'type-graphql';
 import type { ValidationError as ClassValidatorValidationError } from 'class-validator';
 import { GraphQLError } from 'graphql';
 import { Error } from 'mongoose';
+import { env } from './env';
 type IValidationError = Pick<ClassValidatorValidationError, 'property' | 'value' | 'constraints' | 'children'> | Error.ValidatorError;
 
 function formatValidationErrors(validationError: IValidationError): IValidationError {
@@ -57,6 +58,10 @@ export class DuplicateKeyError extends GraphQLError {
 
 export function formatError(formattedError: GraphQLFormattedError, error: unknown): GraphQLFormattedError {
   const originalError = unwrapResolverError(error) as unknown | any;
+
+  if (env.NODE_ENV === 'development') {
+    console.error(originalError);
+  }
 
   if (originalError instanceof ArgumentValidationError) {
     return new ValidationError(originalError.validationErrors);
