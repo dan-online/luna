@@ -6,7 +6,7 @@
     "start": "turbo run start",
     "typecheck": "turbo run typecheck",
     "watch:start": "turbo run watch:start",
-    "watch:build": "nodemon --watch 'packages/core/src' -e ts --exec 'turbo run build'",
+    "watch:build": "nodemon --signal SIGINT --watch 'packages/core/src' -e ts --exec 'turbo run build'",
     "lint": "turbo run lint",
     "postinstall": "husky install"
   },

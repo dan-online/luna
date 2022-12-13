@@ -1,4 +1,5 @@
 import { Mongoose } from 'mongoose';
+import { addExitHandler } from './catchExit';
 import { env } from './env';
 import { log } from './log';
 
@@ -8,6 +9,8 @@ export const getMongo = () => {
   if (instance) return instance.connection;
 
   instance = new Mongoose();
+
+  addExitHandler(() => instance?.disconnect());
 
   instance.set('strictQuery', true);
 

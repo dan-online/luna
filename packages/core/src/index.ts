@@ -8,6 +8,7 @@ import { UserResolver } from './api/resolvers/User';
 import { getContext } from './orm';
 import ConnectRouter from './routes/auth/google';
 import { authChecker } from './utils/auth';
+import { addExitHandler } from './utils/catchExit';
 import type { Context } from './utils/context';
 import { env, envToLogger } from './utils/env';
 import { formatError } from './utils/formatError';
@@ -43,6 +44,8 @@ const start = async () => {
   });
 
   await fastifyServer.register(ConnectRouter);
+
+  addExitHandler(() => fastifyServer.close());
 
   await fastifyServer.listen({ port: env.PORT });
 };

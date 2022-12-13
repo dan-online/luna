@@ -1,4 +1,5 @@
 import Redis, { RedisOptions as Options } from 'ioredis';
+import { addExitHandler } from './catchExit';
 import { log } from './log';
 
 export const RedisOptions: Options = {
@@ -16,6 +17,8 @@ export function getRedis() {
 
   const redis = new Redis(RedisOptions);
   let registeredDisconnect = false;
+
+  addExitHandler(() => redis.quit());
 
   redis.addListener('connect', () => {
     log.info(`[redis] connected successfully`);

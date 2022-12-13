@@ -17,7 +17,7 @@ export class SchoolResolver {
     @Arg('school') schoolInput: CreateSchoolInput,
     @Ctx() { user }: Context<DocType<UserSchema>>
   ): Promise<CreateSchoolOutput> {
-    if (!user.verifiedEmail) {
+    if (!user!.verifiedEmail) {
       throw new GraphQLError('You must verify your email before creating a school', {
         extensions: {
           code: 'UNVERIFIED_EMAIL'
@@ -28,7 +28,7 @@ export class SchoolResolver {
     const newSchool = new SchoolModel({
       name: schoolInput.name,
       domain: schoolInput.domain.toLowerCase(),
-      owners: [user._id]
+      owners: [user!._id]
     });
 
     const doc = await newSchool.save();
@@ -41,18 +41,18 @@ export class SchoolResolver {
   @Query(() => SchoolsOutput)
   @Authorized()
   public async schools(
-    @Ctx() { user }: Context<DocType<SchoolSchema>>,
+    @Ctx() { user }: Context<DocType<UserSchema>>,
     @Info() info: GraphQLResolveInfo,
     @Arg('pagination', { nullable: true }) pagination?: PaginationInput
   ): Promise<SchoolsOutput> {
     const schools = await limitFind<DocType<SchoolSchema>>(
-      SchoolModel.find({ owners: user._id }, autoProjection(info, ['schools'], { owners: 1 }), {
+      SchoolModel.find({ owners: user!._id }, autoProjection(info, ['schools'], { owners: 1 }), {
         populate: autoPopulate(info, ['schools'])
       }),
       pagination
     );
 
-    const total = await SchoolModel.countDocuments({ owners: user._id });
+    const total = await SchoolModel.countDocuments({ owners: user!._id });
 
     return {
       total,
@@ -64,10 +64,10 @@ export class SchoolResolver {
   @Authorized()
   public async school(
     @Arg('school') schoolId: string,
-    @Ctx() { user }: Context<DocType<SchoolSchema>>,
+    @Ctx() { user }: Context<DocType<UserSchema>>,
     @Info() info: GraphQLResolveInfo
   ): Promise<DocType<SchoolSchema>> {
-    const school = await SchoolModel.findOne({ owners: user._id, _id: schoolId }, autoProjection(info, [], { owners: 1 }), {
+    const school = await SchoolModel.findOne({ owners: user!._id, _id: schoolId }, autoProjection(info, [], { owners: 1 }), {
       populate: autoPopulate(info)
     });
 
@@ -84,8 +84,8 @@ export class SchoolResolver {
 
   @Mutation(() => Boolean)
   @Authorized()
-  public async deleteSchool(@Arg('school') _id: string, @Ctx() { user }: Context<DocType<SchoolSchema>>): Promise<boolean> {
-    const school = await SchoolModel.findOne({ _id, owners: user._id });
+  public async deleteSchool(@Arg('school') _id: string, @Ctx() { user }: Context<DocType<UserSchema>>): Promise<boolean> {
+    const school = await SchoolModel.findOne({ _id, owners: user!._id });
 
     if (!school) {
       throw new GraphQLError('School not found', {
@@ -102,8 +102,8 @@ export class SchoolResolver {
 
   @Mutation(() => Boolean)
   @Authorized()
-  public async verifyDomain(@Arg('school') _id: string, @Ctx() { user }: Context<DocType<SchoolSchema>>): Promise<boolean> {
-    const school = await SchoolModel.findOne({ _id, owners: user._id });
+  public async verifyDomain(@Arg('school') _id: string, @Ctx() { user }: Context<DocType<UserSchema>>): Promise<boolean> {
+    const school = await SchoolModel.findOne({ _id, owners: user!._id });
 
     if (!school) {
       return false;
