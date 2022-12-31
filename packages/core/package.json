@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
-    "@types/node": "^18.11.14",
+    "@types/node": "^18.11.18",
     "pino-pretty": "^9.1.1"
   }
 }
