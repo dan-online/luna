@@ -24,7 +24,6 @@ jobs:
         id: yarn-cache-dir-path
         run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
         shell: bash
-        working-directory: tooling
       - name: Restore yarn cache
         uses: actions/cache@v3
         with:
