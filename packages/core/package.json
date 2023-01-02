@@ -11,7 +11,7 @@
     "typecheck": "tsc --noEmit -p ./src/tsconfig.json"
   },
   "dependencies": {
-    "@apollo/server": "^4.2.2",
+    "@apollo/server": "^4.3.0",
     "@apollo/utils.keyvadapter": "^2.0.0",
     "@as-integrations/fastify": "^1.2.0",
     "@fastify/one-line-logger": "^1.1.1",
@@ -21,14 +21,14 @@
     "class-validator": "^0.14.0",
     "env-schema": "^5.2.0",
     "fast-jwt": "^2.0.2",
-    "fastify": "^4.10.2",
+    "fastify": "^4.11.0",
     "google-auth-library": "^8.7.0",
     "graphql": "^16.6.0",
     "graphql-middleware": "^6.1.33",
     "graphql-rate-limit": "^3.3.0",
     "ioredis": "^5.2.4",
     "keyv": "^4.5.2",
-    "mongoose": "^6.8.0",
+    "mongoose": "^6.8.2",
     "reflect-metadata": "^0.1.13",
     "type-graphql": "2.0.0-beta.1"
   },
