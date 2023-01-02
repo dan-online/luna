@@ -1,20 +1,20 @@
-import { IsAscii, IsString, IsUrl, MaxLength, MinLength } from 'class-validator';
-import { Field, InputType } from 'type-graphql';
+import { IsAscii, IsString, IsUrl, MaxLength, MinLength } from "class-validator";
+import { Field, InputType } from "type-graphql";
 
 @InputType()
 export class CreateSchoolInput {
-  @IsString()
+	@IsString()
   @IsAscii()
   @MinLength(3)
   @MaxLength(50)
   @Field()
-  public name!: string;
+	public name!: string;
 
-  @IsUrl()
+	@IsUrl()
   @IsString()
   @MinLength(3)
   @MaxLength(50)
   @IsAscii()
   @Field()
-  public domain!: string;
+	public domain!: string;
 }

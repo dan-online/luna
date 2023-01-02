@@ -8,11 +8,19 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**", "build/**"]
     },
+    "ci": {
+      "dependsOn": [],
+      "outputs": []
+    },
     "watch:start": {
       "dependsOn": [],
       "outputs": []
     },
     "lint": {
+      "dependsOn": [],
+      "outputs": []
+    },
+    "format": {
       "dependsOn": [],
       "outputs": []
     },

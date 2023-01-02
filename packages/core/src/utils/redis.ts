@@ -1,59 +1,59 @@
-import Redis, { RedisOptions as Options } from 'ioredis';
-import { addExitHandler } from './catchExit';
-import { env } from './env';
-import { log } from './log';
+import Redis, { RedisOptions as Options } from "ioredis";
+import { addExitHandler } from "./catchExit";
+import { env } from "./env";
+import { log } from "./log";
 
 export const RedisOptions: Options = {
-  host: env.REDIS_HOST,
-  port: 6379,
-  lazyConnect: true
+	host: env.REDIS_HOST,
+	port: 6379,
+	lazyConnect: true,
 };
 
 let instance: Redis | null = null;
 
 export function getRedis() {
-  if (instance) {
-    return instance;
-  }
+	if (instance) {
+		return instance;
+	}
 
-  const redis = new Redis(RedisOptions);
-  let registeredDisconnect = false;
+	const redis = new Redis(RedisOptions);
+	let registeredDisconnect = false;
 
-  addExitHandler(() => redis.quit());
+	addExitHandler(() => redis.quit());
 
-  redis.addListener('connect', () => {
-    log.info(`[redis] connected successfully`);
-    registeredDisconnect = false;
-  });
+	redis.addListener("connect", () => {
+		log.info("[redis] connected successfully");
+		registeredDisconnect = false;
+	});
 
-  redis.addListener('error', (err) => {
-    if (err.code !== 'ECONNREFUSED') {
-      log.error(`[redis] error: ${err.message}`);
-    } // Handled on line 35
-  });
+	redis.addListener("error", (err) => {
+		if (err.code !== "ECONNREFUSED") {
+			log.error(`[redis] error: ${err.message}`);
+		} // Handled on line 35
+	});
 
-  redis.addListener('close', () => {
-    if (!registeredDisconnect) {
-      log.warn(`[redis] disconnected`);
-    }
+	redis.addListener("close", () => {
+		if (!registeredDisconnect) {
+			log.warn("[redis] disconnected");
+		}
 
-    registeredDisconnect = true;
-  });
+		registeredDisconnect = true;
+	});
 
-  const connect = async () => {
-    try {
-      await redis.connect();
-    } catch {
-      if (redis.status !== 'ready' && redis.status !== 'connect') {
-        log.warn(`[redis] failed to connect, attempting to reconnect in 2s`);
-        setTimeout(connect, 2000);
-      }
-    }
-  };
+	const connect = async () => {
+		try {
+			await redis.connect();
+		} catch {
+			if (redis.status !== "ready" && redis.status !== "connect") {
+				log.warn("[redis] failed to connect, attempting to reconnect in 2s");
+				setTimeout(connect, 2000);
+			}
+		}
+	};
 
-  void connect();
+	void connect();
 
-  instance = redis;
+	instance = redis;
 
-  return redis;
+	return redis;
 }

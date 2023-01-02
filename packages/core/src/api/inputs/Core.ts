@@ -1,13 +1,13 @@
-import { Max, Min } from 'class-validator';
-import { Field, InputType, Int } from 'type-graphql';
+import { Max, Min } from "class-validator";
+import { Field, InputType, Int } from "type-graphql";
 @InputType()
 export class PaginationInput {
-  @Max(100)
+	@Max(100)
   @Min(10)
   @Field(() => Int)
-  public limit?: number;
+	public limit?: number;
 
-  @Min(1)
+	@Min(1)
   @Field(() => Int)
-  public page?: number;
+	public page?: number;
 }

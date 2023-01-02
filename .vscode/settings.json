@@ -1,14 +1,9 @@
 {
-  "eslint.validate": ["typescript"],
   "editor.tabSize": 2,
   "editor.useTabStops": false,
   "editor.insertSpaces": true,
   "editor.detectIndentation": false,
-  "editor.codeActionsOnSave": {
-    "source.fixAll": true,
-    "source.fixAll.eslint": true,
-    "source.organizeImports": true
-  },
+  "editor.formatOnSave": true,
   "files.eol": "\n",
   "typescript.tsdk": "node_modules/typescript/lib",
   "restoreTerminals.terminals": [
@@ -16,13 +11,17 @@
       "splitTerminals": [
         {
           "name": "Build",
-          "commands": ["yarn watch:build"]
+          "commands": [
+            "yarn watch:build"
+          ]
         },
         {
           "name": "Start",
-          "commands": ["yarn watch:start | cut -d\" \" -f2-"]
+          "commands": [
+            "yarn watch:start | cut -d\" \" -f2-"
+          ]
         }
       ]
     }
-  ]
+  ],
 }

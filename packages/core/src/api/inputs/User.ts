@@ -1,67 +1,67 @@
-import { IsAscii, IsDate, IsEmail, IsString, IsStrongPassword, MaxLength, MinLength } from 'class-validator';
-import { Field, InputType } from 'type-graphql';
+import { IsAscii, IsDate, IsEmail, IsString, IsStrongPassword, MaxLength, MinLength } from "class-validator";
+import { Field, InputType } from "type-graphql";
 
 @InputType()
 export class RegisterInput {
-  @IsAscii()
+	@IsAscii()
   @IsString()
   @MinLength(3)
   @MaxLength(120)
   @Field()
-  public firstName!: string;
+	public firstName!: string;
 
-  @IsAscii()
+	@IsAscii()
   @IsString()
   @MinLength(3)
   @MaxLength(120)
   @Field()
-  public middleName!: string;
+	public middleName!: string;
 
-  @IsAscii()
+	@IsAscii()
   @IsString()
   @MinLength(3)
   @MaxLength(120)
   @Field()
-  public lastName!: string;
+	public lastName!: string;
 
-  @IsAscii()
+	@IsAscii()
   @IsString()
   @IsEmail()
   @MaxLength(320)
   @MinLength(3)
   @Field()
-  public email!: string;
+	public email!: string;
 
-  @IsDate()
+	@IsDate()
   @Field()
-  public birthday!: Date;
+	public birthday!: Date;
 
-  @IsStrongPassword() // may remove
+	@IsStrongPassword() // may remove
   @IsAscii()
   @IsString()
   @Field()
-  public password!: string;
+	public password!: string;
 
-  @IsString()
+	@IsString()
   @IsAscii()
   @MinLength(3)
   @MaxLength(24)
   @Field()
-  public username!: string;
+	public username!: string;
 
-  @IsString()
+	@IsString()
   @Field({ nullable: process.env.NODE_ENV !== 'production' })
-  public captcha?: string;
+	public captcha?: string;
 }
 
 @InputType()
 export class LoginInput {
-  @Field()
-  public email!: string;
+	@Field()
+	public email!: string;
 
-  @Field()
-  public password!: string;
+	@Field()
+	public password!: string;
 
-  @Field({ nullable: process.env.NODE_ENV !== 'production' })
-  public captcha?: string;
+	@Field({ nullable: process.env.NODE_ENV !== 'production' })
+	public captcha?: string;
 }

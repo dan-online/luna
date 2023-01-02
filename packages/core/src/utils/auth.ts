@@ -1,8 +1,8 @@
-import type { AuthChecker } from 'type-graphql';
-import type { Context } from './context';
+import type { AuthChecker } from "type-graphql";
+import type { Context } from "./context";
 
 export const authChecker: AuthChecker<Context> = ({ context }) => {
-  if (!context.user) return false;
+	if (!context.user) return false;
 
-  return true;
+	return true;
 };

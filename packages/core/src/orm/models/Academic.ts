@@ -1,29 +1,29 @@
-import { getModelForClass, modelOptions, prop, Ref } from '@typegoose/typegoose';
-import { IsAscii, IsEmail, IsPhoneNumber, IsString, MaxLength, MinLength } from 'class-validator';
-import { Field, ObjectType } from 'type-graphql';
-import { getMongo } from '../../utils/mongo';
-import { BaseUser } from './BaseUser';
-import { SchoolModel, SchoolSchema } from './School';
+import { getModelForClass, modelOptions, prop, Ref } from "@typegoose/typegoose";
+import { IsAscii, IsEmail, IsPhoneNumber, IsString, MaxLength, MinLength } from "class-validator";
+import { Field, ObjectType } from "type-graphql";
+import { getMongo } from "../../utils/mongo";
+import { BaseUser } from "./BaseUser";
+import { SchoolModel, SchoolSchema } from "./School";
 
 @ObjectType()
 class Socials {
-  @IsString()
+	@IsString()
   @IsAscii()
   @MaxLength(120)
   @MinLength(1)
-  public linkedin?: string;
+	public linkedin?: string;
 
-  @IsString()
+	@IsString()
   @IsAscii()
   @MaxLength(120)
   @MinLength(1)
-  public facebook?: string;
+	public facebook?: string;
 
-  @IsString()
+	@IsString()
   @IsAscii()
   @MaxLength(120)
   @MinLength(1)
-  public twitter?: string;
+	public twitter?: string;
 }
 
 /**
@@ -34,64 +34,64 @@ class Socials {
 @ObjectType()
 @modelOptions({ options: { customName: 'academic' }, existingConnection: getMongo(), schemaOptions: { timestamps: true, autoIndex: true } })
 export class AcademicSchema extends BaseUser {
-  @IsAscii()
+	@IsAscii()
   @IsString()
   @MinLength(3)
   @MaxLength(120)
   @Field()
   @prop()
-  public preferredName?: string;
+	public preferredName?: string;
 
-  @IsAscii()
+	@IsAscii()
   @IsString()
   @MinLength(1)
   @MaxLength(16)
   @Field()
   @prop()
-  public gender?: string;
+	public gender?: string;
 
-  @IsString({ each: true })
+	@IsString({ each: true })
   @IsAscii({ each: true })
   @IsEmail({}, { each: true })
   @MaxLength(120, { each: true })
   @MinLength(3, { each: true })
   @Field(() => [String])
   @prop({ default: [], type: [String] })
-  public emails!: string[];
+	public emails!: string[];
 
-  @IsString({ each: true })
+	@IsString({ each: true })
   @IsPhoneNumber(undefined, { each: true }) // +44 1234 567890
   @Field(() => [String])
   @prop({ default: [], type: [String] })
-  public phoneNumbers!: string[];
+	public phoneNumbers!: string[];
 
-  @IsString()
+	@IsString()
   @IsAscii()
   @Field()
   @prop()
-  public address?: string;
+	public address?: string;
 
-  @IsString()
+	@IsString()
   @IsAscii()
   @Field()
   @prop()
-  public citizenship?: string;
+	public citizenship?: string;
 
-  @IsString({ each: true })
+	@IsString({ each: true })
   @IsAscii({ each: true })
   @MinLength(1, { each: true })
   @MaxLength(2, { each: true })
   @Field(() => [String])
   @prop({ default: [], type: [String] })
-  public languages!: string[];
+	public languages!: string[];
 
-  @Field()
+	@Field()
   @prop({ default: {} })
-  public socials?: Socials;
+	public socials?: Socials;
 
-  @Field(() => SchoolSchema)
+	@Field(() => SchoolSchema)
   @prop({ ref: () => SchoolModel, required: true })
-  public school!: Ref<SchoolSchema>;
+	public school!: Ref<SchoolSchema>;
 }
 
 export const AcademicModel = getModelForClass(AcademicSchema);

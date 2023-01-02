@@ -1,7 +1,7 @@
 import { FastifyInstance } from 'fastify';
 import { setupTests } from '../setupTests';
 
-const createUser = {
+const RegisterUser = {
   query: `mutation Register($user: RegisterInput!) {
   register(user: $user) {
     token
@@ -21,7 +21,21 @@ const createUser = {
   }
 };
 
-const deleteUser = {
+const LoginUser = {
+  query: `mutation Login($user: LoginInput!) {
+  login(user: $user) {
+    token
+  }
+}`,
+  variables: {
+    user: {
+      email: 'test@dancodes.online',
+      password: 'Testing@!123'
+    }
+  }
+};
+
+const DeleteUser = {
   query: `mutation Mutation {
   deleteAccount
 }`
@@ -39,7 +53,7 @@ describe('Luna', () => {
     const req = await app.inject({
       url: '/graphql',
       method: 'POST',
-      payload: { ...createUser, variables: { user: { ...createUser.variables.user, email: 'test' } } }
+      payload: { ...RegisterUser, variables: { user: { ...RegisterUser.variables.user, email: 'test' } } }
     });
 
     const json = req.json();
@@ -70,7 +84,7 @@ describe('Luna', () => {
     const req = await app.inject({
       url: '/graphql',
       method: 'POST',
-      payload: createUser
+      payload: RegisterUser
     });
 
     const json = req.json();
@@ -86,11 +100,31 @@ describe('Luna', () => {
     userToken = json.data.register.token;
   });
 
-  test('GIVEN fastify server THEN responds', async () => {
+  test('GIVEN user THEN login user', async () => {
     const req = await app.inject({
       url: '/graphql',
       method: 'POST',
-      payload: deleteUser,
+      payload: LoginUser
+    });
+
+    const json = req.json();
+
+    expect(json).toMatchObject({
+      data: {
+        login: {
+          token: expect.any(String)
+        }
+      }
+    });
+
+    userToken = json.data.login.token;
+  });
+
+  test('GIVEN user THEN deletes user', async () => {
+    const req = await app.inject({
+      url: '/graphql',
+      method: 'POST',
+      payload: DeleteUser,
       headers: {
         authorization: `${userToken}`
       }
