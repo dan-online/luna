@@ -35,6 +35,10 @@ const schema = {
     GOOGLE_REDIRECT_URI: {
       type: 'string',
       default: ''
+    },
+    REDIS_HOST: {
+      type: 'string',
+      default: 'localhost'
     }
   }
 };
@@ -48,6 +52,7 @@ export const env = envSchema<{
   GOOGLE_CLIENT_ID: string;
   GOOGLE_CLIENT_SECRET: string;
   GOOGLE_REDIRECT_URI: string;
+  REDIS_HOST: string;
 }>({
   schema,
   dotenv: true

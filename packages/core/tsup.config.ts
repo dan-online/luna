@@ -23,7 +23,10 @@ export default defineConfig({
     'graphql',
     'graphql-rate-limit',
     'ioredis',
-    'pino'
+    'pino',
+    'keyv',
+    '@apollo/utils.keyvadapter',
+    '@keyv/redis'
   ],
   format: 'cjs',
   tsconfig: resolve(process.cwd(), 'src', 'tsconfig.json')

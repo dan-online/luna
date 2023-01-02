@@ -12,6 +12,7 @@ import { addExitHandler } from './utils/catchExit';
 import type { Context } from './utils/context';
 import { env, envToLogger } from './utils/env';
 import { formatError } from './utils/formatError';
+import { getKeyVRedis } from './utils/keyv';
 
 const start = async () => {
   const fastifyServer = Fastify({
@@ -30,7 +31,8 @@ const start = async () => {
     schema,
     plugins: [fastifyApolloDrainPlugin(fastifyServer)],
     formatError,
-    introspection: env.NODE_ENV === 'development'
+    introspection: env.NODE_ENV === 'development',
+    cache: getKeyVRedis()
   });
 
   await apollo.start();

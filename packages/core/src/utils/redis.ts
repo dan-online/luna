@@ -1,9 +1,10 @@
 import Redis, { RedisOptions as Options } from 'ioredis';
 import { addExitHandler } from './catchExit';
+import { env } from './env';
 import { log } from './log';
 
 export const RedisOptions: Options = {
-  host: process.env.REDIS_HOST || 'localhost',
+  host: env.REDIS_HOST,
   port: 6379,
   lazyConnect: true
 };
@@ -28,7 +29,7 @@ export function getRedis() {
   redis.addListener('error', (err) => {
     if (err.code !== 'ECONNREFUSED') {
       log.error(`[redis] error: ${err.message}`);
-    } // Handled on line 36
+    } // Handled on line 35
   });
 
   redis.addListener('close', () => {

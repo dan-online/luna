@@ -12,8 +12,10 @@
   },
   "dependencies": {
     "@apollo/server": "^4.2.2",
+    "@apollo/utils.keyvadapter": "^2.0.0",
     "@as-integrations/fastify": "^1.2.0",
     "@fastify/one-line-logger": "^1.1.1",
+    "@keyv/redis": "^2.5.4",
     "@typegoose/typegoose": "^9.13.2",
     "bcrypt": "^5.1.0",
     "class-validator": "^0.14.0",
@@ -25,10 +27,10 @@
     "graphql-middleware": "^6.1.33",
     "graphql-rate-limit": "^3.3.0",
     "ioredis": "^5.2.4",
+    "keyv": "^4.5.2",
     "mongoose": "^6.8.0",
     "reflect-metadata": "^0.1.13",
-    "type-graphql": "2.0.0-beta.1",
-    "zod": "^3.19.1"
+    "type-graphql": "2.0.0-beta.1"
   },
   "nodemonConfig": {
     "ignore": [
