@@ -51,7 +51,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@apollo/server@npm:^4.2.2":
+"@apollo/server@npm:^4.3.0":
   version: 4.3.0
   resolution: "@apollo/server@npm:4.3.0"
   dependencies:
@@ -1638,7 +1638,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@luna/core@workspace:packages/core"
   dependencies:
-    "@apollo/server": ^4.2.2
+    "@apollo/server": ^4.3.0
     "@apollo/utils.keyvadapter": ^2.0.0
     "@as-integrations/fastify": ^1.2.0
     "@fastify/one-line-logger": ^1.1.1
@@ -1650,14 +1650,14 @@ __metadata:
     class-validator: ^0.14.0
     env-schema: ^5.2.0
     fast-jwt: ^2.0.2
-    fastify: ^4.10.2
+    fastify: ^4.11.0
     google-auth-library: ^8.7.0
     graphql: ^16.6.0
     graphql-middleware: ^6.1.33
     graphql-rate-limit: ^3.3.0
     ioredis: ^5.2.4
     keyv: ^4.5.2
-    mongoose: ^6.8.0
+    mongoose: ^6.8.2
     pino-pretty: ^9.1.1
     reflect-metadata: ^0.1.13
     type-graphql: 2.0.0-beta.1
@@ -4170,7 +4170,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fastify@npm:^4.10.2":
+"fastify@npm:^4.11.0":
   version: 4.11.0
   resolution: "fastify@npm:4.11.0"
   dependencies:
@@ -5834,7 +5834,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mongoose@npm:^6.8.0":
+"mongoose@npm:^6.8.2":
   version: 6.8.2
   resolution: "mongoose@npm:6.8.2"
   dependencies:
