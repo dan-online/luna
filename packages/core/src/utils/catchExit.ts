@@ -1,7 +1,5 @@
 import { log } from './log';
 
-process.stdin.resume();
-
 const handlers: (() => void)[] = [];
 
 function attemptClear() {
@@ -11,13 +9,15 @@ function attemptClear() {
   } catch {}
 }
 
-function exitHandler(options: { cleanup?: boolean; exit?: boolean }) {
+export function exitHandler(options: { cleanup?: boolean; exit?: boolean }) {
   if (options.cleanup && handlers.length > 0) {
+    process.stdin.resume();
+
+    if (process.env.NODE_ENV !== 'test') attemptClear();
     log.info(`[proc] cleaning up ${handlers.length} handlers`);
 
-    attemptClear();
-
     handlers.forEach((handler) => handler());
+    process.stdin.destroy();
   }
 
   if (options.exit) process.exit();

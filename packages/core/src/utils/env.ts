@@ -10,7 +10,7 @@ const schema = {
     },
     LOG_LEVEL: {
       type: 'string',
-      default: 'info'
+      default: process.env.NODE_ENV === 'test' ? 'error' : 'info'
     },
     NODE_ENV: {
       type: 'string',
@@ -71,5 +71,7 @@ export const envToLogger = {
     }
   },
   production: true,
-  test: false
+  test: {
+    level: env.LOG_LEVEL
+  }
 };

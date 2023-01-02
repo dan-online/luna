@@ -13,6 +13,8 @@ import type { Context } from './utils/context';
 import { env, envToLogger } from './utils/env';
 import { formatError } from './utils/formatError';
 import { getKeyVRedis } from './utils/keyv';
+import { getMongo } from './utils/mongo';
+import { getRedis } from './utils/redis';
 
 const start = async () => {
   const fastifyServer = Fastify({
@@ -45,11 +47,28 @@ const start = async () => {
     return { hello: 'world' };
   });
 
+  fastifyServer.get('/status', () => {
+    const redis = getRedis();
+    const mongo = getMongo();
+    const mongoStatus = { '0': 'disconnected', '2': 'connecting', '3': 'disconnected', '99': 'uninitialized' };
+
+    if (redis.status !== 'ready') return { status: redis.status };
+    if (mongo.readyState !== 1) return { status: mongoStatus[mongo.readyState] };
+
+    return { status: 'ok' };
+  });
+
   await fastifyServer.register(ConnectRouter);
 
   addExitHandler(() => fastifyServer.close());
 
   await fastifyServer.listen({ port: env.PORT });
+
+  return fastifyServer;
 };
 
-void start();
+if (process.env.NODE_ENV !== 'test') {
+  void start();
+}
+
+export { start };

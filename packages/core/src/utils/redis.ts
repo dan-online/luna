@@ -34,7 +34,7 @@ export function getRedis() {
 
   redis.addListener('close', () => {
     if (!registeredDisconnect) {
-      log.error(`[redis] connection closed`);
+      log.warn(`[redis] disconnected`);
     }
 
     registeredDisconnect = true;

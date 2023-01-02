@@ -8,14 +8,16 @@ import { SelfGuard } from '../../api/guards/SelfGuard';
 import { env } from '../../utils/env';
 import type { UserSchema } from './User';
 
-const sign = createSigner({ key: env.SECRET, expiresIn: env.NODE_ENV === 'development' ? 1000 * 60 * 60 * 24 * 365 : 1000 * 60 * 60 * 24 * 7 });
+const year = 1000 * 60 * 60 * 24 * 365;
+const week = (year / 365) * 7; // felt repetitive to write 1000 * 60 * 60 * 24 * 7
+const sign = createSigner({ key: env.SECRET, expiresIn: env.NODE_ENV === 'development' ? year : week });
 
 @ObjectType()
 export class BaseUser {
   public createdAt?: Date;
   public updatedAt?: Date;
 
-  @Field()
+  @Field(() => Date)
   @prop({ default: () => new Date() })
   public lastLogin?: Date;
 

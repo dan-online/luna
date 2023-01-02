@@ -19,7 +19,7 @@ export const getMongo = () => {
   });
 
   instance.connection.on('disconnected', () => {
-    log.error(`[mongo] disconnected`);
+    log.warn(`[mongo] disconnected`);
   });
 
   instance.connection.on('error', (err) => {

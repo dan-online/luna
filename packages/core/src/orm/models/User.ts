@@ -5,6 +5,7 @@ import { Field, ObjectType } from 'type-graphql';
 import { getMongo } from '../../utils/mongo';
 import { randomKey } from '../../utils/randomKey';
 import { BaseUser } from './BaseUser';
+
 /**
  * @description This user schema is used for authentication and authorization of Admins, they are not the same as Students or teachers etc
  */

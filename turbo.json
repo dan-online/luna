@@ -23,6 +23,10 @@
     "typecheck": {
       "dependsOn": [],
       "outputs": []
+    },
+    "test": {
+      "dependsOn": [],
+      "outputs": []
     }
   }
 }

@@ -4,6 +4,7 @@
   "scripts": {
     "build": "turbo run build",
     "start": "turbo run start",
+    "test": "turbo run test",
     "typecheck": "turbo run typecheck",
     "watch:start": "turbo run watch:start",
     "watch:build": "nodemon --watch 'packages/core/src' -e ts --exec 'turbo run build'",
