@@ -120,5 +120,5 @@ jobs:
           redis-version: 6
       - name: Install Dependencies
         run: yarn --immutable
-      - name: Run ESLint
+      - name: Run Jest
         run: yarn test
