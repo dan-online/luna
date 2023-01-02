@@ -17,7 +17,7 @@ export function exitHandler(options: { cleanup?: boolean; exit?: boolean }) {
     log.info(`[proc] cleaning up ${handlers.length} handlers`);
 
     handlers.forEach((handler) => handler());
-    process.stdin.destroy();
+    if (!process.argv.find((arg) => arg === '--watch')) process.stdin.pause();
   }
 
   if (options.exit) process.exit();
