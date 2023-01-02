@@ -121,4 +121,4 @@ jobs:
       - name: Install Dependencies
         run: yarn --immutable
       - name: Run Jest
-        run: yarn test
+        run: yarn test --cache-dir ./.turbo
