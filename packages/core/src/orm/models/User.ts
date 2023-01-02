@@ -22,7 +22,7 @@ export class UserSchema extends BaseUser {
 
   @IsString()
   @IsEmail()
-  @MaxLength(120)
+  @MaxLength(320)
   @MinLength(3)
   @prop({ unique: true, required: true })
   public email!: string;

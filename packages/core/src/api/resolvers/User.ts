@@ -73,18 +73,17 @@ export class UserResolver {
   @Mutation(() => Boolean)
   @UseMiddleware(RateLimit({ window: '1s', max: 1 }))
   @Authorized()
-  public async verifyEmail(@Arg('verificationCode') verificationCode: string, @Ctx() { user }: Context<DocType<UserSchema>>): Promise<boolean> {
-    if (user!.verifiedEmail) {
-      return true;
-    }
-
-    if (user!.emailVerificationCode === verificationCode) {
-      user!.verifiedEmail = true;
-      await user!.save();
-
-      return true;
-    }
-
-    return false;
+  public async deleteAccount(@Ctx() { user }: Context<DocType<UserSchema>>): Promise<boolean> {
+    await user!.delete();
+    return true;
   }
+
+  // @Mutation(() => Boolean)
+  // @UseMiddleware(RateLimit({ window: '1s', max: 1 }))
+  // @Authorized()
+  // public verifyEmail(@Arg('verificationCode') verificationCode: string, @Ctx() { user }: Context<DocType<UserSchema>>): Promise<boolean> {
+  //   if (user!.verifiedEmail) {
+  //     return true;
+  //   }
+  // }
 }

@@ -1,13 +1,11 @@
 import { FastifyInstance } from 'fastify';
-import { setTimeout } from 'node:timers/promises';
-import { start } from '../src/index';
-import { exitHandler } from '../src/utils/catchExit';
+import { setupTests } from './setupTests';
 
 describe('Luna', () => {
   let app: FastifyInstance;
 
-  beforeAll(async () => {
-    app = await start();
+  setupTests((generatedApp) => {
+    app = generatedApp;
   });
 
   test('GIVEN fastify server THEN responds', async () => {
@@ -19,31 +17,12 @@ describe('Luna', () => {
     expect(req.json()).toEqual({ hello: 'world' });
   });
 
-  test('GIVEN mongo and redis THEN app connects', async () => {
-    const getReq = async () => {
-      const req = await app.inject({
-        url: '/status',
-        method: 'GET'
-      });
+  test('GIVEN fastify server THEN services are available', async () => {
+    const req = await app.inject({
+      url: '/status',
+      method: 'GET'
+    });
 
-      const json = req.json<{ status: string }>();
-
-      if (json.status === 'ok') {
-        return json;
-      }
-
-      await setTimeout(1);
-
-      return getReq();
-    };
-
-    const json = await getReq();
-
-    expect(json).toEqual({ status: 'ok' });
-  });
-
-  afterAll(async () => {
-    await app.close();
-    exitHandler({ cleanup: true, exit: false });
+    expect(req.json()).toEqual({ status: 'ok' });
   });
 });
