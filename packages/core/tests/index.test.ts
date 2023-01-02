@@ -32,7 +32,7 @@ describe('Luna', () => {
         return json;
       }
 
-      await setTimeout(100);
+      await setTimeout(1);
 
       return getReq();
     };

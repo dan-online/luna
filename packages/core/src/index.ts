@@ -47,9 +47,10 @@ const start = async () => {
     return { hello: 'world' };
   });
 
+  const redis = getRedis();
+  const mongo = getMongo();
+
   fastifyServer.get('/status', () => {
-    const redis = getRedis();
-    const mongo = getMongo();
     const mongoStatus = { '0': 'disconnected', '2': 'connecting', '3': 'disconnected', '99': 'uninitialized' };
 
     if (redis.status !== 'ready') return { status: redis.status };
