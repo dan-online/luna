@@ -1,7 +1,7 @@
 import { Mongoose } from "mongoose";
-import { addExitHandler } from "./catchExit";
-import { env } from "./env";
-import { log } from "./log";
+import { addExitHandler } from "../dev/catchExit";
+import { env } from "../dev/env";
+import { log } from "../dev/log";
 
 let instance: Mongoose | undefined;
 

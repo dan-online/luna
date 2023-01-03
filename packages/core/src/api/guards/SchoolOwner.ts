@@ -2,7 +2,7 @@ import { GraphQLError } from "graphql";
 import { Types } from "mongoose";
 import type { MiddlewareFn } from "type-graphql";
 import type { SchoolSchema } from "../../orm";
-import type { Context, DocType } from "../../utils/context";
+import type { Context, DocType } from "../../utils/dev/context";
 
 export const SchoolGuard: MiddlewareFn<Context> = async ({ context, root }, next) => {
 	const { user } = context;

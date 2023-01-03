@@ -1,8 +1,8 @@
 import type { ApolloFastifyContextFunction } from "@as-integrations/fastify";
 import { createVerifier } from "fast-jwt";
 
-import type { Context } from "../utils/context";
-import { env } from "../utils/env";
+import type { Context } from "../utils/dev/context";
+import { env } from "../utils/dev/env";
 
 import { AcademicModel, AcademicSchema } from "./models/Academic";
 import { SchoolModel, SchoolSchema } from "./models/School";

@@ -1,7 +1,7 @@
 import Redis, { RedisOptions as Options } from "ioredis";
-import { addExitHandler } from "./catchExit";
-import { env } from "./env";
-import { log } from "./log";
+import { addExitHandler } from "../dev/catchExit";
+import { env } from "../dev/env";
+import { log } from "../dev/log";
 
 export const RedisOptions: Options = {
 	host: env.REDIS_HOST,

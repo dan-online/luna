@@ -1,10 +1,10 @@
 import { GraphQLError, GraphQLResolveInfo } from "graphql";
 import { Arg, Authorized, Ctx, Info, Mutation, Query, Resolver } from "type-graphql";
 import { SchoolModel, SchoolSchema, UserSchema } from "../../orm";
-import { autoPopulate } from "../../utils/autoPopulate";
-import { autoProjection } from "../../utils/autoProject";
-import type { Context, DocType } from "../../utils/context";
-import { limitFind } from "../../utils/limitFind";
+import { autoPopulate } from "../../utils/db/autoPopulate";
+import { autoProjection } from "../../utils/db/autoProject";
+import type { Context, DocType } from "../../utils/dev/context";
+import { limitFind } from "../../utils/db/limitFind";
 import { PaginationInput } from "../inputs/Core.input";
 import { CreateSchoolInput } from "../inputs/School.input";
 import { CreateSchoolOutput, SchoolsOutput } from "../outputs/School.output";

@@ -3,7 +3,7 @@ import type { ResolverData } from "type-graphql";
 import { GraphQLError } from "graphql";
 import { getGraphQLRateLimiter, RedisStore } from "graphql-rate-limit";
 import type { Context } from "vm";
-import { getRedis } from "../../utils/redis";
+import { getRedis } from "../../utils/db/redis";
 
 const redisStore = new RedisStore(getRedis());
 

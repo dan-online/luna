@@ -1,9 +1,9 @@
 import { DocumentType, getModelForClass, modelOptions, prop } from "@typegoose/typegoose";
 import { compare, genSalt, hash } from "bcrypt";
-import { IsAscii, IsEmail, IsString, MaxLength, MinLength } from "class-validator";
 import { Field, ObjectType } from "type-graphql";
-import { getMongo } from "../../utils/mongo";
+import { getMongo } from "../../utils/db/mongo";
 import { randomKey } from "../../utils/randomKey";
+import { validateAscii, validateEmail, validateString, validateStrLength, validateUsername } from "../../utils/validate";
 import { BaseUser } from "./BaseUser";
 
 /**
@@ -12,19 +12,11 @@ import { BaseUser } from "./BaseUser";
 @ObjectType()
 @modelOptions({ options: { customName: 'user' }, existingConnection: getMongo(), schemaOptions: { timestamps: true, autoIndex: true } })
 export class UserSchema extends BaseUser {
-	@IsString()
-  @IsAscii()
-  @MinLength(3)
-  @MaxLength(24)
-  @Field()
-  @prop({ unique: true, required: true })
+	@Field()
+  @prop({ unique: true, required: true, validate: [validateString, validateAscii, validateStrLength(3, 24), validateUsername] })
 	public username!: string;
 
-	@IsString()
-  @IsEmail()
-  @MaxLength(320)
-  @MinLength(3)
-  @prop({ unique: true, required: true })
+	@prop({ unique: true, required: true, validate: [validateString, validateEmail, validateStrLength(3, 320)] })
 	public email!: string;
 
 	@prop({ default: false })
@@ -33,7 +25,7 @@ export class UserSchema extends BaseUser {
 	@prop({ default: randomKey() })
 	public emailVerificationCode?: string;
 
-	@prop({ required: true })
+	@prop({ required: true, validate: [validateString] })
 	private password!: string;
 
 	public async hashPassword(this: DocumentType<UserSchema>, password: string) {

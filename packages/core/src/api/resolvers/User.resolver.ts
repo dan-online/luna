@@ -1,7 +1,7 @@
 import { GraphQLError } from "graphql";
 import { Arg, Authorized, Ctx, Mutation, Query, Resolver, UseMiddleware } from "type-graphql";
 import { UserModel, UserSchema } from "../../orm";
-import type { Context, DocType } from "../../utils/context";
+import type { Context, DocType } from "../../utils/dev/context";
 import RateLimit from "../guards/RateLimit";
 import { LoginInput, RegisterInput } from "../inputs/User.input";
 import { LoginOutput, RegisterOutput } from "../outputs/User.output";

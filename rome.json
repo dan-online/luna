@@ -6,7 +6,9 @@
     "indentStyle": "tab",
     "indentSize": 2,
     "lineWidth": 150,
-    "ignore": ["**/node_modules"]
+    "ignore": [
+      "**/node_modules"
+    ]
   },
   "linter": {
     "enabled": true,

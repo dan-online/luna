@@ -7,7 +7,23 @@
   "editor.defaultFormatter": "rome.rome",
   "files.eol": "\n",
   "typescript.tsdk": "node_modules/typescript/lib",
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
   "restoreTerminals.terminals": [
+    {
+      "splitTerminals": [
+        {
+          "name": "Test",
+          "commands": [
+            "yarn test"
+          ]
+        }
+      ]
+    },
     {
       "splitTerminals": [
         {
@@ -15,7 +31,11 @@
           "commands": [
             "yarn watch:build --no-daemon"
           ]
-        },
+        }
+      ]
+    },
+    {
+      "splitTerminals": [
         {
           "name": "Start",
           "commands": [
@@ -23,6 +43,6 @@
           ]
         }
       ]
-    }
+    },
   ],
 }

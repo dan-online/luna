@@ -3,8 +3,9 @@ import type { Types } from "mongoose";
 import dns from "node:dns/promises";
 import { Authorized, Field, ObjectType, UseMiddleware } from "type-graphql";
 import { SchoolGuard } from "../../api/guards/SchoolOwner";
-import { getMongo } from "../../utils/mongo";
+import { getMongo } from "../../utils/db/mongo";
 import { randomKey } from "../../utils/randomKey";
+import { validateDomain, validateString, validateStrLength } from "../../utils/validate";
 import { UserSchema } from "./User";
 
 @ObjectType()
@@ -23,7 +24,7 @@ export class SchoolSchema {
 	@UseMiddleware(SchoolGuard)
   @Authorized()
   @Field()
-  @prop({ unique: true, required: true })
+  @prop({ unique: true, required: true, validate: [validateString,validateDomain, validateStrLength(3, 253)] })
 	public domain!: string;
 
 	@UseMiddleware(SchoolGuard)

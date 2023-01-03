@@ -8,13 +8,13 @@ import { UserResolver } from "./api/resolvers/User.resolver";
 import { getContext } from "./orm";
 import ConnectRouter from "./routes/auth/google";
 import { authChecker } from "./utils/auth";
-import { addExitHandler } from "./utils/catchExit";
-import type { Context } from "./utils/context";
-import { env, envToLogger } from "./utils/env";
-import { formatError } from "./utils/formatError";
-import { getKeyVRedis } from "./utils/keyv";
-import { getMongo } from "./utils/mongo";
-import { getRedis } from "./utils/redis";
+import { addExitHandler } from "./utils/dev/catchExit";
+import type { Context } from "./utils/dev/context";
+import { env, envToLogger } from "./utils/dev/env";
+import { formatError } from "./utils/dev/formatError";
+import { getKeyVRedis } from "./utils/db/keyv";
+import { getMongo } from "./utils/db/mongo";
+import { getRedis } from "./utils/db/redis";
 
 const start = async () => {
 	const fastifyServer = Fastify({
