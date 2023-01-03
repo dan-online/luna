@@ -1,7 +1,7 @@
 import { Field, ObjectType } from "type-graphql";
 import { SchoolSchema } from "../../orm";
 
-import { PaginatedOutput } from "./Paginated";
+import { PaginatedOutput } from "./Paginated.output";
 
 @ObjectType()
 export class CreateSchoolOutput {

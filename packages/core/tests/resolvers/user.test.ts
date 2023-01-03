@@ -1,8 +1,9 @@
 import { FastifyInstance } from "fastify";
-import { RegisterUser, DeleteUser, LoginUser, User } from "../api/user";
+import { UserModel } from "../../src/orm";
+import { RegisterUser, DeleteUser, LoginUser, User, VerifyEmail } from "../api/user";
 import { setupTests } from "../setupTests";
 
-describe("Luna", () => {
+describe("Luna > Resolvers > User", () => {
 	let app: FastifyInstance;
 	let userToken: string;
 
@@ -161,6 +162,56 @@ describe("Luna", () => {
 					middleName: user.middleName,
 					username: user.username,
 				},
+			},
+		});
+	});
+
+	test("GIVEN user w/o verification code THEN don't verify email", async () => {
+		const req = await app.inject({
+			url: "/graphql",
+			method: "POST",
+			payload: {
+				query: VerifyEmail.query,
+				variables: {
+					verificationCode: "123",
+				},
+			},
+			headers: {
+				authorization: `${userToken}`,
+			},
+		});
+
+		const json = req.json();
+
+		expect(json).toMatchObject({
+			data: {
+				verifyEmail: false,
+			},
+		});
+	});
+
+	test("GIVEN user w/ verification code THEN verify email", async () => {
+		const u = await UserModel.findOne({ username: RegisterUser.variables.user.username });
+		const verificationCode = u!.emailVerificationCode;
+		const req = await app.inject({
+			url: "/graphql",
+			method: "POST",
+			payload: {
+				query: VerifyEmail.query,
+				variables: {
+					verificationCode,
+				},
+			},
+			headers: {
+				authorization: `${userToken}`,
+			},
+		});
+
+		const json = req.json();
+
+		expect(json).toMatchObject({
+			data: {
+				verifyEmail: true,
 			},
 		});
 	});

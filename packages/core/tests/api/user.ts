@@ -50,3 +50,12 @@ export const User = {
   }
 }`,
 };
+
+export const VerifyEmail = {
+	query: `mutation VerifyEmail($verificationCode: String!) {
+  verifyEmail(verificationCode: $verificationCode)
+}`,
+	variables: {
+		verificationCode: "123456",
+	},
+};

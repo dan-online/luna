@@ -45,6 +45,14 @@ export class UserSchema extends BaseUser {
 	public checkPassword(password: string): Promise<boolean> {
 		return compare(password, this.password);
 	}
+
+	public verifyEmail(verificationCode: string) {
+		if (this.emailVerificationCode === verificationCode) {
+			this.verifiedEmail = true;
+			this.emailVerificationCode = undefined;
+		}
+		return this.verifiedEmail;
+	}
 }
 
 export const UserModel = getModelForClass(UserSchema);

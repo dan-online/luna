@@ -3,8 +3,8 @@ import fastifyApollo, { fastifyApolloDrainPlugin } from "@as-integrations/fastif
 import Fastify from "fastify";
 import "reflect-metadata";
 import { buildSchema } from "type-graphql";
-import { SchoolResolver } from "./api/resolvers/School";
-import { UserResolver } from "./api/resolvers/User";
+import { SchoolResolver } from "./api/resolvers/School.resolver";
+import { UserResolver } from "./api/resolvers/User.resolver";
 import { getContext } from "./orm";
 import ConnectRouter from "./routes/auth/google";
 import { authChecker } from "./utils/auth";

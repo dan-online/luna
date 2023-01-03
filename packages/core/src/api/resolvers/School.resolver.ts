@@ -5,9 +5,9 @@ import { autoPopulate } from "../../utils/autoPopulate";
 import { autoProjection } from "../../utils/autoProject";
 import type { Context, DocType } from "../../utils/context";
 import { limitFind } from "../../utils/limitFind";
-import { PaginationInput } from "../inputs/Core";
-import { CreateSchoolInput } from "../inputs/School";
-import { CreateSchoolOutput, SchoolsOutput } from "../outputs/School";
+import { PaginationInput } from "../inputs/Core.input";
+import { CreateSchoolInput } from "../inputs/School.input";
+import { CreateSchoolOutput, SchoolsOutput } from "../outputs/School.output";
 
 @Resolver(() => SchoolSchema)
 export class SchoolResolver {

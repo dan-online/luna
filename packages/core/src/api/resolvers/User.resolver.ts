@@ -3,8 +3,8 @@ import { Arg, Authorized, Ctx, Mutation, Query, Resolver, UseMiddleware } from "
 import { UserModel, UserSchema } from "../../orm";
 import type { Context, DocType } from "../../utils/context";
 import RateLimit from "../guards/RateLimit";
-import { LoginInput, RegisterInput } from "../inputs/User";
-import { LoginOutput, RegisterOutput } from "../outputs/User";
+import { LoginInput, RegisterInput } from "../inputs/User.input";
+import { LoginOutput, RegisterOutput } from "../outputs/User.output";
 
 @Resolver(() => UserSchema)
 export class UserResolver {
@@ -73,7 +73,7 @@ export class UserResolver {
 	}
 
 	@Mutation(() => Boolean)
-  @UseMiddleware(RateLimit({ window: '1s', max: 1 }))
+  @UseMiddleware(RateLimit({ window: '1s', max: 2 }))
   @Authorized()
 	public async deleteAccount(
 		@Ctx() { user }: Context<DocType<UserSchema>>,
@@ -82,12 +82,16 @@ export class UserResolver {
 		return true;
 	}
 
-	// @Mutation(() => Boolean)
-	// @UseMiddleware(RateLimit({ window: '1s', max: 1 }))
-	// @Authorized()
-	// public verifyEmail(@Arg('verificationCode') verificationCode: string, @Ctx() { user }: Context<DocType<UserSchema>>): Promise<boolean> {
-	//   if (user!.verifiedEmail) {
-	//     return true;
-	//   }
-	// }
+	@Mutation(() => Boolean)
+	@UseMiddleware(RateLimit({ window: '1s', max: 1 }))
+	@Authorized()
+	public async verifyEmail(@Arg('verificationCode') verificationCode: string, @Ctx() { user }: Context<DocType<UserSchema>>): Promise<boolean> {
+		const verified = user!.verifyEmail(verificationCode);
+
+		if (verified) {
+			await user!.save();
+		}
+
+		return verified;
+	}
 }
