@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node dist/index.js",
     "build": "tsup",
-    "test": "jest --runInBand",
+    "test": "jest --runInBand --verbose",
     "lint": "rome check src/**/*.ts",
     "format": "rome format src/**/*.ts",
     "ci": "rome ci src/**/*.ts",

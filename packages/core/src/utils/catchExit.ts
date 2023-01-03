@@ -20,7 +20,9 @@ export function exitHandler(options: { cleanup?: boolean; exit?: boolean }) {
 		if (!process.argv.find((arg) => arg === "--watch")) process.stdin.pause();
 	}
 
-	if (options.exit) process.exit();
+	if (options.exit) {
+		process.exit();
+	}
 }
 
 export function addExitHandler(handler: () => void) {

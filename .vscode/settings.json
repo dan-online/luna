@@ -4,6 +4,7 @@
   "editor.insertSpaces": true,
   "editor.detectIndentation": false,
   "editor.formatOnSave": true,
+  "editor.defaultFormatter": "rome.rome",
   "files.eol": "\n",
   "typescript.tsdk": "node_modules/typescript/lib",
   "restoreTerminals.terminals": [
@@ -12,13 +13,13 @@
         {
           "name": "Build",
           "commands": [
-            "yarn watch:build"
+            "yarn watch:build --no-daemon"
           ]
         },
         {
           "name": "Start",
           "commands": [
-            "yarn watch:start | cut -d\" \" -f2-"
+            "yarn watch:start --no-daemon | cut -d\" \" -f2-"
           ]
         }
       ]
