@@ -1,19 +1,31 @@
 {
   "pipeline": {
     "build": {
-      "dependsOn": ["^build"],
-      "outputs": ["dist/**", "build/**"]
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "dist/**",
+        "build/**"
+      ]
     },
     "watch": {
-      "dependsOn": ["^build"],
-      "outputs": ["dist/**", "build/**"]
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "dist/**",
+        "build/**"
+      ]
     },
     "ci": {
       "dependsOn": [],
       "outputs": []
     },
     "watch:start": {
-      "dependsOn": [],
+      "dependsOn": [
+        "^build"
+      ],
       "outputs": []
     },
     "lint": {
@@ -25,7 +37,9 @@
       "outputs": []
     },
     "start": {
-      "dependsOn": [],
+      "dependsOn": [
+        "^build"
+      ],
       "outputs": []
     },
     "typecheck": {
@@ -34,7 +48,9 @@
     },
     "test": {
       "dependsOn": [],
-      "outputs": []
+      "outputs": [
+        "coverage/**"
+      ]
     }
   }
 }
