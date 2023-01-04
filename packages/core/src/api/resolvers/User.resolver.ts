@@ -6,7 +6,7 @@ import RateLimit from "../guards/RateLimit";
 import { LoginInput, RegisterInput } from "../inputs/User.input";
 import { LoginOutput, RegisterOutput } from "../outputs/User.output";
 
-@Resolver(() => UserSchema)
+@Resolver()
 export class UserResolver {
 	@UseMiddleware(RateLimit({ window: '10s', max: 1 }))
   @Mutation(() => RegisterOutput)
