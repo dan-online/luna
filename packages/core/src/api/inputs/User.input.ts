@@ -1,4 +1,4 @@
-import { IsAscii, IsDate, IsEmail, IsString, IsStrongPassword, MaxLength, MinLength } from "class-validator";
+import { IsAscii, IsDateString, IsEmail, IsString, IsStrongPassword, MaxLength, MinLength } from "class-validator";
 import { Field, InputType } from "type-graphql";
 
 @InputType()
@@ -32,9 +32,9 @@ export class RegisterInput {
   @Field()
 	public email!: string;
 
-	@IsDate()
-  @Field()
-	public birthday!: Date;
+	@Field()
+  @IsDateString()
+	public birthday!: string;
 
 	@IsStrongPassword() // may remove
   @IsAscii()

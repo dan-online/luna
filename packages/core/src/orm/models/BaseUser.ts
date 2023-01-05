@@ -17,9 +17,9 @@ const sign = createSigner({
 
 @ObjectType()
 export class BaseUser extends Base {
-	@Field(() => Date)
-  @prop({ default: () => new Date() })
-	public lastLogin!: Date; // Possibly change to array of last 5 logins with User Agents
+	@Field(() => String)
+  @prop({ default: () => (new Date().toISOString()) })
+	public lastLogin!: string; // Possibly change to array of last 5 logins with User Agents
 
 	@UseMiddleware(SelfGuard)
   @prop({ required: true, validate: [validateAscii, validateString, validateStrLength(3, 120)] })
@@ -37,7 +37,7 @@ export class BaseUser extends Base {
 	public lastName!: string;
 
 	@prop({ required: true, validate: [validateDate]})
-	public birthday!: Date;
+	public birthday!: string;
 
 	public getToken(this: DocumentType<UserSchema>): string {
 		return sign({ user: this._id });

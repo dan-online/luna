@@ -4,10 +4,10 @@ import type { UserSchema } from "../../orm";
 import type { Context, DocType } from "../../utils/dev/context";
 
 export const SelfGuard: MiddlewareFn<Context> = async ({ context, root }, next) => {
-	const { user } = context;
 	const typedRoot = root as DocType<UserSchema>;
 
-	if (user) {
+	if (context?.user) {
+		const { user } = context;
 		if (typedRoot._id.equals(user._id)) {
 			return next();
 		}

@@ -1,4 +1,4 @@
-import { isAscii, isDate, isEmail, isString, isStrongPassword, isURL, maxLength, minLength } from "class-validator";
+import { isAscii, isDateString, isEmail, isString, isStrongPassword, isURL, maxLength, minLength } from "class-validator";
 import { usernameRegex } from "./regex";
 
 export const validateString = {
@@ -17,7 +17,7 @@ export const validateEmail = {
 };
 
 export const validateDate = {
-	validator: isDate,
+	validator: (value: string) => isDateString(value),
 	message: "value must be a valid date",
 };
 

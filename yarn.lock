@@ -1872,7 +1872,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-tools/schema@npm:^9.0.0":
+"@graphql-tools/schema@npm:^9.0.0, @graphql-tools/schema@npm:^9.0.12":
   version: 9.0.12
   resolution: "@graphql-tools/schema@npm:9.0.12"
   dependencies:
@@ -2286,6 +2286,7 @@ __metadata:
     "@apollo/utils.keyvadapter": ^2.0.0
     "@as-integrations/fastify": ^1.2.0
     "@fastify/one-line-logger": ^1.1.1
+    "@graphql-tools/schema": ^9.0.12
     "@keyv/redis": ^2.5.4
     "@swc/core": ^1.3.24
     "@swc/jest": ^0.2.24
@@ -2293,6 +2294,7 @@ __metadata:
     "@types/bcrypt": ^5.0.0
     "@types/jest": ^29.2.5
     "@types/node": ^18.11.18
+    "@types/ws": ^8.5.4
     bcrypt: ^5.1.0
     class-validator: ^0.14.0
     env-schema: ^5.2.0
@@ -2302,6 +2304,8 @@ __metadata:
     graphql: ^16.6.0
     graphql-middleware: ^6.1.33
     graphql-rate-limit: ^3.3.0
+    graphql-redis-subscriptions: ^2.6.0
+    graphql-ws: ^5.11.2
     ioredis: ^5.2.4
     jest: ^29.3.1
     keyv: ^4.5.2
@@ -2309,6 +2313,7 @@ __metadata:
     pino-pretty: ^9.1.1
     reflect-metadata: ^0.1.13
     type-graphql: 2.0.0-beta.1
+    ws: ^8.11.0
   languageName: unknown
   linkType: soft
 
@@ -2972,6 +2977,15 @@ __metadata:
     "@types/node": "*"
     "@types/webidl-conversions": "*"
   checksum: 5dc5afe078dfa1a8a266745586fa3db9baa8ce7cc904789211d1dca1d34d7f3dd17d0b7423c36bc9beab9d98aa99338f1fc60798c0af6cbb8356f20e20d9f243
+  languageName: node
+  linkType: hard
+
+"@types/ws@npm:^8.5.4":
+  version: 8.5.4
+  resolution: "@types/ws@npm:8.5.4"
+  dependencies:
+    "@types/node": "*"
+  checksum: fefbad20d211929bb996285c4e6f699b12192548afedbe4930ab4384f8a94577c9cd421acaad163cacd36b88649509970a05a0b8f20615b30c501ed5269038d1
   languageName: node
   linkType: hard
 
@@ -5206,6 +5220,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"graphql-redis-subscriptions@npm:^2.6.0":
+  version: 2.6.0
+  resolution: "graphql-redis-subscriptions@npm:2.6.0"
+  dependencies:
+    ioredis: ^5.2.4
+  peerDependencies:
+    graphql-subscriptions: ^1.0.0 || ^2.0.0
+  dependenciesMeta:
+    ioredis:
+      optional: true
+  checksum: 56a73c5f038774c7387a9c64e84563fb928285ffa58ac4bd11f6116c2168cb076c8f8559521135ffa2e775f941b1c52cd12ec06fdf0c13fc95600d67ba6a79b3
+  languageName: node
+  linkType: hard
+
 "graphql-shield@npm:^7.5.0":
   version: 7.6.5
   resolution: "graphql-shield@npm:7.6.5"
@@ -5229,6 +5257,15 @@ __metadata:
   peerDependencies:
     graphql: ^15.7.2 || ^16.0.0
   checksum: 4735ef86462967bca2f549c5e5e30ca63fb6ddde19a81d8601f38fb12f8bda2b5f1203b33df8fd8d1154ffa3eadc2820d407e64b8fda73e319559256c508af21
+  languageName: node
+  linkType: hard
+
+"graphql-ws@npm:^5.11.2":
+  version: 5.11.2
+  resolution: "graphql-ws@npm:5.11.2"
+  peerDependencies:
+    graphql: ">=0.11 <=16"
+  checksum: 2c94b06c1919217dc15a0556474673de7aabcc7179a2982a87ded51856c105e4f4ee6d54a6c135a0a7f55d85a5997a6a15cff514959258885814adec6a61ff00
   languageName: node
   linkType: hard
 
@@ -9098,6 +9135,21 @@ __metadata:
     imurmurhash: ^0.1.4
     signal-exit: ^3.0.7
   checksum: 5da60bd4eeeb935eec97ead3df6e28e5917a6bd317478e4a85a5285e8480b8ed96032bbcc6ecd07b236142a24f3ca871c924ec4a6575e623ec1b11bf8c1c253c
+  languageName: node
+  linkType: hard
+
+"ws@npm:^8.11.0":
+  version: 8.11.0
+  resolution: "ws@npm:8.11.0"
+  peerDependencies:
+    bufferutil: ^4.0.1
+    utf-8-validate: ^5.0.2
+  peerDependenciesMeta:
+    bufferutil:
+      optional: true
+    utf-8-validate:
+      optional: true
+  checksum: 316b33aba32f317cd217df66dbfc5b281a2f09ff36815de222bc859e3424d83766d9eb2bd4d667de658b6ab7be151f258318fb1da812416b30be13103e5b5c67
   languageName: node
   linkType: hard
 

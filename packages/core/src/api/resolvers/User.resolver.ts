@@ -18,9 +18,16 @@ export class UserResolver {
 			firstName: userInput.firstName,
 			middleName: userInput.middleName,
 			lastName: userInput.lastName,
-			birthday: userInput.birthday,
+			birthday: new Date(userInput.birthday).toISOString(),
 			username: userInput.username,
 		});
+
+		// if (newUser.birthday === "Invalid Date")
+		// 	throw new GraphQLError("Invalid birthday", {
+		// 		extensions: {
+		// 			code: "BAD_REQUEST",
+		// 		},
+		// 	});
 
 		await newUser.hashPassword(userInput.password);
 
@@ -55,7 +62,7 @@ export class UserResolver {
 			});
 		}
 
-		foundUser.lastLogin = new Date();
+		foundUser.lastLogin = new Date().toISOString();
 
 		await foundUser.save();
 
