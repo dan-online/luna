@@ -109,7 +109,7 @@ jobs:
           restore-keys: |
             turbo-${{ github.job }}-${{ github.ref_name }}-
       - name: Start MongoDB
-        uses: supercharge/mongodb-github-action@1.8.0
+        uses: supercharge/mongodb-github-action@v1.9.0
         with:
           mongodb-version: '6.0'
       - name: Start Redis
