@@ -1,4 +1,4 @@
-import { getModelForClass, modelOptions, prop, Ref } from "@typegoose/typegoose";
+import { getModelForClass, modelOptions, prop, type Ref } from "@typegoose/typegoose";
 import type { Types } from "mongoose";
 import dns from "node:dns/promises";
 import { Authorized, Field, ObjectType, UseMiddleware } from "type-graphql";

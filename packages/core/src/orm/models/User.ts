@@ -1,4 +1,4 @@
-import { DocumentType, getModelForClass, modelOptions, prop } from "@typegoose/typegoose";
+import { type DocumentType, getModelForClass, modelOptions, prop } from "@typegoose/typegoose";
 import { compare, genSalt, hash } from "bcrypt";
 import { Field, ObjectType } from "type-graphql";
 import { getMongo } from "../../utils/db/mongo";

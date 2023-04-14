@@ -1,4 +1,4 @@
-import Redis, { RedisOptions as Options } from "ioredis";
+import Redis, { type RedisOptions as Options } from "ioredis";
 import { addExitHandler } from "../dev/catchExit";
 import { env } from "../dev/env";
 import { log } from "../dev/log";

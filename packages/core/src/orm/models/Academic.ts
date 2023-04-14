@@ -1,4 +1,4 @@
-import { getModelForClass, modelOptions, prop, Ref } from "@typegoose/typegoose";
+import { getModelForClass, modelOptions, prop, type Ref } from "@typegoose/typegoose";
 import { IsAscii, IsEmail, IsPhoneNumber, IsString, MaxLength, MinLength } from "class-validator";
 import { Field, ObjectType } from "type-graphql";
 import { getMongo } from "../../utils/db/mongo";
