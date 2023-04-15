@@ -1535,12 +1535,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/cli@npm:^17.5.1":
-  version: 17.5.1
-  resolution: "@commitlint/cli@npm:17.5.1"
+"@commitlint/cli@npm:^17.6.1":
+  version: 17.6.1
+  resolution: "@commitlint/cli@npm:17.6.1"
   dependencies:
     "@commitlint/format": ^17.4.4
-    "@commitlint/lint": ^17.4.4
+    "@commitlint/lint": ^17.6.1
     "@commitlint/load": ^17.5.0
     "@commitlint/read": ^17.5.1
     "@commitlint/types": ^17.4.4
@@ -1551,16 +1551,16 @@ __metadata:
     yargs: ^17.0.0
   bin:
     commitlint: cli.js
-  checksum: 2bdd26b3215796dccb16b0d7459d3b0db7f6324800aa73b97a8cdf79b77f3691d85ee88f37fa6cf20c97ac664f31dcb6ad7aef1da3c3b32d7bb12f18d49a37f2
+  checksum: ec559e1f529c8bdc680d71527d2eb591dc7d264fcc8a70cf7ee12d5b833c385374ae41943f7a8e8346423c51f8900dded5041b6e719586295573882e366c41ba
   languageName: node
   linkType: hard
 
-"@commitlint/config-conventional@npm:^17.4.4":
-  version: 17.4.4
-  resolution: "@commitlint/config-conventional@npm:17.4.4"
+"@commitlint/config-conventional@npm:^17.6.1":
+  version: 17.6.1
+  resolution: "@commitlint/config-conventional@npm:17.6.1"
   dependencies:
     conventional-changelog-conventionalcommits: ^5.0.0
-  checksum: 679d92509fe6e53ee0cc4202f8069d88360c4f9dbd7ab74114bb28278a196da517ef711dfe69893033a66e54ffc29e8df2ccf63cfd746a89c82a053949473c4b
+  checksum: a854bae11f76b22e188af2fabe4048b5054f56b7f270e6364ab1ed807670fa38192e1a2628d626a9b759785f64874a0b33b560080b34208f69f401ef70d91562
   languageName: node
   linkType: hard
 
@@ -1615,15 +1615,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/lint@npm:^17.4.4":
-  version: 17.4.4
-  resolution: "@commitlint/lint@npm:17.4.4"
+"@commitlint/lint@npm:^17.6.1":
+  version: 17.6.1
+  resolution: "@commitlint/lint@npm:17.6.1"
   dependencies:
     "@commitlint/is-ignored": ^17.4.4
     "@commitlint/parse": ^17.4.4
-    "@commitlint/rules": ^17.4.4
+    "@commitlint/rules": ^17.6.1
     "@commitlint/types": ^17.4.4
-  checksum: bf04a9f9a1435e0d3cd03c58b6bf924613d0278b66b0a5d0e18eb96c7af9eeb02871e739a4d7d9312b2b4178f6f8ae9a49ba74382b4e28f623e1bf0af7067946
+  checksum: 990f6940fe277f252087e1d11d1042cfc034fa66b6355d451a0d7d8a24a0f0c381fd88f03556edb9a187c19e6d2a22a575b10c8d6db2f8342578c06396f10285
   languageName: node
   linkType: hard
 
@@ -1694,16 +1694,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/rules@npm:^17.4.4":
-  version: 17.4.4
-  resolution: "@commitlint/rules@npm:17.4.4"
+"@commitlint/rules@npm:^17.6.1":
+  version: 17.6.1
+  resolution: "@commitlint/rules@npm:17.6.1"
   dependencies:
     "@commitlint/ensure": ^17.4.4
     "@commitlint/message": ^17.4.2
     "@commitlint/to-lines": ^17.4.0
     "@commitlint/types": ^17.4.4
     execa: ^5.0.0
-  checksum: f36525f6e234df6a17d47457b733a1fc10e3e01db1aa6fb45b18cbaf74b7915f634ab65f73d2412787137c366046f8264126c2f21ad9023ac6b68ec8b1cee8f4
+  checksum: e00b453e8a66eee6a335223a67cb328943133c54a9b416a7700857a917ea5ab3a6394c6c37e6123a8244bc2625e765c0f7182b7dfc2d4dee94577bb300d6d3a0
   languageName: node
   linkType: hard
 
@@ -2461,8 +2461,8 @@ __metadata:
     "@fastify/one-line-logger": ^1.1.1
     "@graphql-tools/schema": ^9.0.12
     "@keyv/redis": ^2.5.4
-    "@swc/core": ^1.3.46
-    "@swc/jest": ^0.2.24
+    "@swc/core": ^1.3.50
+    "@swc/jest": ^0.2.26
     "@typegoose/typegoose": ^10.0.0
     "@types/bcrypt": ^5.0.0
     "@types/jest": ^29.5.0
@@ -2713,90 +2713,90 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@swc/core-darwin-arm64@npm:1.3.46":
-  version: 1.3.46
-  resolution: "@swc/core-darwin-arm64@npm:1.3.46"
+"@swc/core-darwin-arm64@npm:1.3.50":
+  version: 1.3.50
+  resolution: "@swc/core-darwin-arm64@npm:1.3.50"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@swc/core-darwin-x64@npm:1.3.46":
-  version: 1.3.46
-  resolution: "@swc/core-darwin-x64@npm:1.3.46"
+"@swc/core-darwin-x64@npm:1.3.50":
+  version: 1.3.50
+  resolution: "@swc/core-darwin-x64@npm:1.3.50"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm-gnueabihf@npm:1.3.46":
-  version: 1.3.46
-  resolution: "@swc/core-linux-arm-gnueabihf@npm:1.3.46"
+"@swc/core-linux-arm-gnueabihf@npm:1.3.50":
+  version: 1.3.50
+  resolution: "@swc/core-linux-arm-gnueabihf@npm:1.3.50"
   conditions: os=linux & cpu=arm
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm64-gnu@npm:1.3.46":
-  version: 1.3.46
-  resolution: "@swc/core-linux-arm64-gnu@npm:1.3.46"
+"@swc/core-linux-arm64-gnu@npm:1.3.50":
+  version: 1.3.50
+  resolution: "@swc/core-linux-arm64-gnu@npm:1.3.50"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm64-musl@npm:1.3.46":
-  version: 1.3.46
-  resolution: "@swc/core-linux-arm64-musl@npm:1.3.46"
+"@swc/core-linux-arm64-musl@npm:1.3.50":
+  version: 1.3.50
+  resolution: "@swc/core-linux-arm64-musl@npm:1.3.50"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@swc/core-linux-x64-gnu@npm:1.3.46":
-  version: 1.3.46
-  resolution: "@swc/core-linux-x64-gnu@npm:1.3.46"
+"@swc/core-linux-x64-gnu@npm:1.3.50":
+  version: 1.3.50
+  resolution: "@swc/core-linux-x64-gnu@npm:1.3.50"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@swc/core-linux-x64-musl@npm:1.3.46":
-  version: 1.3.46
-  resolution: "@swc/core-linux-x64-musl@npm:1.3.46"
+"@swc/core-linux-x64-musl@npm:1.3.50":
+  version: 1.3.50
+  resolution: "@swc/core-linux-x64-musl@npm:1.3.50"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@swc/core-win32-arm64-msvc@npm:1.3.46":
-  version: 1.3.46
-  resolution: "@swc/core-win32-arm64-msvc@npm:1.3.46"
+"@swc/core-win32-arm64-msvc@npm:1.3.50":
+  version: 1.3.50
+  resolution: "@swc/core-win32-arm64-msvc@npm:1.3.50"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@swc/core-win32-ia32-msvc@npm:1.3.46":
-  version: 1.3.46
-  resolution: "@swc/core-win32-ia32-msvc@npm:1.3.46"
+"@swc/core-win32-ia32-msvc@npm:1.3.50":
+  version: 1.3.50
+  resolution: "@swc/core-win32-ia32-msvc@npm:1.3.50"
   conditions: os=win32 & cpu=ia32
   languageName: node
   linkType: hard
 
-"@swc/core-win32-x64-msvc@npm:1.3.46":
-  version: 1.3.46
-  resolution: "@swc/core-win32-x64-msvc@npm:1.3.46"
+"@swc/core-win32-x64-msvc@npm:1.3.50":
+  version: 1.3.50
+  resolution: "@swc/core-win32-x64-msvc@npm:1.3.50"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"@swc/core@npm:^1.3.46":
-  version: 1.3.46
-  resolution: "@swc/core@npm:1.3.46"
+"@swc/core@npm:^1.3.50":
+  version: 1.3.50
+  resolution: "@swc/core@npm:1.3.50"
   dependencies:
-    "@swc/core-darwin-arm64": 1.3.46
-    "@swc/core-darwin-x64": 1.3.46
-    "@swc/core-linux-arm-gnueabihf": 1.3.46
-    "@swc/core-linux-arm64-gnu": 1.3.46
-    "@swc/core-linux-arm64-musl": 1.3.46
-    "@swc/core-linux-x64-gnu": 1.3.46
-    "@swc/core-linux-x64-musl": 1.3.46
-    "@swc/core-win32-arm64-msvc": 1.3.46
-    "@swc/core-win32-ia32-msvc": 1.3.46
-    "@swc/core-win32-x64-msvc": 1.3.46
+    "@swc/core-darwin-arm64": 1.3.50
+    "@swc/core-darwin-x64": 1.3.50
+    "@swc/core-linux-arm-gnueabihf": 1.3.50
+    "@swc/core-linux-arm64-gnu": 1.3.50
+    "@swc/core-linux-arm64-musl": 1.3.50
+    "@swc/core-linux-x64-gnu": 1.3.50
+    "@swc/core-linux-x64-musl": 1.3.50
+    "@swc/core-win32-arm64-msvc": 1.3.50
+    "@swc/core-win32-ia32-msvc": 1.3.50
+    "@swc/core-win32-x64-msvc": 1.3.50
   peerDependencies:
     "@swc/helpers": ^0.5.0
   dependenciesMeta:
@@ -2820,19 +2820,22 @@ __metadata:
       optional: true
     "@swc/core-win32-x64-msvc":
       optional: true
-  checksum: bd1773bf9e7940b540d4f7a36bf109594562fcca338ec60d5a95bd1bc9fc2e3e632351c3c9cf803f6947bf7ebc200e5260d034c49db8d28689d96d031e2836b1
+  peerDependenciesMeta:
+    "@swc/helpers":
+      optional: true
+  checksum: 63364c0bf6f395a57b576c4f7c5f79542a7c018c7bcc121e1bccdb157ca3ead97ee30920cf5ec6e93b0bd58e0145cb388721d7862ede867927137a437b4ef21a
   languageName: node
   linkType: hard
 
-"@swc/jest@npm:^0.2.24":
-  version: 0.2.24
-  resolution: "@swc/jest@npm:0.2.24"
+"@swc/jest@npm:^0.2.26":
+  version: 0.2.26
+  resolution: "@swc/jest@npm:0.2.26"
   dependencies:
     "@jest/create-cache-key-function": ^27.4.2
     jsonc-parser: ^3.2.0
   peerDependencies:
     "@swc/core": "*"
-  checksum: 3558213098970cc2882b1f2d1299e78ccea2e18e1e4a4c1820bb669b969ced648eacb14eb78b0bc6fe66e4a60816a7ad7a72c5048ece8382647b8ceac82b708a
+  checksum: 771821ed08cf168ca0b6307dee7689253d0af0685acd08408ac431860a7c42ace892db2cb6bb6dcfe297edbdce0f2e22d44ed4ed72d1c621be9e841cffd408a0
   languageName: node
   linkType: hard
 
@@ -8089,17 +8092,17 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root@workspace:."
   dependencies:
-    "@commitlint/cli": ^17.5.1
-    "@commitlint/config-conventional": ^17.4.4
+    "@commitlint/cli": ^17.6.1
+    "@commitlint/config-conventional": ^17.6.1
     "@sapphire/ts-config": ^4.0.0
-    "@swc/core": ^1.3.46
+    "@swc/core": ^1.3.50
     "@types/node": ^18.15.11
     husky: ^8.0.3
     nodemon: ^2.0.22
     rome: ^11.0.0
     tslib: ^2.5.0
     tsup: ^6.7.0
-    turbo: ^1.8.8
+    turbo: ^1.9.1
     typescript: ^5.0.4
   languageName: unknown
   linkType: soft
@@ -8902,58 +8905,58 @@ __metadata:
   languageName: node
   linkType: hard
 
-"turbo-darwin-64@npm:1.8.8":
-  version: 1.8.8
-  resolution: "turbo-darwin-64@npm:1.8.8"
+"turbo-darwin-64@npm:1.9.1":
+  version: 1.9.1
+  resolution: "turbo-darwin-64@npm:1.9.1"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-darwin-arm64@npm:1.8.8":
-  version: 1.8.8
-  resolution: "turbo-darwin-arm64@npm:1.8.8"
+"turbo-darwin-arm64@npm:1.9.1":
+  version: 1.9.1
+  resolution: "turbo-darwin-arm64@npm:1.9.1"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo-linux-64@npm:1.8.8":
-  version: 1.8.8
-  resolution: "turbo-linux-64@npm:1.8.8"
+"turbo-linux-64@npm:1.9.1":
+  version: 1.9.1
+  resolution: "turbo-linux-64@npm:1.9.1"
   conditions: os=linux & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-linux-arm64@npm:1.8.8":
-  version: 1.8.8
-  resolution: "turbo-linux-arm64@npm:1.8.8"
+"turbo-linux-arm64@npm:1.9.1":
+  version: 1.9.1
+  resolution: "turbo-linux-arm64@npm:1.9.1"
   conditions: os=linux & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo-windows-64@npm:1.8.8":
-  version: 1.8.8
-  resolution: "turbo-windows-64@npm:1.8.8"
+"turbo-windows-64@npm:1.9.1":
+  version: 1.9.1
+  resolution: "turbo-windows-64@npm:1.9.1"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-windows-arm64@npm:1.8.8":
-  version: 1.8.8
-  resolution: "turbo-windows-arm64@npm:1.8.8"
+"turbo-windows-arm64@npm:1.9.1":
+  version: 1.9.1
+  resolution: "turbo-windows-arm64@npm:1.9.1"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo@npm:^1.8.8":
-  version: 1.8.8
-  resolution: "turbo@npm:1.8.8"
+"turbo@npm:^1.9.1":
+  version: 1.9.1
+  resolution: "turbo@npm:1.9.1"
   dependencies:
-    turbo-darwin-64: 1.8.8
-    turbo-darwin-arm64: 1.8.8
-    turbo-linux-64: 1.8.8
-    turbo-linux-arm64: 1.8.8
-    turbo-windows-64: 1.8.8
-    turbo-windows-arm64: 1.8.8
+    turbo-darwin-64: 1.9.1
+    turbo-darwin-arm64: 1.9.1
+    turbo-linux-64: 1.9.1
+    turbo-linux-arm64: 1.9.1
+    turbo-windows-64: 1.9.1
+    turbo-windows-arm64: 1.9.1
   dependenciesMeta:
     turbo-darwin-64:
       optional: true
@@ -8969,7 +8972,7 @@ __metadata:
       optional: true
   bin:
     turbo: bin/turbo
-  checksum: 6dcfd7b38e2dd9abe279bda54e474be3463df51428f0b91c5e0539e9fd8c9b1efec562df629946f5ca92ede05f0aba35027481065d054249334e11692085ddb7
+  checksum: dd5413088d9c39ccc9823e12abdb264e5cd486aa7994d7178da9e7270bb7651adb306eff607a561eae4bed5508b2dd5ce2393dbef053216443f5470f670a6ef4
   languageName: node
   linkType: hard
 
