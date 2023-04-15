@@ -19,7 +19,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.5.1",
     "@commitlint/config-conventional": "^17.4.4",
-    "@sapphire/ts-config": "^3.3.4",
+    "@sapphire/ts-config": "^4.0.0",
     "@swc/core": "^1.3.46",
     "@types/node": "^18.15.11",
     "husky": "^8.0.3",
