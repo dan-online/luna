@@ -1,4 +1,4 @@
-import { GraphQLError, GraphQLResolveInfo } from "graphql";
+import { GraphQLError, type GraphQLResolveInfo } from "graphql";
 import { Arg, Authorized, Ctx, Info, Mutation, Query, Resolver } from "type-graphql";
 import { SchoolModel, SchoolSchema, UserSchema } from "../../orm";
 import { autoPopulate } from "../../utils/db/autoPopulate";
