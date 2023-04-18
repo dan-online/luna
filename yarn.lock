@@ -139,18 +139,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@apollo/utils.keyvadapter@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "@apollo/utils.keyvadapter@npm:2.0.0"
+"@apollo/utils.keyvadapter@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@apollo/utils.keyvadapter@npm:3.0.0"
   dependencies:
-    "@apollo/utils.keyvaluecache": ^2.0.0
+    "@apollo/utils.keyvaluecache": ^3.0.0
     dataloader: ^2.1.0
     keyv: ^4.4.0
-  checksum: 7d0f29f2b6324d80619d8ba756014ffbdf72ee842f8b33e72503289858e78efdf1b0fd3ea6c32f61e4fc43f2f28dbd9d94dca96865e1e030a38fb4a0bc5322af
+  checksum: 42e8bc36e5093dd564c7672dfcf3249ad019f6e9da1f46266a5a6255d15f51c542f26782ce4466162d5ae95a2126e7fa3b4872d17705718faeea64764bd93062
   languageName: node
   linkType: hard
 
-"@apollo/utils.keyvaluecache@npm:^2.0.0, @apollo/utils.keyvaluecache@npm:^2.0.1, @apollo/utils.keyvaluecache@npm:^2.1.0":
+"@apollo/utils.keyvaluecache@npm:^2.0.1, @apollo/utils.keyvaluecache@npm:^2.1.0":
   version: 2.1.0
   resolution: "@apollo/utils.keyvaluecache@npm:2.1.0"
   dependencies:
@@ -160,10 +160,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@apollo/utils.keyvaluecache@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@apollo/utils.keyvaluecache@npm:3.0.0"
+  dependencies:
+    "@apollo/utils.logger": ^3.0.0
+    lru-cache: ^9.0.3
+  checksum: 4cdeefa8cb1991abc53b2f636ad26b6255516086f6dea88f0502be9c46598ffa804ab512af7aa95f6903f8496fb4c649144b18f092a60a1b11d7c8a662936125
+  languageName: node
+  linkType: hard
+
 "@apollo/utils.logger@npm:^2.0.0":
   version: 2.0.0
   resolution: "@apollo/utils.logger@npm:2.0.0"
   checksum: bfe87036382adaf1b5f05acc8e926b6316a8b37dc0c0b20ae0c2010b61085d018620203eda9cb6884e650f3d971a4dfdbc30980deedba99d219ba2abd9bd8ffa
+  languageName: node
+  linkType: hard
+
+"@apollo/utils.logger@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@apollo/utils.logger@npm:3.0.0"
+  checksum: e3bd3e55e7ff86410afa2620dd767073dcf017a8d1e5ab5484fe293a42d06c38e73b5dc5ada99dbb7b9ef2919f225214f7a7d3944a1665e72d84082837359c0b
   languageName: node
   linkType: hard
 
@@ -2456,7 +2473,7 @@ __metadata:
   resolution: "@luna/core@workspace:packages/core"
   dependencies:
     "@apollo/server": ^4.3.0
-    "@apollo/utils.keyvadapter": ^2.0.0
+    "@apollo/utils.keyvadapter": ^3.0.0
     "@as-integrations/fastify": ^1.2.0
     "@fastify/one-line-logger": ^1.1.1
     "@graphql-tools/schema": ^9.0.12
@@ -6690,6 +6707,13 @@ __metadata:
   version: 7.14.1
   resolution: "lru-cache@npm:7.14.1"
   checksum: d72c6713c6a6d86836a7a6523b3f1ac6764768cca47ec99341c3e76db06aacd4764620e5e2cda719a36848785a52a70e531822dc2b33fb071fa709683746c104
+  languageName: node
+  linkType: hard
+
+"lru-cache@npm:^9.0.3":
+  version: 9.0.3
+  resolution: "lru-cache@npm:9.0.3"
+  checksum: 218415714d44c113bc3a8d12ceca6dedf310915aa861f9e0df13df1fe6db9833e1b5f1f656e9a117ac82677ad3e499be23bff2f670f2a7c5c186d64a92596b68
   languageName: node
   linkType: hard
 
