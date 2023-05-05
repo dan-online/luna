@@ -2483,7 +2483,7 @@ __metadata:
     "@typegoose/typegoose": ^10.0.0
     "@types/bcrypt": ^5.0.0
     "@types/jest": ^29.5.1
-    "@types/node": ^18.16.3
+    "@types/node": ^18.16.4
     "@types/ws": ^8.5.4
     bcrypt: ^5.1.0
     class-validator: ^0.14.0
@@ -3104,10 +3104,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^18.16.3":
-  version: 18.16.3
-  resolution: "@types/node@npm:18.16.3"
-  checksum: 816b39d45b05ebdc6f362b630970df3f6d82f71d418a2555353522f4eeeb078fa201de5299f02c09a09faa975e43b2745fe19c263d44069f87ddf37d6c37b717
+"@types/node@npm:^18.16.4":
+  version: 18.16.4
+  resolution: "@types/node@npm:18.16.4"
+  checksum: 21d575391c88be9f3568675de59d571597cfc122efa32939ae2697c2218c6ccfb6ba0d4b5d9301905e6c4964f43add42569249b15d2e12d68b0aedaf891ec9a5
   languageName: node
   linkType: hard
 
@@ -8120,7 +8120,7 @@ __metadata:
     "@commitlint/config-conventional": ^17.6.3
     "@sapphire/ts-config": ^4.0.0
     "@swc/core": ^1.3.56
-    "@types/node": ^18.16.3
+    "@types/node": ^18.16.4
     husky: ^8.0.3
     nodemon: ^2.0.22
     rome: ^11.0.0
