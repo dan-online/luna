@@ -2488,7 +2488,7 @@ __metadata:
     bcrypt: ^5.1.0
     class-validator: ^0.14.0
     env-schema: ^5.2.0
-    fast-jwt: ^2.0.2
+    fast-jwt: ^3.1.1
     fastify: ^4.11.0
     google-auth-library: ^8.7.0
     graphql: ^16.6.0
@@ -3495,7 +3495,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"asn1.js@npm:^5.3.0":
+"asn1.js@npm:^5.4.1":
   version: 5.4.1
   resolution: "asn1.js@npm:5.4.1"
   dependencies:
@@ -4806,14 +4806,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-jwt@npm:^2.0.2":
-  version: 2.0.2
-  resolution: "fast-jwt@npm:2.0.2"
+"fast-jwt@npm:^3.1.1":
+  version: 3.1.1
+  resolution: "fast-jwt@npm:3.1.1"
   dependencies:
-    asn1.js: ^5.3.0
+    asn1.js: ^5.4.1
     ecdsa-sig-formatter: ^1.0.11
-    mnemonist: ^0.39.0
-  checksum: c6a4eacdc9217e6c23b29d05f6ac3f4247ebf81fae4043000b78dd6483a8916a970ddc28a9aa4f59cd4eeeacd62030778cb630ae38aae44e3e400d1fb13ac8dd
+    mnemonist: ^0.39.5
+  checksum: c401a39105ec2a81abf8565316c625310410a3b13dcc4286b6dd921f45319414f45fdc52df6b8a27460afddd377b038cb41b12ee42cd93d46158b396723ac6eb
   languageName: node
   linkType: hard
 
@@ -7021,7 +7021,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mnemonist@npm:^0.39.0":
+"mnemonist@npm:^0.39.5":
   version: 0.39.5
   resolution: "mnemonist@npm:0.39.5"
   dependencies:
