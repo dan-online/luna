@@ -2530,7 +2530,7 @@ __metadata:
     "@typegoose/typegoose": ^10.0.0
     "@types/bcrypt": ^5.0.0
     "@types/jest": ^29.5.2
-    "@types/node": ^18.16.16
+    "@types/node": ^18.16.17
     "@types/ws": ^8.5.5
     bcrypt: ^5.1.0
     class-validator: ^0.14.0
@@ -3151,10 +3151,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^18.16.16":
-  version: 18.16.16
-  resolution: "@types/node@npm:18.16.16"
-  checksum: 0efad726dd1e0bef71c392c708fc5d78c5b39c46b0ac5186fee74de4ccb1b2e847b3fa468da67d62812f56569da721b15bf31bdc795e6c69b56c73a45079ed2d
+"@types/node@npm:^18.16.17":
+  version: 18.16.17
+  resolution: "@types/node@npm:18.16.17"
+  checksum: 2f7e3a552d525ef4b7a2620ef5ef59b3fdfb1d8ab20627b537e090732b35c2bd103944933d347a319cc7d478b3866b0d1bc3d629ee5899ca663a4547ca078cee
   languageName: node
   linkType: hard
 
@@ -8167,13 +8167,13 @@ __metadata:
     "@commitlint/config-conventional": ^17.6.5
     "@sapphire/ts-config": ^4.0.0
     "@swc/core": ^1.3.62
-    "@types/node": ^18.16.16
+    "@types/node": ^18.16.17
     husky: ^8.0.3
     nodemon: ^2.0.22
     rome: ^11.0.0
     tslib: ^2.5.3
     tsup: ^6.7.0
-    turbo: ^1.10.2
+    turbo: ^1.10.3
     typescript: ^5.1.3
   languageName: unknown
   linkType: soft
@@ -8994,58 +8994,58 @@ __metadata:
   languageName: node
   linkType: hard
 
-"turbo-darwin-64@npm:1.10.2":
-  version: 1.10.2
-  resolution: "turbo-darwin-64@npm:1.10.2"
+"turbo-darwin-64@npm:1.10.3":
+  version: 1.10.3
+  resolution: "turbo-darwin-64@npm:1.10.3"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-darwin-arm64@npm:1.10.2":
-  version: 1.10.2
-  resolution: "turbo-darwin-arm64@npm:1.10.2"
+"turbo-darwin-arm64@npm:1.10.3":
+  version: 1.10.3
+  resolution: "turbo-darwin-arm64@npm:1.10.3"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo-linux-64@npm:1.10.2":
-  version: 1.10.2
-  resolution: "turbo-linux-64@npm:1.10.2"
+"turbo-linux-64@npm:1.10.3":
+  version: 1.10.3
+  resolution: "turbo-linux-64@npm:1.10.3"
   conditions: os=linux & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-linux-arm64@npm:1.10.2":
-  version: 1.10.2
-  resolution: "turbo-linux-arm64@npm:1.10.2"
+"turbo-linux-arm64@npm:1.10.3":
+  version: 1.10.3
+  resolution: "turbo-linux-arm64@npm:1.10.3"
   conditions: os=linux & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo-windows-64@npm:1.10.2":
-  version: 1.10.2
-  resolution: "turbo-windows-64@npm:1.10.2"
+"turbo-windows-64@npm:1.10.3":
+  version: 1.10.3
+  resolution: "turbo-windows-64@npm:1.10.3"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-windows-arm64@npm:1.10.2":
-  version: 1.10.2
-  resolution: "turbo-windows-arm64@npm:1.10.2"
+"turbo-windows-arm64@npm:1.10.3":
+  version: 1.10.3
+  resolution: "turbo-windows-arm64@npm:1.10.3"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo@npm:^1.10.2":
-  version: 1.10.2
-  resolution: "turbo@npm:1.10.2"
+"turbo@npm:^1.10.3":
+  version: 1.10.3
+  resolution: "turbo@npm:1.10.3"
   dependencies:
-    turbo-darwin-64: 1.10.2
-    turbo-darwin-arm64: 1.10.2
-    turbo-linux-64: 1.10.2
-    turbo-linux-arm64: 1.10.2
-    turbo-windows-64: 1.10.2
-    turbo-windows-arm64: 1.10.2
+    turbo-darwin-64: 1.10.3
+    turbo-darwin-arm64: 1.10.3
+    turbo-linux-64: 1.10.3
+    turbo-linux-arm64: 1.10.3
+    turbo-windows-64: 1.10.3
+    turbo-windows-arm64: 1.10.3
   dependenciesMeta:
     turbo-darwin-64:
       optional: true
@@ -9061,7 +9061,7 @@ __metadata:
       optional: true
   bin:
     turbo: bin/turbo
-  checksum: ec40ddbc6914aa04562a924df9e1a344d027c4bd32a2185b24df486c716726c90109fa22608c85eea05f2e9fec3145a0e893e16d2848e8f9eff5515ee54cd2a7
+  checksum: 38a11c8f1548408e6c8576d13ed78e2b0a232577e64a1cb6623faa39437cdc28012eb388f77d53af1b1853c521000aae0467cb5d91aa169b0883be976edfbdb1
   languageName: node
   linkType: hard
 
