@@ -21,7 +21,7 @@
     "@commitlint/config-conventional": "^18.0.0",
     "@sapphire/ts-config": "^5.0.0",
     "@swc/core": "^1.3.62",
-    "@types/node": "^18.16.17",
+    "@types/node": "^20.8.9",
     "husky": "^8.0.3",
     "nodemon": "^3.0.0",
     "@biomejs/biome": "^1.0.0",
