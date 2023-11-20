@@ -1703,6 +1703,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@lukeed/ms@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "@lukeed/ms@npm:2.0.1"
+  checksum: 06a5c9985194fb5e5e3ea60766589c808efee61661d85f869f92432bfb2fa5e5326b56b99df4c5d900bf4e9ce861791db058cae89a1d02a6be0638d9e804644a
+  languageName: node
+  linkType: hard
+
 "@luna/core@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "@luna/core@workspace:packages/core"
@@ -4071,13 +4078,14 @@ __metadata:
   linkType: hard
 
 "fast-jwt@npm:^3.1.1":
-  version: 3.1.1
-  resolution: "fast-jwt@npm:3.1.1"
+  version: 3.3.2
+  resolution: "fast-jwt@npm:3.3.2"
   dependencies:
+    "@lukeed/ms": "npm:^2.0.1"
     asn1.js: "npm:^5.4.1"
     ecdsa-sig-formatter: "npm:^1.0.11"
     mnemonist: "npm:^0.39.5"
-  checksum: 8/c401a39105ec2a81abf8565316c625310410a3b13dcc4286b6dd921f45319414f45fdc52df6b8a27460afddd377b038cb41b12ee42cd93d46158b396723ac6eb
+  checksum: 8824918ae04b107d9776302c9f70869dac0bab12a0a3ac20886d48673653d33b164af38e6c4e8f5a2015fc51686e838c8a38395a5aaf8b05ca12b3b712ce2046
   languageName: node
   linkType: hard
 
