@@ -1722,7 +1722,7 @@ __metadata:
     "@keyv/redis": "npm:^2.5.4"
     "@swc/core": "npm:^1.3.62"
     "@swc/jest": "npm:^0.2.26"
-    "@typegoose/typegoose": "npm:^10.0.0"
+    "@typegoose/typegoose": "npm:^11.7.1"
     "@types/bcrypt": "npm:^5.0.0"
     "@types/jest": "npm:^29.5.2"
     "@types/node": "npm:^20.8.9"
@@ -2184,18 +2184,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typegoose/typegoose@npm:^10.0.0":
-  version: 10.0.0
-  resolution: "@typegoose/typegoose@npm:10.0.0"
+"@typegoose/typegoose@npm:^11.7.1":
+  version: 11.7.1
+  resolution: "@typegoose/typegoose@npm:11.7.1"
   dependencies:
     lodash: "npm:^4.17.20"
     loglevel: "npm:^1.8.1"
     reflect-metadata: "npm:^0.1.13"
-    semver: "npm:^7.3.8"
-    tslib: "npm:^2.4.1"
+    semver: "npm:^7.5.4"
+    tslib: "npm:^2.6.2"
   peerDependencies:
-    mongoose: ~6.8.0
-  checksum: 8/317aadd56d022ab78baccc101579fa48fa275c65a0ebf01fba81742fa0cf4148a35d4548fb2367d0c9b6db042f9a3720bb311cfd771dda70707141b051d7dba8
+    mongoose: ~7.6.3
+  checksum: 98dedf3e23314ed2eabd99f8d404f7011a245f23924232da3bb87954814eac07c6b55c6b1a3bd0e6b6416191bf4f515a160f0c3c80d8f3c042b8357748c70861
   languageName: node
   linkType: hard
 
@@ -7456,7 +7456,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:7.5.4, semver@npm:^7.5.3":
+"semver@npm:7.5.4, semver@npm:^7.5.3, semver@npm:^7.5.4":
   version: 7.5.4
   resolution: "semver@npm:7.5.4"
   dependencies:
@@ -7476,7 +7476,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^7.3.4, semver@npm:^7.3.5, semver@npm:^7.3.7, semver@npm:^7.3.8":
+"semver@npm:^7.3.4, semver@npm:^7.3.5, semver@npm:^7.3.7":
   version: 7.3.8
   resolution: "semver@npm:7.3.8"
   dependencies:
@@ -8114,7 +8114,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.0.3, tslib@npm:^2.4.0, tslib@npm:^2.4.1, tslib@npm:~2.4.0":
+"tslib@npm:^2.0.3, tslib@npm:^2.4.0, tslib@npm:~2.4.0":
   version: 2.4.1
   resolution: "tslib@npm:2.4.1"
   checksum: 8/19480d6e0313292bd6505d4efe096a6b31c70e21cf08b5febf4da62e95c265c8f571f7b36fcc3d1a17e068032f59c269fab3459d6cd3ed6949eafecf64315fca
