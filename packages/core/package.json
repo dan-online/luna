@@ -20,7 +20,7 @@
     "@fastify/one-line-logger": "^1.1.1",
     "@graphql-tools/schema": "^10.0.0",
     "@keyv/redis": "^2.5.4",
-    "@typegoose/typegoose": "^10.0.0",
+    "@typegoose/typegoose": "^12.0.0",
     "bcrypt": "^5.1.0",
     "class-validator": "^0.14.0",
     "env-schema": "^5.2.0",
