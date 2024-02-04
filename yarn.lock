@@ -1706,7 +1706,7 @@ __metadata:
 "@lukeed/ms@npm:^2.0.1":
   version: 2.0.1
   resolution: "@lukeed/ms@npm:2.0.1"
-  checksum: 06a5c9985194fb5e5e3ea60766589c808efee61661d85f869f92432bfb2fa5e5326b56b99df4c5d900bf4e9ce861791db058cae89a1d02a6be0638d9e804644a
+  checksum: 10c0/06a5c9985194fb5e5e3ea60766589c808efee61661d85f869f92432bfb2fa5e5326b56b99df4c5d900bf4e9ce861791db058cae89a1d02a6be0638d9e804644a
   languageName: node
   linkType: hard
 
@@ -2195,7 +2195,7 @@ __metadata:
     tslib: "npm:^2.6.2"
   peerDependencies:
     mongoose: ~8.0.1
-  checksum: 08e62a9017c1df112d86eedaf552cf7f2ec22075a5bd83558b10a5a02fe7c5c12d08cc6fa9b62c8012b10fdce163fac0e1dc85e91616020e8555b9db52345c4b
+  checksum: 10c0/08e62a9017c1df112d86eedaf552cf7f2ec22075a5bd83558b10a5a02fe7c5c12d08cc6fa9b62c8012b10fdce163fac0e1dc85e91616020e8555b9db52345c4b
   languageName: node
   linkType: hard
 
@@ -3863,7 +3863,7 @@ __metadata:
       optional: true
   bin:
     esbuild: bin/esbuild
-  checksum: bffa321c68373d2c99f5e0af58718900ca04b67a48164abf71cd3da97ee98c037f6d7abc9bd1b589e43ccda82f9ba3a5e54a6b757cf0561b861135f6d1548832
+  checksum: 10c0/bffa321c68373d2c99f5e0af58718900ca04b67a48164abf71cd3da97ee98c037f6d7abc9bd1b589e43ccda82f9ba3a5e54a6b757cf0561b861135f6d1548832
   languageName: node
   linkType: hard
 
@@ -4085,7 +4085,7 @@ __metadata:
     asn1.js: "npm:^5.4.1"
     ecdsa-sig-formatter: "npm:^1.0.11"
     mnemonist: "npm:^0.39.5"
-  checksum: 8824918ae04b107d9776302c9f70869dac0bab12a0a3ac20886d48673653d33b164af38e6c4e8f5a2015fc51686e838c8a38395a5aaf8b05ca12b3b712ce2046
+  checksum: 10c0/8824918ae04b107d9776302c9f70869dac0bab12a0a3ac20886d48673653d33b164af38e6c4e8f5a2015fc51686e838c8a38395a5aaf8b05ca12b3b712ce2046
   languageName: node
   linkType: hard
 
@@ -4753,7 +4753,7 @@ __metadata:
   resolution: "husky@npm:9.0.6"
   bin:
     husky: bin.js
-  checksum: 1ef034899dcdc35e5bf5436e1e02f8a7177dbb8a10dd91b77456d7fe110c204d8d4a7d53180e0651b87e35f39d7e0e95a53b4b7c334f68aefbc0d93bce4b54f8
+  checksum: 10c0/1ef034899dcdc35e5bf5436e1e02f8a7177dbb8a10dd91b77456d7fe110c204d8d4a7d53180e0651b87e35f39d7e0e95a53b4b7c334f68aefbc0d93bce4b54f8
   languageName: node
   linkType: hard
 
@@ -7378,7 +7378,7 @@ __metadata:
       optional: true
   bin:
     rollup: dist/bin/rollup
-  checksum: baed6dade46ea34d051eb27fc33626638b1386389887d0ff42e922d9c31f1befc2d56b96024112ddd3d63bd9bdbcafa461982d857689752f286f5968669e2924
+  checksum: 10c0/baed6dade46ea34d051eb27fc33626638b1386389887d0ff42e922d9c31f1befc2d56b96024112ddd3d63bd9bdbcafa461982d857689752f286f5968669e2924
   languageName: node
   linkType: hard
 
@@ -8184,7 +8184,7 @@ __metadata:
   bin:
     tsup: dist/cli-default.js
     tsup-node: dist/cli-node.js
-  checksum: a282cdb1dc9401d9e7b63e325c3a7dfe59c838b31c9c399363eac76232ac41fc98bffe75b1bdf9c7cb6c73606f03b3aceec890808dc251191c2a2f0ee862066a
+  checksum: 10c0/a282cdb1dc9401d9e7b63e325c3a7dfe59c838b31c9c399363eac76232ac41fc98bffe75b1bdf9c7cb6c73606f03b3aceec890808dc251191c2a2f0ee862066a
   languageName: node
   linkType: hard
 
