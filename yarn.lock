@@ -1730,7 +1730,7 @@ __metadata:
     bcrypt: "npm:^5.1.0"
     class-validator: "npm:^0.14.0"
     env-schema: "npm:^5.2.0"
-    fast-jwt: "npm:^3.1.1"
+    fast-jwt: "npm:^4.0.0"
     fastify: "npm:^4.11.0"
     google-auth-library: "npm:^9.0.0"
     graphql: "npm:^16.6.0"
@@ -4077,15 +4077,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-jwt@npm:^3.1.1":
-  version: 3.3.2
-  resolution: "fast-jwt@npm:3.3.2"
+"fast-jwt@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "fast-jwt@npm:4.0.0"
   dependencies:
     "@lukeed/ms": "npm:^2.0.1"
     asn1.js: "npm:^5.4.1"
     ecdsa-sig-formatter: "npm:^1.0.11"
     mnemonist: "npm:^0.39.5"
-  checksum: 10c0/8824918ae04b107d9776302c9f70869dac0bab12a0a3ac20886d48673653d33b164af38e6c4e8f5a2015fc51686e838c8a38395a5aaf8b05ca12b3b712ce2046
+  checksum: 10c0/415c3cec84e1ce39b3cf5955c5dedf058f6aa33f3cdead63f4a38a9a6a1d7315d693dbc5a63484a1d2e635da2063e091d1dc2296715b0666d6a7cc1f13c709e6
   languageName: node
   linkType: hard
 
