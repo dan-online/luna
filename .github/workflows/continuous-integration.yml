@@ -121,7 +121,7 @@ jobs:
       - name: Run Jest
         run: yarn test --cache-dir ./.turbo -- --coverage
       - name: Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           directory: packages/core/coverage/
