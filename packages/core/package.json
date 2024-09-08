@@ -17,7 +17,7 @@
     "@apollo/server": "^4.3.0",
     "@apollo/utils.keyvadapter": "^3.0.0",
     "@as-integrations/fastify": "^2.0.0",
-    "@fastify/one-line-logger": "^1.1.1",
+    "@fastify/one-line-logger": "^2.0.0",
     "@graphql-tools/schema": "^10.0.0",
     "@keyv/redis": "^3.0.1",
     "@typegoose/typegoose": "^12.0.0",
