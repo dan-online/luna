@@ -25,7 +25,7 @@
     "class-validator": "^0.14.0",
     "env-schema": "^6.0.0",
     "fast-jwt": "^4.0.0",
-    "fastify": "^4.11.0",
+    "fastify": "^5.0.0",
     "google-auth-library": "^9.0.0",
     "graphql": "^16.6.0",
     "graphql-middleware": "^6.1.33",
