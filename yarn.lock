@@ -139,14 +139,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@apollo/utils.keyvadapter@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@apollo/utils.keyvadapter@npm:3.0.0"
+"@apollo/utils.keyvadapter@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "@apollo/utils.keyvadapter@npm:4.0.0"
   dependencies:
-    "@apollo/utils.keyvaluecache": "npm:^3.0.0"
+    "@apollo/utils.keyvaluecache": "npm:^3.1.0"
     dataloader: "npm:^2.1.0"
-    keyv: "npm:^4.4.0"
-  checksum: 8/42e8bc36e5093dd564c7672dfcf3249ad019f6e9da1f46266a5a6255d15f51c542f26782ce4466162d5ae95a2126e7fa3b4872d17705718faeea64764bd93062
+    keyv: "npm:^5.1.0"
+  checksum: 10c0/7f5100cf2264adc50494ca90da97b740aedad60a15906b07f2f4ecbb5eb948df2ba790993568cbd4e299997caa0dd278b24a6d5dd5e23a6b871d7b8e3fa61baa
   languageName: node
   linkType: hard
 
@@ -160,13 +160,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@apollo/utils.keyvaluecache@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@apollo/utils.keyvaluecache@npm:3.0.0"
+"@apollo/utils.keyvaluecache@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "@apollo/utils.keyvaluecache@npm:3.1.0"
   dependencies:
     "@apollo/utils.logger": "npm:^3.0.0"
-    lru-cache: "npm:^9.0.3"
-  checksum: 8/4cdeefa8cb1991abc53b2f636ad26b6255516086f6dea88f0502be9c46598ffa804ab512af7aa95f6903f8496fb4c649144b18f092a60a1b11d7c8a662936125
+    lru-cache: "npm:^10.0.0"
+  checksum: 10c0/aea41af9f8df0218577ba656bfbb51b3125bf03ead2688f002106050d454c0f634bea449610d705d80926620bada4516423d3fd7381f4020655aabb1ea93109d
   languageName: node
   linkType: hard
 
@@ -1701,7 +1701,7 @@ __metadata:
   resolution: "@luna/core@workspace:packages/core"
   dependencies:
     "@apollo/server": "npm:^4.3.0"
-    "@apollo/utils.keyvadapter": "npm:^3.0.0"
+    "@apollo/utils.keyvadapter": "npm:^4.0.0"
     "@as-integrations/fastify": "npm:^2.0.0"
     "@fastify/one-line-logger": "npm:^2.0.0"
     "@graphql-tools/schema": "npm:^10.0.0"
@@ -5566,13 +5566,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"json-buffer@npm:3.0.1":
-  version: 3.0.1
-  resolution: "json-buffer@npm:3.0.1"
-  checksum: 8/9026b03edc2847eefa2e37646c579300a1f3a4586cfb62bf857832b60c852042d0d6ae55d1afb8926163fa54c2b01d83ae24705f34990348bdac6273a29d4581
-  languageName: node
-  linkType: hard
-
 "json-parse-even-better-errors@npm:^2.3.0":
   version: 2.3.1
   resolution: "json-parse-even-better-errors@npm:2.3.1"
@@ -5647,21 +5640,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"keyv@npm:^4.4.0":
-  version: 4.5.2
-  resolution: "keyv@npm:4.5.2"
-  dependencies:
-    json-buffer: "npm:3.0.1"
-  checksum: 8/13ad58303acd2261c0d4831b4658451603fd159e61daea2121fcb15feb623e75ee328cded0572da9ca76b7b3ceaf8e614f1806c6b3af5db73c9c35a345259651
-  languageName: node
-  linkType: hard
-
 "keyv@npm:^5.0.1":
   version: 5.0.1
   resolution: "keyv@npm:5.0.1"
   dependencies:
     "@keyv/serialize": "npm:*"
   checksum: 10c0/e16a4322a21e448040ea1bb6e97b9b35c7ebedf9f9fb617ad08ac82f42e98799033cec207c767f3e71f9b59738d708cfcfa45eace64ba3c6b7b9134af87a6cc8
+  languageName: node
+  linkType: hard
+
+"keyv@npm:^5.1.0":
+  version: 5.1.2
+  resolution: "keyv@npm:5.1.2"
+  dependencies:
+    "@keyv/serialize": "npm:*"
+  checksum: 10c0/0b848e2e867352db24be2c963a9ae50e883388a6d0e6aa7bdd75baae7e6d1f4e7f31403cf36b863acdac51a4b78ad959a8c8c1a025cbdc68b96c4f7fb11e8120
   languageName: node
   linkType: hard
 
@@ -5864,6 +5857,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lru-cache@npm:^10.0.0":
+  version: 10.4.3
+  resolution: "lru-cache@npm:10.4.3"
+  checksum: 10c0/ebd04fbca961e6c1d6c0af3799adcc966a1babe798f685bb84e6599266599cd95d94630b10262f5424539bc4640107e8a33aa28585374abf561d30d16f4b39fb
+  languageName: node
+  linkType: hard
+
 "lru-cache@npm:^5.1.1":
   version: 5.1.1
   resolution: "lru-cache@npm:5.1.1"
@@ -5886,13 +5886,6 @@ __metadata:
   version: 7.14.1
   resolution: "lru-cache@npm:7.14.1"
   checksum: 8/d72c6713c6a6d86836a7a6523b3f1ac6764768cca47ec99341c3e76db06aacd4764620e5e2cda719a36848785a52a70e531822dc2b33fb071fa709683746c104
-  languageName: node
-  linkType: hard
-
-"lru-cache@npm:^9.0.3":
-  version: 9.0.3
-  resolution: "lru-cache@npm:9.0.3"
-  checksum: 8/218415714d44c113bc3a8d12ceca6dedf310915aa861f9e0df13df1fe6db9833e1b5f1f656e9a117ac82677ad3e499be23bff2f670f2a7c5c186d64a92596b68
   languageName: node
   linkType: hard
 
