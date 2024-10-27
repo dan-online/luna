@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@apollo/server": "^4.3.0",
-    "@apollo/utils.keyvadapter": "^3.0.0",
+    "@apollo/utils.keyvadapter": "^4.0.0",
     "@as-integrations/fastify": "^2.0.0",
     "@fastify/one-line-logger": "^2.0.0",
     "@graphql-tools/schema": "^10.0.0",
