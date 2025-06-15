@@ -26,7 +26,7 @@
     "env-schema": "^6.0.0",
     "fast-jwt": "^6.0.0",
     "fastify": "^5.0.0",
-    "google-auth-library": "^9.0.0",
+    "google-auth-library": "^10.1.0",
     "graphql": "^16.6.0",
     "graphql-middleware": "^6.1.33",
     "graphql-rate-limit": "^3.3.0",
