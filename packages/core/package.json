@@ -14,7 +14,7 @@
     "typecheck": "tsc --noEmit -p ./src/tsconfig.json"
   },
   "dependencies": {
-    "@apollo/server": "^4.3.0",
+    "@apollo/server": "^5.0.0",
     "@apollo/utils.keyvadapter": "^4.0.0",
     "@as-integrations/fastify": "^2.0.0",
     "@fastify/one-line-logger": "^2.0.0",
