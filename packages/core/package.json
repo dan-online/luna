@@ -34,7 +34,7 @@
     "graphql-ws": "^6.0.1",
     "ioredis": "^5.2.4",
     "keyv": "^5.0.1",
-    "mongoose": "^8.0.0",
+    "mongoose": "^9.0.0",
     "reflect-metadata": "^0.1.13",
     "type-graphql": "2.0.0-beta.1",
     "ws": "^8.12.0"
