@@ -4169,14 +4169,14 @@ __metadata:
   linkType: hard
 
 "fast-jwt@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "fast-jwt@npm:6.0.0"
+  version: 6.1.0
+  resolution: "fast-jwt@npm:6.1.0"
   dependencies:
     "@lukeed/ms": "npm:^2.0.2"
     asn1.js: "npm:^5.4.1"
     ecdsa-sig-formatter: "npm:^1.0.11"
     mnemonist: "npm:^0.40.0"
-  checksum: 10c0/111a3f5e877d88134732544fb93ddcbc3060e9332b39793eb81a8ba2fc1e4f978380fe29c2031857c66c82a88878fe8bc6a1fd99135907bba792698994c70078
+  checksum: 10c0/bf5e268c209ef3ee0b321ebac643fc44facecc1811476c3899dbf611fbf044b7b3d0036036fb2c3b1a4cc9e1809c782c3c3622f0bd298da51833f5d6cd81687a
   languageName: node
   linkType: hard
 
