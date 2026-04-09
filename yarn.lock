@@ -4169,14 +4169,15 @@ __metadata:
   linkType: hard
 
 "fast-jwt@npm:^6.0.0":
-  version: 6.2.0
-  resolution: "fast-jwt@npm:6.2.0"
+  version: 6.2.1
+  resolution: "fast-jwt@npm:6.2.1"
   dependencies:
     "@lukeed/ms": "npm:^2.0.2"
     asn1.js: "npm:^5.4.1"
     ecdsa-sig-formatter: "npm:^1.0.11"
     mnemonist: "npm:^0.40.0"
-  checksum: 10c0/fba643d9813cd5278438d3bbc78fe2b7dfd42cb3ecc7d3bf4dffd74c12aa2a3f0d47970a62cc0821fe756fa32d485f7131a76228c5ad3a4a7aacf426f78e8986
+    safe-regex2: "npm:^5.1.0"
+  checksum: 10c0/dfeeab0e336a8804731b5aee5bf00de970c29628781c2400898bfc524b9e79d8e54d0ddb58fbfbc214003f1dcab57aa9d1f599be3380a29cfbbaaf9e7be74bef
   languageName: node
   linkType: hard
 
@@ -7485,6 +7486,17 @@ __metadata:
   dependencies:
     ret: "npm:~0.5.0"
   checksum: 10c0/faebf910036228868e83b4a33a84405b04e8e89f01283efe847e17e96b6b4658cc65c6560cef11de3bd5aef3b28b58dffac48744df67ca2ae46e073f668cb71d
+  languageName: node
+  linkType: hard
+
+"safe-regex2@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "safe-regex2@npm:5.1.0"
+  dependencies:
+    ret: "npm:~0.5.0"
+  bin:
+    safe-regex2: bin/safe-regex2.js
+  checksum: 10c0/9ee1e1c0336dbbf7a9cc182766d193371cff8adc4e390d9d709a5fb72fe0dc42500efc77eb5a266d8feb442ae3872a189021e73e7286420b4ad65db9896977b0
   languageName: node
   linkType: hard
 
