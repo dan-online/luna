@@ -1869,7 +1869,7 @@ __metadata:
     fast-jwt: "npm:^6.0.0"
     fastify: "npm:^5.0.0"
     google-auth-library: "npm:^10.1.0"
-    graphql: "npm:^16.6.0"
+    graphql: "npm:^17.0.1"
     graphql-middleware: "npm:^6.1.33"
     graphql-rate-limit: "npm:^3.3.0"
     graphql-redis-subscriptions: "npm:^2.6.0"
@@ -4836,10 +4836,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"graphql@npm:^16.6.0":
-  version: 16.8.1
-  resolution: "graphql@npm:16.8.1"
-  checksum: 8/8d304b7b6f708c8c5cc164b06e92467dfe36aff6d4f2cf31dd19c4c2905a0e7b89edac4b7e225871131fd24e21460836b369de0c06532644d15b461d55b1ccc0
+"graphql@npm:^17.0.1":
+  version: 17.0.1
+  resolution: "graphql@npm:17.0.1"
+  checksum: 10c0/95e4766eefa97bbc37cb4452527d24e12068f170e03c564611a3911f30a77361dfcfbdbfeea00f643c82585c02312c1f41ba6a6263049996d279c49951454980
   languageName: node
   linkType: hard
 
