@@ -27,7 +27,7 @@
     "fast-jwt": "^6.0.0",
     "fastify": "^5.0.0",
     "google-auth-library": "^10.1.0",
-    "graphql": "^16.6.0",
+    "graphql": "^17.0.1",
     "graphql-middleware": "^6.1.33",
     "graphql-rate-limit": "^3.3.0",
     "graphql-redis-subscriptions": "^2.6.0",
