@@ -18,7 +18,7 @@
     "@apollo/utils.keyvadapter": "^4.0.0",
     "@as-integrations/fastify": "^3.0.0",
     "@fastify/one-line-logger": "^2.0.0",
-    "@graphql-tools/schema": "^10.0.0",
+    "@graphql-tools/schema": "^11.0.6",
     "@keyv/redis": "^6.1.0",
     "@typegoose/typegoose": "^13.0.0",
     "bcrypt": "^6.0.0",
