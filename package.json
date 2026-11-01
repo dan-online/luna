@@ -17,17 +17,17 @@
     "packages/*"
   ],
   "devDependencies": {
-    "@commitlint/cli": "^21.0.0",
-    "@commitlint/config-conventional": "^21.0.0",
-    "@sapphire/ts-config": "^5.0.0",
-    "@swc/core": "^1.3.62",
+    "@commitlint/cli": "^21.2.4",
+    "@commitlint/config-conventional": "^21.2.4",
+    "@sapphire/ts-config": "^5.0.3",
+    "@swc/core": "^1.16.21",
     "@types/node": "^26.6.6",
-    "husky": "^9.0.6",
-    "nodemon": "^3.0.0",
-    "@biomejs/biome": "^2.0.4",
-    "tslib": "^2.5.3",
+    "husky": "^9.1.7",
+    "nodemon": "^3.1.14",
+    "@biomejs/biome": "^2.6.4",
+    "tslib": "^2.9.1",
     "tsup": "^9.0.0",
-    "turbo": "^2.0.14",
+    "turbo": "^2.11.10",
     "typescript": "^7.0.2"
   },
   "engines": {
